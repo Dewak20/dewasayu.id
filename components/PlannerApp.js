@@ -9,7 +9,9 @@ const NAV = [
   ["budget", "◉", "Anggaran"], ["expenses", "↗", "Pengeluaran"],
   ["payments", "⊟", "Bayar Vendor"], ["funding", "⊕", "Pendanaan"],
   ["adat", "❋", "Uang Adat"], ["saving", "◌", "Tabungan"],
-  ["events", "◈", "Rangkaian Acara"], ["checklist", "✓", "Checklist"],
+  ["events", "◈", "Rangkaian Acara"], ["rundown", "◷", "Rundown & PIC"],
+  ["katering", "❖", "Katering"], ["transportasi", "⇄", "Transport & Akomodasi"],
+  ["emergency", "✚", "Emergency Kit"], ["checklist", "✓", "Checklist"],
   ["vendors", "♢", "Vendor MUA"], ["prewedding", "◎", "Prewedding"],
   ["guests", "♡", "Daftar Tamu"], ["preparations", "□", "Seserahan"],
   ["documents", "▤", "Dokumen"], ["moodboard", "✦", "Mood Board"]
@@ -69,6 +71,10 @@ export default function PlannerApp() {
           {view === "funding" && <PendanaanView {...props} />}
           {view === "saving" && <SavingPlannerView {...props} />}
           {view === "events" && <RangkaianAcaraView {...props} />}
+          {view === "rundown" && <RundownView {...props} />}
+          {view === "katering" && <KateringView {...props} />}
+          {view === "transportasi" && <TransportasiView {...props} />}
+          {view === "emergency" && <EmergencyKitView {...props} />}
           {view === "checklist" && <ChecklistView {...props} />}
           {view === "vendors" && <VendorView {...props} />}
           {view === "prewedding" && <PreweddingView {...props} />}
@@ -196,6 +202,102 @@ function RangkaianAcaraView({ data, patchData, notify }) {
     {sorted.length === 0 ? <section className="workspace-card"><Empty text="Belum ada acara. Tambahkan tahapan seperti Ngidih, Pawiwahan, atau Resepsi beserta tanggalnya." /></section>
       : <div className="event-grid">{sorted.map((event) => { const days = event.date ? Math.ceil((new Date(event.date) - new Date()) / 86400000) : null; return <article className="event-card editable" key={event.id}><input className="event-name-input" value={event.name} onChange={(e) => update(event.id, "name", e.target.value)} placeholder="Nama acara" /><input type="date" value={event.date?.slice(0, 10) || ""} onChange={(e) => update(event.id, "date", e.target.value)} /><em>{days === null ? "Tanggal belum diatur" : days < 0 ? "Sudah lewat" : `${days} hari lagi`}</em><button className="delete-x" onClick={() => remove(event.id)}>×</button></article>; })}</div>}
     {modal && <Modal title="Tambah Acara" onClose={() => setModal(false)}><form className="editor-form" onSubmit={add}><Field wide label="Nama acara"><input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="mis. Ngidih / Pawiwahan / Resepsi" /></Field><Field label="Tanggal"><input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+function RundownView({ data, patchData, notify }) {
+  const events = data.project.events || [];
+  const rundown = data.rundown || [];
+  const empty = { eventId: events[0]?.id || "", time: "", activity: "", pic: "", place: "", note: "" };
+  const [form, setForm] = useState(empty);
+  const [modal, setModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const [tab, setTab] = useState("all");
+  const eventName = (id) => events.find((e) => e.id === id)?.name || "Umum";
+  const items = rundown.filter((r) => tab === "all" || r.eventId === tab).sort((a, b) => (a.time || "").localeCompare(b.time || ""));
+  const open = (item) => { setEditing(item?.id || null); setForm(item ? { ...item } : { ...empty, eventId: tab !== "all" ? tab : (events[0]?.id || "") }); setModal(true); };
+  const save = (e) => { e.preventDefault(); const record = { ...form, id: editing || uid("run") }; patchData("rundown", editing ? rundown.map((x) => x.id === editing ? record : x) : [...rundown, record]); setModal(false); notify(editing ? "Rundown diperbarui" : "Baris rundown ditambahkan"); };
+  const remove = (id) => { if (confirm("Hapus baris rundown ini?")) { patchData("rundown", rundown.filter((x) => x.id !== id)); notify("Baris dihapus"); } };
+  return <><PageIntro kicker="JADWAL HARI-H" title="Rundown & PIC" text="Susunan jam-per-jam tiap acara beserta penanggung jawab (PIC) dan tempatnya. Buat acara di Rangkaian Acara untuk memisahkan rundown per acara." action={<button className="main-button" onClick={() => open()}>＋ Tambah baris</button>} />
+    <div className="data-alert"><strong>Catatan:</strong> jam &amp; urutan acara mengikuti kesepakatan keluarga &amp; pemangku sesuai <em>desa-kala-patra</em> — susunan di sini bantu koordinasi, bukan patokan adat.</div>
+    {events.length > 0 && <div className="owner-tabs"><button className={tab === "all" ? "active" : ""} onClick={() => setTab("all")}>Semua acara</button>{events.map((e) => <button key={e.id} className={tab === e.id ? "active" : ""} onClick={() => setTab(e.id)}>{e.name}</button>)}</div>}
+    {items.length === 0 ? <section className="workspace-card"><Empty text="Belum ada rundown. Tambahkan baris jadwal (jam, kegiatan, PIC, tempat) untuk acaramu." /></section>
+      : <section className="workspace-card"><div className="record-list">{items.map((r) => <article key={r.id}><span className="record-icon">◷</span><div><strong>{r.activity || "Kegiatan"}</strong><small>{eventName(r.eventId)}{r.pic ? ` · PIC: ${r.pic}` : ""}{r.place ? ` · ${r.place}` : ""}{r.note ? ` · ${r.note}` : ""}</small></div><em className="pill">{r.time || "--:--"}</em><b></b><div className="row-actions"><button onClick={() => open(r)}>Edit</button><button onClick={() => remove(r.id)}>Hapus</button></div></article>)}</div></section>}
+    {modal && <Modal title={editing ? "Edit Rundown" : "Tambah Rundown"} onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field label="Acara"><select value={form.eventId} onChange={(e) => setForm({ ...form, eventId: e.target.value })}><option value="">Umum</option>{events.map((e) => <option key={e.id} value={e.id}>{e.name}</option>)}</select></Field><Field label="Jam"><input type="time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })} /></Field><Field wide label="Kegiatan"><input required value={form.activity} onChange={(e) => setForm({ ...form, activity: e.target.value })} placeholder="mis. Mekala-kalaan" /></Field><Field label="PIC"><input value={form.pic} onChange={(e) => setForm({ ...form, pic: e.target.value })} placeholder="Penanggung jawab" /></Field><Field label="Tempat"><input value={form.place} onChange={(e) => setForm({ ...form, place: e.target.value })} /></Field><Field wide label="Catatan"><input value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+function KateringView({ data, patchData, notify }) {
+  const catering = data.catering || [];
+  const events = data.project.events || [];
+  const guestPax = sum(data.guests || [], "pax");
+  const empty = { event: "", menu: "", pax: guestPax || "", pricePerPax: "", note: "" };
+  const [form, setForm] = useState(empty);
+  const [modal, setModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const totalPax = sum(catering, "pax");
+  const totalCost = catering.reduce((t, c) => t + Number(c.pax || 0) * Number(c.pricePerPax || 0), 0);
+  const open = (item) => { setEditing(item?.id || null); setForm(item ? { ...item } : { ...empty }); setModal(true); };
+  const save = (e) => { e.preventDefault(); const record = { ...form, id: editing || uid("cat"), pax: Number(form.pax || 0), pricePerPax: Number(form.pricePerPax || 0) }; patchData("catering", editing ? catering.map((x) => x.id === editing ? record : x) : [...catering, record]); setModal(false); notify(editing ? "Konsumsi diperbarui" : "Konsumsi ditambahkan"); };
+  const remove = (id) => { if (confirm("Hapus item konsumsi ini?")) { patchData("catering", catering.filter((x) => x.id !== id)); notify("Item dihapus"); } };
+  return <><PageIntro kicker="KATERING & KONSUMSI" title="Katering & Konsumsi" text="Rencanakan porsi & biaya konsumsi per acara — dari prosesi kecil sampai resepsi. Jumlah porsi bisa mengikuti daftar tamu." action={<button className="main-button" onClick={() => open()}>＋ Tambah konsumsi</button>} />
+    <div className="metric-grid"><Metric label="Total Porsi" value={`${totalPax} pax`} tone="green" note={`${catering.length} pos konsumsi`} /><Metric label="Total Biaya" value={money(totalCost)} /><Metric label="Total Tamu Terdata" value={`${guestPax} pax`} note="dari Daftar Tamu" /></div>
+    {catering.length === 0 ? <section className="workspace-card"><Empty text="Belum ada rencana konsumsi. Tambahkan pos katering (mis. Prasmanan resepsi, Konsumsi ngayah) beserta jumlah porsi dan harga per pax." /></section>
+      : <section className="workspace-card"><div className="record-list">{catering.map((c) => { const sub = Number(c.pax || 0) * Number(c.pricePerPax || 0); return <article key={c.id}><span className="record-icon">❖</span><div><strong>{c.menu || "Menu"}</strong><small>{c.event || "Umum"} · {c.pax} pax × {money(c.pricePerPax)}{c.note ? ` · ${c.note}` : ""}</small></div><em className="pill">{c.pax} pax</em><b>{money(sub)}</b><div className="row-actions"><button onClick={() => open(c)}>Edit</button><button onClick={() => remove(c.id)}>Hapus</button></div></article>; })}</div></section>}
+    {modal && <Modal title={editing ? "Edit Konsumsi" : "Tambah Konsumsi"} onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field label="Acara / sesi"><input list="event-list" value={form.event} onChange={(e) => setForm({ ...form, event: e.target.value })} placeholder="mis. Resepsi" /><datalist id="event-list">{events.map((e) => <option key={e.id} value={e.name} />)}</datalist></Field><Field label="Menu / jenis"><input required value={form.menu} onChange={(e) => setForm({ ...form, menu: e.target.value })} placeholder="mis. Nasi campur Bali" /></Field><Field label="Jumlah porsi (pax)"><input type="number" min="0" value={form.pax} onChange={(e) => setForm({ ...form, pax: e.target.value })} /></Field><Field label="Harga per pax"><input type="number" min="0" value={form.pricePerPax} onChange={(e) => setForm({ ...form, pricePerPax: e.target.value })} /></Field><Field wide label="Catatan"><input value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+const LOGISTIC_REF = {
+  Transportasi: [{ item: "Mobil pengantin" }, { item: "Transport keluarga inti" }, { item: "Transport rombongan / ngiring" }],
+  Akomodasi: [{ item: "Kamar tamu luar kota" }, { item: "Penginapan kru vendor" }]
+};
+
+function TransportasiView({ data, patchData, notify }) {
+  const logistics = data.logistics || [];
+  const [tab, setTab] = useState("Transportasi");
+  const empty = { type: "Transportasi", item: "", detail: "", cost: "", note: "" };
+  const [form, setForm] = useState(empty);
+  const [modal, setModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const items = logistics.filter((x) => x.type === tab);
+  const totalCost = sum(logistics, "cost");
+  const open = (item) => { setEditing(item?.id || null); setForm(item ? { ...item } : { ...empty, type: tab }); setModal(true); };
+  const save = (e) => { e.preventDefault(); const record = { ...form, id: editing || uid("log"), cost: Number(form.cost || 0) }; patchData("logistics", editing ? logistics.map((x) => x.id === editing ? record : x) : [...logistics, record]); setModal(false); notify(editing ? "Diperbarui" : "Ditambahkan"); };
+  const remove = (id) => { if (confirm("Hapus item ini?")) { patchData("logistics", logistics.filter((x) => x.id !== id)); notify("Item dihapus"); } };
+  const loadReference = () => { patchData("logistics", [...logistics, ...LOGISTIC_REF[tab].map((r) => ({ ...r, id: uid("log"), type: tab, detail: "", cost: 0, note: "" }))]); notify(`Daftar ${tab.toLowerCase()} umum dimuat`); };
+  return <><PageIntro kicker="LOGISTIK HARI-H" title="Transportasi & Akomodasi" text="Catat kebutuhan kendaraan dan penginapan — pengantin, keluarga, rombongan, hingga kru vendor — beserta biayanya." action={<button className="main-button" onClick={() => open()}>＋ Tambah item</button>} />
+    <div className="metric-grid"><Metric label="Total Biaya Logistik" value={money(totalCost)} tone="green" note={`${logistics.length} item`} /><Metric label="Transportasi" value={money(sum(logistics.filter((x) => x.type === "Transportasi"), "cost"))} /><Metric label="Akomodasi" value={money(sum(logistics.filter((x) => x.type === "Akomodasi"), "cost"))} /></div>
+    <div className="owner-tabs"><button className={tab === "Transportasi" ? "active" : ""} onClick={() => setTab("Transportasi")}>Transportasi</button><button className={tab === "Akomodasi" ? "active" : ""} onClick={() => setTab("Akomodasi")}>Akomodasi</button></div>
+    {items.length === 0 ? <section className="workspace-card"><Empty text={`Belum ada ${tab.toLowerCase()}. Tambahkan item atau muat daftar umum.`} /><div style={{ textAlign: "center" }}><button className="main-button" onClick={loadReference}>Muat daftar {tab.toLowerCase()} umum</button></div></section>
+      : <section className="workspace-card"><div className="record-list">{items.map((x) => <article key={x.id}><span className="record-icon">⇄</span><div><strong>{x.item || "Item"}</strong><small>{x.detail || "Belum ada detail"}{x.note ? ` · ${x.note}` : ""}</small></div><em className="pill">{x.type}</em><b>{money(x.cost)}</b><div className="row-actions"><button onClick={() => open(x)}>Edit</button><button onClick={() => remove(x.id)}>Hapus</button></div></article>)}</div></section>}
+    {modal && <Modal title={editing ? "Edit Logistik" : "Tambah Logistik"} onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field label="Jenis"><select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })}><option>Transportasi</option><option>Akomodasi</option></select></Field><Field label="Item"><input required value={form.item} onChange={(e) => setForm({ ...form, item: e.target.value })} placeholder="mis. Mobil pengantin" /></Field><Field wide label="Detail"><input value={form.detail} onChange={(e) => setForm({ ...form, detail: e.target.value })} placeholder="mis. Sewa 1 hari + sopir" /></Field><Field label="Biaya"><input type="number" min="0" value={form.cost} onChange={(e) => setForm({ ...form, cost: e.target.value })} /></Field><Field label="Catatan"><input value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+const EMERGENCY_REF = [
+  { item: "Jarum & benang jahit", category: "Busana" }, { item: "Peniti & double tape", category: "Busana" },
+  { item: "Penghapus noda / tisu basah", category: "Busana" }, { item: "Sisir & cermin kecil", category: "Busana" },
+  { item: "Obat pereda nyeri & minyak angin", category: "Kesehatan" }, { item: "Plester luka", category: "Kesehatan" },
+  { item: "Air mineral & snack ringan", category: "Kesehatan" }, { item: "Powerbank & kabel charger", category: "Elektronik" },
+  { item: "Fotokopi KTP, KK & surat", category: "Dokumen" }, { item: "Salinan kontrak vendor", category: "Dokumen" },
+  { item: "Uang tunai cadangan", category: "Lainnya" }, { item: "Payung", category: "Lainnya" }
+];
+
+function EmergencyKitView({ data, patchData, notify }) {
+  const kit = data.emergencyKit || [];
+  const [form, setForm] = useState({ item: "", category: "Lainnya" });
+  const [modal, setModal] = useState(false);
+  const done = kit.filter((x) => x.checked).length;
+  const toggle = (id) => patchData("emergencyKit", kit.map((x) => x.id === id ? { ...x, checked: !x.checked } : x));
+  const save = (e) => { e.preventDefault(); patchData("emergencyKit", [...kit, { ...form, id: uid("kit"), checked: false }]); setForm({ item: "", category: "Lainnya" }); setModal(false); notify("Item ditambahkan"); };
+  const remove = (id) => patchData("emergencyKit", kit.filter((x) => x.id !== id));
+  const loadReference = () => { patchData("emergencyKit", [...kit, ...EMERGENCY_REF.map((r) => ({ ...r, id: uid("kit"), checked: false }))]); notify("Daftar emergency kit umum dimuat"); };
+  return <><PageIntro kicker="SIAP SEDIA HARI-H" title="Emergency Kit Hari H" text="Checklist barang darurat yang wajib ada di lokasi — dari jarum jahit sampai powerbank — supaya masalah kecil tak jadi drama." action={<button className="main-button" onClick={() => setModal(true)}>＋ Tambah item</button>} />
+    <div className="document-progress"><div><strong>{done}/{kit.length}</strong><span>item siap</span></div><div className="big-progress"><span style={{ width: `${kit.length ? done / kit.length * 100 : 0}%` }} /></div></div>
+    {kit.length === 0 ? <section className="workspace-card"><Empty text="Belum ada emergency kit. Muat daftar umum lalu sesuaikan dengan kebutuhanmu." /><div style={{ textAlign: "center" }}><button className="main-button" onClick={loadReference}>Muat daftar emergency kit umum</button></div></section>
+      : <section className="workspace-card document-list">{kit.map((x) => <article key={x.id} className={x.checked ? "is-done" : ""}><button className="check-button" onClick={() => toggle(x.id)}>{x.checked ? "✓" : ""}</button><div><strong>{x.item}</strong><small>{x.category}</small></div><button className="delete-x" onClick={() => remove(x.id)}>×</button></article>)}</section>}
+    {modal && <Modal title="Tambah Item Emergency Kit" onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field wide label="Nama barang"><input required value={form.item} onChange={(e) => setForm({ ...form, item: e.target.value })} /></Field><Field wide label="Kategori"><select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}><option>Busana</option><option>Kesehatan</option><option>Elektronik</option><option>Dokumen</option><option>Lainnya</option></select></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
   </>;
 }
 

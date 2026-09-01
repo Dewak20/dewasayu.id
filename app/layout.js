@@ -1,7 +1,11 @@
+import { DM_Sans, Marcellus } from "next/font/google";
 import "../styles.css";
 import "../planner.css";
 import "../landing.css";
 import "../auth.css";
+
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
+const marcellus = Marcellus({ subsets: ["latin"], weight: "400", variable: "--font-marcellus" });
 
 export const metadata = {
   title: "Dewasa Ayu — Persiapan Pernikahan dalam Satu Tempat",
@@ -16,7 +20,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
+    <html lang="id" className={`${dmSans.variable} ${marcellus.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -12,9 +12,12 @@ const NAV = [
   ["events", "◈", "Rangkaian Acara"], ["rundown", "◷", "Rundown & PIC"],
   ["katering", "❖", "Katering"], ["transportasi", "⇄", "Transport & Akomodasi"],
   ["emergency", "✚", "Emergency Kit"], ["checklist", "✓", "Checklist"],
-  ["vendors", "♢", "Vendor MUA"], ["prewedding", "◎", "Prewedding"],
+  ["vendors", "♢", "Vendor MUA"], ["vendor-compare", "⚖", "Banding Vendor"],
+  ["prewedding", "◎", "Prewedding"], ["shotlist", "▦", "Shot List"],
   ["guests", "♡", "Daftar Tamu"], ["preparations", "□", "Seserahan"],
-  ["documents", "▤", "Dokumen"], ["moodboard", "✦", "Mood Board"]
+  ["documents", "▤", "Dokumen"], ["pascanikah", "⊛", "Pasca-Nikah"],
+  ["playlist", "♪", "Playlist"], ["catatan", "✎", "Catatan"],
+  ["moodboard", "✦", "Mood Board"]
 ];
 const OWNER_OPTIONS = ["Pengantin Pria", "Orang Tua Pria", "Pengantin Wanita", "Orang Tua Wanita"];
 const money = (value) => new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(Number(value || 0));
@@ -81,6 +84,11 @@ export default function PlannerApp() {
           {view === "guests" && <GuestsView {...props} />}
           {view === "preparations" && <PreparationsView {...props} />}
           {view === "documents" && <DocumentsView {...props} />}
+          {view === "vendor-compare" && <VendorCompareView {...props} />}
+          {view === "shotlist" && <ShotListView {...props} />}
+          {view === "pascanikah" && <PascaNikahView {...props} />}
+          {view === "playlist" && <PlaylistView {...props} />}
+          {view === "catatan" && <CatatanView {...props} />}
           {view === "moodboard" && <MoodboardView {...props} />}
         </div>
       </main>
@@ -298,6 +306,113 @@ function EmergencyKitView({ data, patchData, notify }) {
     {kit.length === 0 ? <section className="workspace-card"><Empty text="Belum ada emergency kit. Muat daftar umum lalu sesuaikan dengan kebutuhanmu." /><div style={{ textAlign: "center" }}><button className="main-button" onClick={loadReference}>Muat daftar emergency kit umum</button></div></section>
       : <section className="workspace-card document-list">{kit.map((x) => <article key={x.id} className={x.checked ? "is-done" : ""}><button className="check-button" onClick={() => toggle(x.id)}>{x.checked ? "✓" : ""}</button><div><strong>{x.item}</strong><small>{x.category}</small></div><button className="delete-x" onClick={() => remove(x.id)}>×</button></article>)}</section>}
     {modal && <Modal title="Tambah Item Emergency Kit" onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field wide label="Nama barang"><input required value={form.item} onChange={(e) => setForm({ ...form, item: e.target.value })} /></Field><Field wide label="Kategori"><select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}><option>Busana</option><option>Kesehatan</option><option>Elektronik</option><option>Dokumen</option><option>Lainnya</option></select></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+function VendorCompareView({ data, patchData, notify }) {
+  const list = data.vendorCompare || [];
+  const categories = data.categories || [];
+  const empty = { name: "", category: categories[0]?.name || "MUA", price: "", rating: 3, note: "", chosen: false };
+  const [form, setForm] = useState(empty);
+  const [modal, setModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const [filter, setFilter] = useState("all");
+  const cats = [...new Set(list.map((v) => v.category))];
+  const items = list.filter((v) => filter === "all" || v.category === filter).sort((a, b) => (b.rating || 0) - (a.rating || 0) || Number(a.price || 0) - Number(b.price || 0));
+  const open = (item) => { setEditing(item?.id || null); setForm(item ? { ...item } : { ...empty }); setModal(true); };
+  const save = (e) => { e.preventDefault(); const record = { ...form, id: editing || uid("vc"), price: Number(form.price || 0), rating: Number(form.rating) }; patchData("vendorCompare", editing ? list.map((x) => x.id === editing ? record : x) : [...list, record]); setModal(false); notify(editing ? "Kandidat diperbarui" : "Kandidat ditambahkan"); };
+  const toggleChosen = (id) => patchData("vendorCompare", list.map((x) => x.id === id ? { ...x, chosen: !x.chosen } : x));
+  const remove = (id) => { if (confirm("Hapus kandidat vendor ini?")) { patchData("vendorCompare", list.filter((x) => x.id !== id)); notify("Kandidat dihapus"); } };
+  return <><PageIntro kicker="BANDINGKAN KANDIDAT" title="Banding Vendor" text="Kumpulkan beberapa kandidat vendor per kategori, beri nilai dan harga, lalu tandai yang kamu pilih. Kandidat terurut dari nilai tertinggi." action={<button className="main-button" onClick={() => open()}>＋ Tambah kandidat</button>} />
+    {list.length === 0 ? <section className="workspace-card"><Empty text="Belum ada kandidat. Tambahkan beberapa vendor (mis. 3 MUA) beserta harga & nilai untuk membandingkan." /></section>
+      : <section className="workspace-card"><div className="list-toolbar solo"><select value={filter} onChange={(e) => setFilter(e.target.value)}><option value="all">Semua kategori</option>{cats.map((c) => <option key={c}>{c}</option>)}</select></div>
+        <div className="record-list">{items.map((v) => <article key={v.id} className={v.chosen ? "is-chosen" : ""}><span className="record-icon">{v.chosen ? "★" : "◇"}</span><div><strong>{v.name || "Vendor"}</strong><small>{v.category}{v.note ? ` · ${v.note}` : ""}</small></div><em className="pill">{"★".repeat(v.rating || 0)}{"☆".repeat(5 - (v.rating || 0))}</em><b>{money(v.price)}</b><div className="row-actions"><button onClick={() => toggleChosen(v.id)}>{v.chosen ? "Batal" : "Pilih"}</button><button onClick={() => open(v)}>Edit</button><button onClick={() => remove(v.id)}>Hapus</button></div></article>)}</div></section>}
+    {modal && <Modal title={editing ? "Edit Kandidat" : "Tambah Kandidat"} onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field label="Nama vendor"><input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></Field><Field label="Kategori"><input list="vc-cat" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} /><datalist id="vc-cat">{categories.map((c) => <option key={c.id} value={c.name} />)}</datalist></Field><Field label="Harga"><input type="number" min="0" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} /></Field><Field label="Nilai (1–5)"><select value={form.rating} onChange={(e) => setForm({ ...form, rating: e.target.value })}>{[5, 4, 3, 2, 1].map((n) => <option key={n} value={n}>{"★".repeat(n)} ({n})</option>)}</select></Field><Field wide label="Catatan"><input value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="mis. include hairdo, ramah, respon cepat" /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+const SHOT_REF = [
+  { shot: "Detail cincin & mahar", category: "Detail" }, { shot: "Detail dekorasi & penjor", category: "Detail" },
+  { shot: "Prosesi Mekala-kalaan", category: "Prosesi" }, { shot: "Prosesi Mewidhi Widana", category: "Prosesi" },
+  { shot: "Foto keluarga besar kedua pihak", category: "Keluarga" }, { shot: "Pengantin bersama orang tua", category: "Keluarga" },
+  { shot: "Kandid tamu & suasana", category: "Kandid" }, { shot: "Potong kue / toast resepsi", category: "Resepsi" }
+];
+
+function ShotListView({ data, patchData, notify }) {
+  const shots = data.shotList || [];
+  const [form, setForm] = useState({ shot: "", category: "Detail" });
+  const [modal, setModal] = useState(false);
+  const done = shots.filter((x) => x.checked).length;
+  const toggle = (id) => patchData("shotList", shots.map((x) => x.id === id ? { ...x, checked: !x.checked } : x));
+  const save = (e) => { e.preventDefault(); patchData("shotList", [...shots, { ...form, id: uid("shot"), checked: false }]); setForm({ shot: "", category: "Detail" }); setModal(false); notify("Shot ditambahkan"); };
+  const remove = (id) => patchData("shotList", shots.filter((x) => x.id !== id));
+  const loadReference = () => { patchData("shotList", [...shots, ...SHOT_REF.map((r) => ({ ...r, id: uid("shot"), checked: false }))]); notify("Daftar shot umum dimuat"); };
+  return <><PageIntro kicker="DAFTAR MOMEN FOTO" title="Shot List Dokumentasi" text="Daftar momen wajib untuk fotografer & videografer — supaya tak ada momen penting yang terlewat. Bagikan ke tim dokumentasimu." action={<button className="main-button" onClick={() => setModal(true)}>＋ Tambah shot</button>} />
+    <div className="document-progress"><div><strong>{done}/{shots.length}</strong><span>shot ditandai</span></div><div className="big-progress"><span style={{ width: `${shots.length ? done / shots.length * 100 : 0}%` }} /></div></div>
+    {shots.length === 0 ? <section className="workspace-card"><Empty text="Belum ada shot list. Muat daftar umum lalu sesuaikan dengan momen yang kamu inginkan." /><div style={{ textAlign: "center" }}><button className="main-button" onClick={loadReference}>Muat daftar shot umum</button></div></section>
+      : <section className="workspace-card document-list">{shots.map((x) => <article key={x.id} className={x.checked ? "is-done" : ""}><button className="check-button" onClick={() => toggle(x.id)}>{x.checked ? "✓" : ""}</button><div><strong>{x.shot}</strong><small>{x.category}</small></div><button className="delete-x" onClick={() => remove(x.id)}>×</button></article>)}</section>}
+    {modal && <Modal title="Tambah Shot" onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field wide label="Momen / shot"><input required value={form.shot} onChange={(e) => setForm({ ...form, shot: e.target.value })} /></Field><Field wide label="Kategori"><select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}><option>Detail</option><option>Prosesi</option><option>Keluarga</option><option>Kandid</option><option>Resepsi</option></select></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+const POSTWED_REF = [
+  { task: "Lapor & sungkem ke banjar / desa adat", when: "H+7–30" },
+  { task: "Urus Akta Perkawinan di Dukcapil", when: "H+1–60" },
+  { task: "Ganti status & alamat di KTP", when: "H+30" },
+  { task: "Buat Kartu Keluarga (KK) baru", when: "H+30" },
+  { task: "Update data BPJS Kesehatan", when: "H+30" },
+  { task: "Kirim ucapan terima kasih ke tamu & vendor", when: "H+1–14" },
+  { task: "Terima & backup foto/video dari fotografer", when: "H+14–30" }
+];
+
+function PascaNikahView({ data, patchData, notify }) {
+  const tasks = data.postWedding || [];
+  const [form, setForm] = useState({ task: "", when: "" });
+  const [modal, setModal] = useState(false);
+  const done = tasks.filter((x) => x.checked).length;
+  const toggle = (id) => patchData("postWedding", tasks.map((x) => x.id === id ? { ...x, checked: !x.checked } : x));
+  const save = (e) => { e.preventDefault(); patchData("postWedding", [...tasks, { ...form, id: uid("pw"), checked: false }]); setForm({ task: "", when: "" }); setModal(false); notify("Tugas ditambahkan"); };
+  const remove = (id) => patchData("postWedding", tasks.filter((x) => x.id !== id));
+  const loadReference = () => { patchData("postWedding", [...tasks, ...POSTWED_REF.map((r) => ({ ...r, id: uid("pw"), checked: false }))]); notify("Checklist pasca-nikah umum dimuat"); };
+  return <><PageIntro kicker="TUNTAS SETELAH ACARA" title="Checklist Pasca-Nikah" text="Urusan administrasi & adat setelah hari-H — dari lapor banjar sampai akta & KTP baru. Tandai satu per satu supaya tuntas dengan tenang." action={<button className="main-button" onClick={() => setModal(true)}>＋ Tambah tugas</button>} />
+    <div className="document-progress"><div><strong>{done}/{tasks.length}</strong><span>tugas selesai</span></div><div className="big-progress"><span style={{ width: `${tasks.length ? done / tasks.length * 100 : 0}%` }} /></div></div>
+    {tasks.length === 0 ? <section className="workspace-card"><Empty text="Belum ada checklist. Muat daftar umum (lapor banjar, akta, KTP, BPJS) lalu sesuaikan." /><div style={{ textAlign: "center" }}><button className="main-button" onClick={loadReference}>Muat checklist pasca-nikah umum</button></div></section>
+      : <section className="workspace-card document-list">{tasks.map((x) => <article key={x.id} className={x.checked ? "is-done" : ""}><button className="check-button" onClick={() => toggle(x.id)}>{x.checked ? "✓" : ""}</button><div><strong>{x.task}</strong><small>{x.when || "Tanpa tenggat"}</small></div><button className="delete-x" onClick={() => remove(x.id)}>×</button></article>)}</section>}
+    {modal && <Modal title="Tambah Tugas Pasca-Nikah" onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field wide label="Tugas"><input required value={form.task} onChange={(e) => setForm({ ...form, task: e.target.value })} /></Field><Field wide label="Kapan (opsional)"><input value={form.when} onChange={(e) => setForm({ ...form, when: e.target.value })} placeholder="mis. H+30" /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+function PlaylistView({ data, patchData, notify }) {
+  const songs = data.playlist || [];
+  const empty = { title: "", artist: "", moment: "Resepsi", link: "" };
+  const [form, setForm] = useState(empty);
+  const [modal, setModal] = useState(false);
+  const [tab, setTab] = useState("all");
+  const MOMENTS = ["Prosesi", "Penyambutan", "Resepsi", "Dansa"];
+  const items = songs.filter((s) => tab === "all" || s.moment === tab);
+  const save = (e) => { e.preventDefault(); patchData("playlist", [...songs, { ...form, id: uid("song") }]); setForm(empty); setModal(false); notify("Lagu ditambahkan"); };
+  const remove = (id) => patchData("playlist", songs.filter((x) => x.id !== id));
+  return <><PageIntro kicker="MUSIK ACARA" title="Wedding Playlist" text="Kumpulkan lagu untuk tiap momen — prosesi, penyambutan, resepsi, dansa — lengkap dengan tautannya untuk dibagikan ke MC / sound system." action={<button className="main-button" onClick={() => setModal(true)}>＋ Tambah lagu</button>} />
+    <div className="owner-tabs"><button className={tab === "all" ? "active" : ""} onClick={() => setTab("all")}>Semua</button>{MOMENTS.map((m) => <button key={m} className={tab === m ? "active" : ""} onClick={() => setTab(m)}>{m}</button>)}</div>
+    {items.length === 0 ? <section className="workspace-card"><Empty text="Belum ada lagu. Tambahkan lagu favorit beserta momen dan tautannya." /></section>
+      : <section className="workspace-card simple-list">{items.map((s) => <article key={s.id}><div><strong>{s.title || "Judul lagu"}</strong><small>{s.artist || "Artis"} · {s.moment}</small></div>{s.link && <a href={s.link} target="_blank" rel="noreferrer">Buka ↗</a>}<div className="row-actions"><button onClick={() => remove(s.id)}>Hapus</button></div></article>)}</section>}
+    {modal && <Modal title="Tambah Lagu" onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field label="Judul"><input required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></Field><Field label="Artis"><input value={form.artist} onChange={(e) => setForm({ ...form, artist: e.target.value })} /></Field><Field label="Momen"><select value={form.moment} onChange={(e) => setForm({ ...form, moment: e.target.value })}>{MOMENTS.map((m) => <option key={m}>{m}</option>)}</select></Field><Field label="Tautan (YouTube/Spotify)"><input type="url" value={form.link} onChange={(e) => setForm({ ...form, link: e.target.value })} /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
+  </>;
+}
+
+function CatatanView({ data, patchData, notify }) {
+  const notes = data.notes || [];
+  const empty = { title: "", body: "" };
+  const [form, setForm] = useState(empty);
+  const [modal, setModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const open = (item) => { setEditing(item?.id || null); setForm(item ? { title: item.title, body: item.body } : empty); setModal(true); };
+  const save = (e) => { e.preventDefault(); const record = { ...form, id: editing || uid("note"), date: new Date().toISOString() }; patchData("notes", editing ? notes.map((x) => x.id === editing ? { ...x, ...record } : x) : [...notes, record]); setModal(false); notify(editing ? "Catatan diperbarui" : "Catatan ditambahkan"); };
+  const remove = (id) => { if (confirm("Hapus catatan ini?")) { patchData("notes", notes.filter((x) => x.id !== id)); notify("Catatan dihapus"); } };
+  return <><PageIntro kicker="CATATAN BEBAS" title="Catatan" text="Tempat menyimpan ide, hasil diskusi keluarga, atau pengingat apa pun yang belum punya modulnya sendiri." action={<button className="main-button" onClick={() => open()}>＋ Tambah catatan</button>} />
+    {notes.length === 0 ? <section className="workspace-card"><Empty text="Belum ada catatan. Tambahkan catatan pertama untuk menyimpan ide atau hasil diskusi." /></section>
+      : <section className="workspace-card simple-list">{[...notes].reverse().map((n) => <article key={n.id}><div><strong>{n.title || "Tanpa judul"}</strong><small>{n.body}</small></div><div className="row-actions"><button onClick={() => open(n)}>Edit</button><button onClick={() => remove(n.id)}>Hapus</button></div></article>)}</section>}
+    {modal && <Modal title={editing ? "Edit Catatan" : "Tambah Catatan"} onClose={() => setModal(false)}><form className="editor-form" onSubmit={save}><Field wide label="Judul"><input required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></Field><Field wide label="Isi catatan"><textarea value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
   </>;
 }
 

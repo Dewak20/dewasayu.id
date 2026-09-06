@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Ornamen botani Dewasa Ayu">
+  <defs>
+    <radialGradient id="bg" cx="34%" cy="26%" r="82%">
+      <stop offset="0%" stop-color="#2d4436"/>
+      <stop offset="58%" stop-color="#1d2e24"/>
+      <stop offset="100%" stop-color="#121d17"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0d79c"/>
+      <stop offset="55%" stop-color="#e2bf74"/>
+      <stop offset="100%" stop-color="#c9a24d"/>
+    </linearGradient>
+    <g id="sprig">
+      <path d="M0 150V16" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M0 122c-24 0-42-15-45-39 25-3 42 12 45 39ZM0 122c24 0 42-15 45-39-25-3-42 12-45 39ZM0 78c-20 0-35-12-38-32 21-3 35 9 38 32ZM0 78c20 0 35-12 38-32-21-3-35 9-38 32ZM0 40c-14 0-24-9-26-23 15-2 24 6 26 23ZM0 40c14 0 24-9 26-23-15-2-24 6-26 23Z"
+        stroke="url(#gold)" stroke-width="5" stroke-linejoin="round" fill="none"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- cincin ganda di tengah -->
+  <g opacity=".9" fill="none" stroke="url(#gold)">
+    <circle cx="360" cy="392" r="96" stroke-width="7"/>
+    <circle cx="452" cy="392" r="96" stroke-width="7"/>
+    <path d="M360 296v-30M340 266h40" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- ranting pengapit -->
+  <g opacity=".55"><use href="#sprig" transform="translate(150 250) rotate(-24) scale(1.1)"/></g>
+  <g opacity=".55"><use href="#sprig" transform="translate(654 250) rotate(24) scale(1.1)"/></g>
+  <g opacity=".3"><use href="#sprig" transform="translate(214 596) rotate(-152) scale(.85)"/></g>
+  <g opacity=".3"><use href="#sprig" transform="translate(590 596) rotate(152) scale(.85)"/></g>
+
+  <!-- gelombang bawah -->
+  <path d="M232 640c28-32 56-32 84 0s56 32 84 0 56-32 84 0 56 32 84 0"
+    fill="none" stroke="url(#gold)" stroke-width="11" stroke-linecap="round" opacity=".85"/>
+
+  <!-- titik-titik halus -->
+  <g fill="url(#gold)" opacity=".5">
+    <circle cx="406" cy="188" r="6"/><circle cx="262" cy="452" r="5"/><circle cx="550" cy="452" r="5"/>
+  </g>
+</svg>

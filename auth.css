@@ -1,11 +1,508 @@
-.auth-page{--auth-deep:#263a2e;--auth-dark:#19281f;--auth-sage:#607a68;--auth-paper:#fffdf9;--auth-line:#ded8ce;min-height:100vh;display:grid;grid-template-columns:minmax(390px,42%) 1fr;background:var(--auth-paper);color:#29382f;font-family:var(--font-dm-sans),"Segoe UI",sans-serif}.auth-page *{box-sizing:border-box}
-.auth-story{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:43px clamp(38px,5vw,78px) 48px;color:#fff;background:radial-gradient(circle at 12% 86%,rgba(184,204,187,.18),transparent 25%),radial-gradient(circle at 89% 20%,rgba(218,196,154,.12),transparent 27%),linear-gradient(150deg,#31493a,#1c2c23 70%)}.auth-story:before{content:"";position:absolute;width:min(70vw,650px);aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-48%);border:1px solid rgba(255,255,255,.07);border-radius:50%;box-shadow:0 0 0 70px rgba(255,255,255,.025),0 0 0 140px rgba(255,255,255,.018)}
-.auth-brand{display:inline-flex;width:fit-content;align-items:center;gap:11px;color:inherit;text-decoration:none;position:relative;z-index:2}.auth-brand-mark{width:44px;height:44px;border:1px solid #aebfb2;border-radius:50%;display:grid;place-items:center;font:13px Georgia,serif;position:relative}.auth-brand-mark:after{content:"";position:absolute;inset:4px;border:1px solid rgba(184,202,188,.35);border-radius:inherit}.auth-brand strong,.auth-brand small{display:block}.auth-brand strong{font:18px Georgia,serif;letter-spacing:.3px}.auth-brand small{margin-top:3px;color:#aebbb1;font-size:8px;letter-spacing:1.65px;text-transform:uppercase}
-.auth-story-copy{position:relative;z-index:2;margin:auto 0;max-width:570px}.auth-kicker{color:#cbb383;font-size:9px;font-weight:700;letter-spacing:2.1px}.auth-story blockquote{margin:19px 0 22px;font:italic 45px/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.8px}.auth-story-copy p{width:min(100%,460px);margin:0;color:#afbbb2;font-size:13px;line-height:1.75}
-.auth-mini-card{position:relative;z-index:2;display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:12px;width:min(100%,430px);padding:15px 16px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.07);backdrop-filter:blur(10px)}.auth-mini-icon{width:37px;height:37px;border-radius:50%;display:grid;place-items:center;background:rgba(206,224,210,.15);color:#d9c28f}.auth-mini-card small,.auth-mini-card strong{display:block}.auth-mini-card small{color:#8fa096;font-size:7px;letter-spacing:1.2px}.auth-mini-card strong{margin-top:4px;font:12px Georgia,serif}.auth-mini-card>span{color:#d9c28f;font:15px Georgia,serif}.auth-leaf{position:absolute;line-height:1;color:rgba(255,255,255,.035);font-size:240px;pointer-events:none}.auth-leaf-one{right:-75px;bottom:-65px;transform:rotate(15deg)}.auth-leaf-two{left:-80px;top:70px;transform:rotate(200deg);font-size:190px}
-.auth-panel{min-height:100vh;display:grid;place-items:center;padding:54px 36px;position:relative;background:radial-gradient(circle at 88% 10%,#f2eee6,transparent 25%),var(--auth-paper)}.auth-mobile-header{display:none}.auth-form-wrap{width:min(100%,445px)}.auth-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:48px;color:#778078;text-decoration:none;font-size:11px;font-weight:600}.auth-back span{font-size:16px;transition:transform .2s}.auth-back:hover{color:var(--auth-sage)}.auth-back:hover span{transform:translateX(-3px)}.auth-heading{margin-bottom:31px}.auth-heading .auth-kicker{color:#7b8b7e}.auth-heading h1{margin:11px 0 12px;font:38px/1.12 Georgia,"Times New Roman",serif;letter-spacing:-1px}.auth-heading h1 em{color:var(--auth-sage);font-weight:400}.auth-heading p{margin:0;color:#7b827d;font-size:12px;line-height:1.6}
-.auth-form{display:grid;gap:17px}.auth-field{display:grid;gap:8px}.auth-field>span{font-size:10px;font-weight:700;color:#59655d}.auth-input{height:50px;display:grid;grid-template-columns:27px 1fr auto;align-items:center;padding:0 12px;border:1px solid var(--auth-line);border-radius:10px;background:#fff;transition:border-color .2s,box-shadow .2s}.auth-input:focus-within{border-color:#8fa593;box-shadow:0 0 0 4px rgba(96,122,104,.09)}.auth-input>i{color:#9ba39d;font-size:14px;font-style:normal;text-align:left}.auth-input input{min-width:0;width:100%;height:100%;border:0;outline:0;background:transparent;color:#29382f;font-size:12px}.auth-input input::placeholder{color:#a8aea9}.password-toggle{width:32px;height:32px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;color:#8f9891;cursor:pointer}.password-toggle:hover{background:#f1eee8;color:var(--auth-sage)}.password-toggle svg{width:17px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
-.auth-options{display:flex;justify-content:space-between;align-items:center;gap:20px}.auth-check{display:flex;align-items:flex-start;gap:8px;color:#747d76;font-size:10px;line-height:1.5;cursor:pointer}.auth-check input{position:absolute;opacity:0;pointer-events:none}.auth-check>span{flex:0 0 auto;width:15px;height:15px;border:1px solid #c9cec9;border-radius:4px;background:white;display:grid;place-items:center;margin-top:-1px}.auth-check input:checked+span{background:var(--auth-sage);border-color:var(--auth-sage)}.auth-check input:checked+span:after{content:"✓";color:white;font-size:9px}.auth-check a,.auth-switch a{color:#4e6c58;font-weight:700;text-decoration:none}.auth-check a:hover,.auth-switch a:hover{text-decoration:underline}.auth-agreement{margin-top:1px;cursor:default}.auth-text-button{padding:0;border:0;background:transparent;color:#4e6c58;font-size:10px;font-weight:700;cursor:pointer}.auth-text-button:hover{text-decoration:underline}.auth-alert{padding:10px 12px;border:1px solid #e5c9bf;border-radius:8px;background:#fbf2ef;color:#9a5f52;font-size:10px;line-height:1.5}.auth-submit{height:50px;display:flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:9px;background:var(--auth-deep);color:#fff;box-shadow:0 10px 24px rgba(38,58,46,.18);cursor:pointer;font-size:11px;font-weight:700;transition:transform .2s,background .2s}.auth-submit:hover:not(:disabled){background:var(--auth-dark);transform:translateY(-1px)}.auth-submit:disabled{opacity:.7;cursor:wait}.auth-submit span{font-size:16px}.auth-switch{margin-top:25px;text-align:center;color:#858c87;font-size:10px}.auth-security{display:flex;align-items:center;justify-content:center;gap:7px;margin:37px 0 0;padding-top:22px;border-top:1px solid #ebe7e0;color:#9a9f9b;font-size:8px}.auth-security span{color:var(--auth-sage)}
-@media(min-width:1500px){.auth-story{padding-inline:clamp(70px,6vw,105px)}.auth-story blockquote{font-size:52px}.auth-form-wrap{width:min(100%,500px)}.auth-heading h1{font-size:44px}.auth-input,.auth-submit{height:55px}}
-@media(max-width:900px){.auth-page{grid-template-columns:1fr}.auth-story{display:none}.auth-panel{display:block;padding:0 24px 44px}.auth-mobile-header{height:78px;display:flex;align-items:center;border-bottom:1px solid #ebe6de;margin:0 -24px 38px;padding:0 24px}.auth-mobile-header .auth-brand{color:#29382f}.auth-mobile-header .auth-brand-mark{border-color:var(--auth-sage);width:39px;height:39px}.auth-mobile-header .auth-brand small{color:#848e86}.auth-form-wrap{margin:auto}.auth-back{margin-bottom:34px}}
-@media(max-width:520px){.auth-panel{padding-inline:19px}.auth-mobile-header{margin-inline:-19px;padding-inline:19px}.auth-heading h1{font-size:33px}.auth-heading{margin-bottom:27px}.auth-form{gap:15px}.auth-options{align-items:center}.auth-security{line-height:1.5;text-align:center}}
+/* =============================================================================
+   Halaman auth (Masuk & Daftar) — Dewasa Ayu
+   Mengikuti bahasa desain landing page: kanvas hijau tua, panel membulat
+   melayang, blok aksen ink/emas, tombol pill, dan doodle botani.
+   Root memakai kelas .landing sehingga seluruh token (--ink, --gold, --cream),
+   tipografi Marcellus, serta komponen .btn/.eyebrow/.trust/.tile-icon
+   diwarisi langsung dari landing.css. Berkas ini hanya menambah bagian
+   yang khas halaman auth.
+   ============================================================================= */
+
+.auth-landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav auth: pill yang sama dengan landing, tanpa daftar tautan section. */
+.auth-nav .nav-shell > .brand { flex: 1 1 auto; }
+.auth-nav .nav-shell > .nav-actions { flex: 0 0 auto; }
+
+.auth-nav-note {
+  font-size: clamp(10px, .78vw, 13px);
+  color: #5c665e;
+}
+
+/* ---------- Panel utama ---------- */
+.auth-stack {
+  flex: 1;
+  align-content: start;
+  padding-bottom: var(--gap);
+}
+
+.auth-panel {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: clamp(12px, 1.2vw, 18px);
+  align-items: stretch;
+  /* Padding tipis: dua blok di dalamnya yang jadi kartu utama. */
+  padding: clamp(12px, 1.2vw, 18px);
+}
+
+/* ---------- Sisi cerita (blok ink) ---------- */
+.auth-story {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-card);
+  padding: clamp(24px, 2.8vw, 46px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.4vw, 22px);
+}
+
+/* Eyebrow di atas blok ink perlu varian gelap (landing memakai .on-dark). */
+.auth-story .eyebrow {
+  /* Anak flex-column ikut meregang bila tidak dikunci. */
+  align-self: flex-start;
+  border-color: var(--line-dark);
+  background: rgba(255, 255, 255, .05);
+  color: #c3d0c6;
+}
+
+.auth-story h2 {
+  font-size: clamp(24px, 2.5vw, 40px);
+  max-width: 15ch;
+}
+
+.auth-story > p {
+  max-width: 40ch;
+  font-size: clamp(12px, .9vw, 15px);
+  line-height: 1.68;
+  color: var(--muted-dark);
+}
+
+/* Garis emas di bawah frasa kunci — versi gelap dari .mark landing. */
+.auth-underline {
+  color: var(--gold);
+  background-image: linear-gradient(rgba(226, 191, 116, .3), rgba(226, 191, 116, .3));
+  background-repeat: no-repeat;
+  background-size: 100% .1em;
+  background-position: 0 92%;
+}
+
+.landing .auth-highlights {
+  display: grid;
+  gap: clamp(10px, 1vw, 16px);
+}
+
+.auth-highlights li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 13px;
+}
+
+.auth-highlights .tile-icon {
+  width: clamp(34px, 2.6vw, 42px);
+  height: clamp(34px, 2.6vw, 42px);
+  border-radius: 12px;
+  background: rgba(226, 191, 116, .16);
+  color: var(--gold);
+  font-size: clamp(14px, 1.1vw, 18px);
+}
+
+.auth-highlights strong,
+.auth-highlights small { display: block; }
+
+.auth-highlights strong {
+  font-size: clamp(12px, .92vw, 15px);
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.auth-highlights small {
+  margin-top: 3px;
+  font-size: clamp(10px, .76vw, 12px);
+  line-height: 1.55;
+  color: var(--muted-dark);
+}
+
+/* Kartu progres kecil, sejalan dengan .chip-note pada hero landing.
+   Dipatok ke dasar blok supaya tinggi kolom cerita mengikuti formulir. */
+.auth-mini-card {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, .06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.auth-mini-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #201a09;
+  font-size: 15px;
+}
+
+.auth-mini-card small,
+.auth-mini-card strong { display: block; }
+
+.auth-mini-card small {
+  font-size: 8px;
+  letter-spacing: .18em;
+  color: var(--muted-dark);
+}
+
+.auth-mini-card strong {
+  margin-top: 4px;
+  font-family: var(--font-marcellus), Georgia, serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--cream);
+}
+
+.auth-mini-card > span {
+  font-family: var(--font-marcellus), Georgia, serif;
+  font-size: 17px;
+  color: var(--gold);
+}
+
+.auth-doodle-rays {
+  width: clamp(48px, 4.4vw, 74px);
+  top: clamp(10px, 1.4vw, 22px);
+  right: clamp(14px, 2vw, 34px);
+  color: var(--gold-2);
+  opacity: .8;
+  animation: twinkle 3.6s ease-in-out infinite;
+}
+
+.auth-doodle-sprig {
+  width: clamp(80px, 8vw, 132px);
+  right: clamp(-18px, -1vw, -8px);
+  bottom: clamp(-14px, -.6vw, -6px);
+  color: rgba(255, 255, 255, .07);
+  transform: rotate(14deg);
+}
+
+.auth-doodle-rings {
+  width: clamp(90px, 9vw, 150px);
+  left: clamp(-34px, -2vw, -18px);
+  top: 38%;
+  color: rgba(226, 191, 116, .09);
+  transform: rotate(-12deg);
+}
+
+/* ---------- Sisi formulir (blok paper) ---------- */
+.auth-form-side {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-card);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: clamp(24px, 3vw, 52px) clamp(22px, 3vw, 56px) clamp(48px, 4vw, 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-back {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: clamp(18px, 2vw, 30px);
+  color: #5c665e;
+  text-decoration: none;
+  font-size: clamp(10px, .78vw, 13px);
+  font-weight: 700;
+}
+
+.auth-back .arrow {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--gold);
+  font-style: normal;
+  font-size: 12px;
+  transition: transform .35s var(--ease);
+}
+
+.auth-back:hover { color: var(--text); }
+.auth-back:hover .arrow { transform: translateX(-3px); }
+
+.auth-heading { margin-bottom: clamp(20px, 2.2vw, 32px); }
+
+.auth-heading h1 {
+  /* Lebih kecil dari h1 hero supaya tidak menekan formulir. */
+  font-size: clamp(28px, 2.9vw, 44px);
+  margin: clamp(12px, 1.3vw, 20px) 0 clamp(8px, .9vw, 14px);
+}
+
+.auth-heading > p {
+  max-width: 42ch;
+  font-size: clamp(12px, .9vw, 15px);
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ---------- Formulir ---------- */
+.auth-form {
+  display: grid;
+  gap: clamp(13px, 1.3vw, 18px);
+}
+
+.auth-field { display: grid; gap: 8px; }
+
+.auth-field > span {
+  font-size: clamp(9px, .72vw, 11px);
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #5b665e;
+}
+
+.auth-input {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  align-items: center;
+  height: clamp(48px, 3.6vw, 56px);
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.auth-input:focus-within {
+  border-color: var(--gold-2);
+  box-shadow: 0 0 0 4px rgba(226, 191, 116, .22);
+}
+
+.auth-input > i {
+  font-style: normal;
+  font-size: 14px;
+  color: #9ba39d;
+}
+
+.auth-input input {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: clamp(12px, .9vw, 14px);
+}
+
+.auth-input input::placeholder { color: #a8aea9; }
+
+.password-toggle {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #8f9891;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.password-toggle:hover { background: var(--cream); color: var(--sage); }
+
+.password-toggle svg {
+  width: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+/* ---------- Opsi & pernyataan ---------- */
+.auth-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.auth-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: clamp(10px, .76vw, 12px);
+  line-height: 1.55;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.auth-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.auth-check > span {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-top: -1px;
+  border: 1px solid #c9cec9;
+  border-radius: 5px;
+  background: #fff;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.auth-check input:checked + span {
+  background: var(--gold);
+  border-color: var(--gold-2);
+}
+
+.auth-check input:checked + span::after {
+  content: "✓";
+  font-size: 10px;
+  color: #201a09;
+}
+
+.auth-check input:focus-visible + span {
+  box-shadow: 0 0 0 4px rgba(226, 191, 116, .28);
+}
+
+.auth-check a,
+.auth-switch a {
+  color: var(--sage);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-check a:hover,
+.auth-switch a:hover { text-decoration: underline; }
+
+.auth-agreement { cursor: default; }
+
+.auth-text-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--sage);
+  font-family: inherit;
+  font-size: clamp(10px, .76vw, 12px);
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.auth-text-button:hover { text-decoration: underline; }
+
+.auth-alert {
+  padding: 11px 13px;
+  border: 1px solid rgba(185, 117, 104, .35);
+  border-radius: 12px;
+  background: rgba(185, 117, 104, .1);
+  color: #8f5347;
+  font-size: clamp(10px, .78vw, 12px);
+  line-height: 1.55;
+}
+
+/* Tombol kirim: .btn .btn-gold dari landing, dilebarkan penuh. */
+.auth-submit {
+  width: 100%;
+  margin-top: 4px;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.auth-submit:disabled {
+  opacity: .72;
+  cursor: wait;
+  transform: none;
+}
+
+.auth-submit:disabled:hover { background: var(--gold); transform: none; }
+
+/* ---------- Penutup formulir ---------- */
+.landing .auth-trust { margin-top: clamp(18px, 2vw, 28px); }
+
+.auth-switch {
+  margin-top: clamp(14px, 1.5vw, 22px);
+  font-size: clamp(11px, .82vw, 13px);
+  color: var(--muted);
+}
+
+.auth-doodle-wave {
+  width: clamp(130px, 13vw, 200px);
+  left: 50%;
+  bottom: clamp(16px, 1.8vw, 28px);
+  translate: -50% 0;
+  color: rgba(226, 191, 116, .55);
+}
+
+/* ---------- Footer ---------- */
+.auth-foot {
+  width: min(1320px, 100%);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: clamp(16px, 1.8vw, 26px) clamp(18px, 2vw, 32px) clamp(18px, 2vw, 30px);
+  color: var(--muted-dark);
+  font-size: clamp(10px, .74vw, 12px);
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 1000px) {
+  .auth-panel { grid-template-columns: 1fr; }
+
+  .auth-story {
+    order: 2;
+    gap: clamp(12px, 2vw, 18px);
+  }
+
+  .auth-story h2 { max-width: none; }
+  .auth-story > p { max-width: none; }
+  .auth-highlights { margin-top: 4px; }
+  .auth-form-side { order: 1; }
+  .auth-doodle-rings { display: none; }
+}
+
+@media (max-width: 720px) {
+  .auth-nav-note { display: none; }
+  .auth-heading h1 { font-size: clamp(27px, 8vw, 34px); }
+  .auth-form-side { padding-inline: clamp(18px, 5vw, 26px); }
+
+  .auth-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .auth-foot { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 520px) {
+  .auth-heading > p,
+  .auth-story > p { font-size: 13px; }
+
+  .auth-input { height: 50px; }
+  .auth-doodle-sprig { display: none; }
+}
+
+@media (max-width: 560px) {
+  /* Landing menyembunyikan tombol nav emas karena ada tombol menu.
+     Nav auth tidak punya menu, jadi tombol Masuk/Daftar tetap ditampilkan. */
+  .auth-nav .nav-actions .btn-gold { display: inline-flex; }
+}

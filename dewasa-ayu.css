@@ -1,0 +1,166 @@
+/* =============================================================================
+   Halaman konten publik /dewasa-ayu
+   Memakai token & tipografi dari .landing (landing.css) — kanvas krem terang
+   di sini (bukan hijau tua) karena ini halaman artikel panjang, bukan hero.
+   ============================================================================= */
+
+.content-page { background: var(--cream); }
+.content-page .landing-nav .nav-shell { background: rgba(255, 253, 249, .92); }
+
+.da-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: clamp(28px, 4vw, 56px) clamp(18px, 4vw, 24px) clamp(60px, 8vw, 100px);
+}
+
+/* ---------- Breadcrumb ---------- */
+.da-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+}
+.da-crumbs a { color: var(--muted); text-decoration: none; }
+.da-crumbs a:hover { color: var(--text); }
+.da-crumbs span[aria-hidden] { color: var(--muted-dark); }
+.da-crumbs strong { color: var(--text); font-weight: 500; }
+
+/* ---------- Hero ---------- */
+.da-hero { margin-bottom: clamp(30px, 4vw, 48px); }
+.da-hero h1 { margin-top: 14px; max-width: 18ch; }
+.da-hero .da-lede {
+  margin-top: 16px;
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: var(--muted);
+  max-width: 56ch;
+  line-height: 1.6;
+}
+
+/* ---------- Prosa ---------- */
+.da-prose { font-size: 16px; line-height: 1.75; color: var(--text); }
+.da-prose > * + * { margin-top: 18px; }
+.da-prose h2 {
+  font-size: clamp(21px, 2vw, 27px);
+  margin-top: clamp(38px, 5vw, 54px);
+  padding-top: clamp(24px, 3vw, 34px);
+  border-top: 1px solid var(--line);
+}
+.da-prose > h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.da-prose h3 { font-size: 18px; margin-top: 26px; color: var(--text); }
+.da-prose p { max-width: 66ch; }
+.da-prose ul, .da-prose ol { padding-left: 22px; max-width: 62ch; display: flex; flex-direction: column; gap: 8px; }
+.da-prose li { padding-left: 4px; }
+.da-prose strong { color: var(--text); font-weight: 600; }
+.da-prose a { color: var(--gold-2); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Kartu istilah / glosarium ---------- */
+.da-term-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+.da-term-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 18px 20px;
+}
+.da-term-card strong {
+  display: block;
+  font-family: var(--font-marcellus), Georgia, serif;
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.da-term-card p { font-size: 14.5px; color: var(--muted); line-height: 1.55; margin: 0; }
+
+/* ---------- Grid tautan hub ---------- */
+.da-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+.da-hub-card {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 22px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.da-hub-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -28px rgba(19, 30, 24, .35); border-color: var(--gold-2); }
+.da-hub-card .tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+  background: var(--gold-soft);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.da-hub-card h3 { font-size: 19px; margin-bottom: 8px; }
+.da-hub-card p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.55; }
+.da-hub-card .go { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--sage); }
+
+/* ---------- Callout disclaimer ---------- */
+.da-callout {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--r-card);
+  padding: clamp(20px, 3vw, 28px);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.da-callout .mark-icon { font-size: 20px; flex: none; line-height: 1; margin-top: 2px; }
+.da-callout strong { display: block; color: var(--cream); font-size: 15px; margin-bottom: 4px; }
+.da-callout p { margin: 0; font-size: 14px; color: var(--muted-dark); line-height: 1.6; max-width: 60ch; }
+
+/* ---------- Daftar kriteria (dengan status baik/hindari) ---------- */
+.da-criteria { display: flex; flex-direction: column; gap: 10px; }
+.da-criteria-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.da-criteria-row:last-child { border-bottom: none; }
+.da-criteria-row .status {
+  font-size: 11px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 3px 0;
+}
+.da-criteria-row.good .status { color: var(--sage); }
+.da-criteria-row.avoid .status { color: var(--rose); }
+.da-criteria-row p { margin: 0; font-size: 14.5px; color: var(--text); }
+
+/* ---------- CTA band ---------- */
+.da-cta {
+  margin-top: clamp(48px, 6vw, 72px);
+  background: var(--ink-2);
+  border-radius: var(--r-panel);
+  padding: clamp(28px, 5vw, 48px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.da-cta h2 { color: var(--cream); max-width: 20ch; }
+.da-cta p { color: var(--muted-dark); max-width: 44ch; font-size: 15px; }
+
+@media (max-width: 560px) {
+  .da-criteria-row { grid-template-columns: 1fr; gap: 4px; }
+}

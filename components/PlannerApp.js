@@ -63,11 +63,61 @@ export default function PlannerApp() {
 
   const patchData = (key, next) => setData((current) => ({ ...current, [key]: typeof next === "function" ? next(current[key]) : next }));
   const notify = (message) => setToast(message);
+
+  // Ekspor/impor: satu-satunya jaring pengaman selama data masih tinggal di
+  // localStorage satu browser. Tanpa ini, membersihkan data browser atau
+  // ganti HP berarti kehilangan seluruh persiapan tanpa bisa dipulihkan.
+  const exportData = () => {
+    try {
+      const bekal = { ...data, meta: { ...(data.meta || {}), exportedAt: new Date().toISOString(), app: "dewasa-ayu-planner", version: 2 } };
+      const berkas = new Blob([JSON.stringify(bekal, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(berkas);
+      const tautan = document.createElement("a");
+      const tanggal = new Date().toISOString().slice(0, 10);
+      const nama = (data.project.couple || "dewasa-ayu").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      tautan.href = url;
+      tautan.download = `dewasa-ayu-${nama}-${tanggal}.json`;
+      document.body.appendChild(tautan);
+      tautan.click();
+      document.body.removeChild(tautan);
+      URL.revokeObjectURL(url);
+      notify("Data diekspor — simpan berkasnya di Drive atau kirim ke pasanganmu");
+    } catch (error) {
+      notify("Gagal mengekspor data. Coba lewat browser lain.");
+    }
+  };
+
+  const importData = (berkas) => {
+    if (!berkas) return;
+    const pembaca = new FileReader();
+    pembaca.onload = () => {
+      try {
+        const masuk = JSON.parse(pembaca.result);
+        if (!masuk || typeof masuk !== "object" || !masuk.project || !Array.isArray(masuk.checklist)) {
+          notify("Berkas ini bukan cadangan Dewasa Ayu yang sah.");
+          return;
+        }
+        const jumlah = (masuk.checklist?.length || 0) + (masuk.expenses?.length || 0) + (masuk.guests?.length || 0);
+        if (!confirm(`Ganti seluruh data saat ini dengan isi berkas ini?
+
+Pasangan: ${masuk.project.couple || "tidak tercatat"}
+Berisi sekitar ${jumlah} entri.
+
+Data yang sekarang akan tertimpa dan tidak bisa dikembalikan.`)) return;
+        setData(masuk);
+        notify("Data berhasil dipulihkan dari cadangan");
+      } catch (error) {
+        notify("Berkas gagal dibaca — pastikan itu berkas .json hasil ekspor.");
+      }
+    };
+    pembaca.onerror = () => notify("Berkas gagal dibaca.");
+    pembaca.readAsText(berkas);
+  };
   const couple = data.project.couple || "Pasangan Bahagia";
   const nextEvent = [...data.project.events].filter((event) => event.date).sort((a, b) => a.date.localeCompare(b.date)).find((event) => new Date(event.date) >= new Date()) || data.project.events[0];
   const daysLeft = nextEvent?.date ? Math.max(0, Math.ceil((new Date(nextEvent.date) - new Date()) / 86400000)) : 0;
 
-  const props = { data, patchData, notify };
+  const props = { data, patchData, notify, exportData, importData };
   return (
     <div className="planner-shell">
       <aside className={`planner-sidebar ${sidebar ? "open" : ""}`}>
@@ -81,7 +131,7 @@ export default function PlannerApp() {
       {sidebar && <button className="sidebar-scrim" aria-label="Tutup menu" onClick={() => setSidebar(false)} />}
 
       <main className="planner-main">
-        <header className="planner-topbar"><button className="mobile-menu" onClick={() => setSidebar(true)}>☰</button><div><span>WEDDING WORKSPACE</span><strong>{NAV.find(([id]) => id === view)?.[2]}</strong></div><div className="top-actions"><span className="save-state">● Tersimpan otomatis</span><button className="avatar-button">{couple.charAt(0)}</button></div></header>
+        <header className="planner-topbar"><button className="mobile-menu" onClick={() => setSidebar(true)}>☰</button><div><span>WEDDING WORKSPACE</span><strong>{NAV.find(([id]) => id === view)?.[2]}</strong></div><div className="top-actions"><span className="save-state">● Tersimpan otomatis</span><button className="ghost-button" onClick={exportData} title="Unduh cadangan seluruh data">↓ Cadangkan</button><button className="avatar-button" aria-label={`Profil ${couple}`}>{couple.charAt(0)}</button></div></header>
         {storageError && <div className="storage-warning" role="alert"><strong>⚠ Data belum tersimpan.</strong> {storageError}</div>}
         <div className="planner-content">
           {view === "dashboard" && <DashboardView {...props} onNavigate={setView} />}
@@ -116,7 +166,7 @@ export default function PlannerApp() {
   );
 }
 
-function DashboardView({ data, onNavigate }) {
+function DashboardView({ data, onNavigate, exportData, importData }) {
   const funding = sum(data.project.fundingSources, "amount");
   const allocation = sum(data.categories, "allocation");
   const spent = sum(data.expenses, "amount");
@@ -141,6 +191,14 @@ function DashboardView({ data, onNavigate }) {
     <div className="quick-modules">{[
       ["vendors", "♢", data.muaVendors.length, "Vendor MUA"], ["prewedding", "◎", data.preweddingLocations.length, "Lokasi prewedding"], ["documents", "▤", data.documents.length, "Dokumen"], ["moodboard", "✦", data.assets.length, "Aset visual"]
     ].map(([id, icon, count, label]) => <button key={id} onClick={() => onNavigate(id)}><span>{icon}</span><strong>{count}</strong><small>{label}</small></button>)}</div>
+    <section className="workspace-card backup-card">
+      <CardHead kicker="CADANGAN DATA" title="Simpan salinan persiapanmu" />
+      <p className="backup-note">Seluruh data planner tersimpan di browser perangkat ini saja — tidak ikut berpindah kalau kamu ganti HP, dan bisa hilang kalau data browser dibersihkan. Unduh cadangan secara berkala, lalu simpan di Google Drive atau kirim ke pasanganmu. Berkas yang sama bisa dimuat lagi kapan pun.</p>
+      <div className="backup-actions">
+        <button className="main-button" onClick={exportData}>↓ Unduh cadangan</button>
+        <label className="ghost-button as-label">↑ Pulihkan dari berkas<input type="file" accept="application/json,.json" onChange={(event) => { importData(event.target.files?.[0]); event.target.value = ""; }} /></label>
+      </div>
+    </section>
   </>;
 }
 

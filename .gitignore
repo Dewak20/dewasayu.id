@@ -4,3 +4,10 @@ out
 .vercel
 .env*.local
 npm-debug.log*
+
+# Cache HTML mentah hasil scrape kalender Bali (besar, tidak perlu di-commit)
+scripts/bali-calendar/raw/
+
+# Cache bytecode Python dari skrip build kalender
+__pycache__/
+*.pyc

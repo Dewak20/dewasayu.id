@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import ContentLayout from "../../../../components/ContentLayout";
 import { getAllArticleSlugs, getArticleBySlug } from "../../../../lib/artikel";
+import { LdArtikel, LdRemah } from "../../../../components/DataTerstruktur";
 
 export function generateStaticParams() {
   return getAllArticleSlugs().map((slug) => ({ slug }));
@@ -14,9 +15,18 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) return {};
+  const jalur = `/dewasa-ayu/artikel/${slug}`;
   return {
     title: `${article.meta.title} | Dewasa Ayu`,
-    description: article.meta.description
+    description: article.meta.description,
+    alternates: { canonical: jalur },
+    openGraph: {
+      type: "article",
+      url: jalur,
+      title: article.meta.title,
+      description: article.meta.description,
+      publishedTime: article.meta.date || undefined
+    }
   };
 }
 
@@ -29,6 +39,8 @@ export default async function ArtikelDetail({ params }) {
 
   return (
     <ContentLayout>
+      <LdArtikel judul={article.meta.title} deskripsi={article.meta.description} jalur={`/dewasa-ayu/artikel/${slug}`} terbit={article.meta.date} />
+      <LdRemah jejak={[{ nama: "Beranda", jalur: "/" }, { nama: "Dewasa Ayu", jalur: "/dewasa-ayu" }, { nama: "Artikel", jalur: "/dewasa-ayu/artikel" }, { nama: article.meta.title, jalur: `/dewasa-ayu/artikel/${slug}` }]} />
       <div className="da-crumbs">
         <Link href="/dewasa-ayu">Dewasa Ayu</Link>
         <span aria-hidden="true">/</span>

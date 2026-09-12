@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ContentLayout from "../../../../components/ContentLayout";
 import { cariHariBaik } from "../../../../lib/bali-calendar";
 import { TAHUN_TERBIT, adalahTahunTerbit } from "../../../../lib/tahun-terbit";
+import { LdRemah } from "../../../../components/DataTerstruktur";
 
 const NAMA_BULAN = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
   "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
@@ -15,11 +16,16 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { tahun } = await params;
   if (!adalahTahunTerbit(tahun)) return {};
+  const judul = `Hari Baik Pernikahan ${tahun} Menurut Kalender Bali`;
+  const deskripsi =
+    `Daftar tanggal pernikahan (pawiwahan) ${tahun} yang tidak berbenturan dengan ` +
+    `ala-ayuning dewasa, lengkap dengan wewaran, wuku, dan sasih tiap tanggalnya.`;
+  const jalur = `/dewasa-ayu/pernikahan/${tahun}`;
   return {
-    title: `Hari Baik Pernikahan ${tahun} Menurut Kalender Bali`,
-    description:
-      `Daftar tanggal pernikahan (pawiwahan) ${tahun} yang tidak berbenturan dengan ` +
-      `ala-ayuning dewasa, lengkap dengan wewaran, wuku, dan sasih tiap tanggalnya.`
+    title: judul,
+    description: deskripsi,
+    alternates: { canonical: jalur },
+    openGraph: { type: "article", url: jalur, title: judul, description: deskripsi }
   };
 }
 
@@ -53,6 +59,7 @@ export default async function HariBaikTahunPage({ params }) {
 
   return (
     <ContentLayout>
+      <LdRemah jejak={[{ nama: "Beranda", jalur: "/" }, { nama: "Dewasa Ayu", jalur: "/dewasa-ayu" }, { nama: "Hari Baik Pernikahan", jalur: "/dewasa-ayu/pernikahan" }, { nama: String(tahun), jalur: `/dewasa-ayu/pernikahan/${tahun}` }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

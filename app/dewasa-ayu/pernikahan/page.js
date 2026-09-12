@@ -1,11 +1,19 @@
 import Link from "next/link";
 import { TAHUN_TERBIT } from "../../../lib/tahun-terbit";
 import ContentLayout from "../../../components/ContentLayout";
+import { LdRemah } from "../../../components/DataTerstruktur";
 
 export const metadata = {
   title: "Dewasa Ayu Pernikahan: Cara Memilih Hari Baik Menikah di Bali",
   description:
-    "Kriteria umum yang dipakai memilih dewasa ayu pawiwahan (hari baik menikah) menurut wariga Bali — wewaran, wuku yang dihindari, tanggal, dan bulan yang dianjurkan."
+    "Kriteria umum yang dipakai memilih dewasa ayu pawiwahan (hari baik menikah) menurut wariga Bali — wewaran, wuku yang dihindari, tanggal, dan bulan yang dianjurkan.",
+  alternates: { canonical: "/dewasa-ayu/pernikahan" },
+  openGraph: {
+    type: "article",
+    url: "/dewasa-ayu/pernikahan",
+    title: "Dewasa Ayu Pernikahan: Cara Memilih Hari Baik Menikah di Bali",
+    description: "Kriteria umum yang dipakai memilih dewasa ayu pawiwahan (hari baik menikah) menurut wariga Bali — wewaran, wuku yang dihindari, tanggal, dan bulan yang dianjurkan."
+  }
 };
 
 const criteria = [
@@ -19,6 +27,7 @@ const criteria = [
 export default function PernikahanPage() {
   return (
     <ContentLayout>
+      <LdRemah jejak={[{ nama: "Beranda", jalur: "/" }, { nama: "Dewasa Ayu", jalur: "/dewasa-ayu" }, { nama: "Hari Baik Pernikahan", jalur: "/dewasa-ayu/pernikahan" }]} />
       <div className="da-crumbs">
         <Link href="/dewasa-ayu">Dewasa Ayu</Link>
         <span aria-hidden="true">/</span>

@@ -1,15 +1,24 @@
 import Link from "next/link";
 import ContentLayout from "../../../components/ContentLayout";
+import { LdRemah } from "../../../components/DataTerstruktur";
 
 export const metadata = {
   title: "Otonan Adalah: Arti Ulang Tahun 210 Hari dalam Kalender Bali",
   description:
-    "Apa itu otonan, kenapa dirayakan setiap 210 hari (bukan 365 hari), dan kenapa otonan kedua mempelai relevan saat memilih hari baik pernikahan."
+    "Apa itu otonan, kenapa dirayakan setiap 210 hari (bukan 365 hari), dan kenapa otonan kedua mempelai relevan saat memilih hari baik pernikahan.",
+  alternates: { canonical: "/dewasa-ayu/otonan" },
+  openGraph: {
+    type: "article",
+    url: "/dewasa-ayu/otonan",
+    title: "Otonan Adalah: Arti Ulang Tahun 210 Hari dalam Kalender Bali",
+    description: "Apa itu otonan, kenapa dirayakan setiap 210 hari (bukan 365 hari), dan kenapa otonan kedua mempelai relevan saat memilih hari baik pernikahan."
+  }
 };
 
 export default function OtonanPage() {
   return (
     <ContentLayout>
+      <LdRemah jejak={[{ nama: "Beranda", jalur: "/" }, { nama: "Dewasa Ayu", jalur: "/dewasa-ayu" }, { nama: "Otonan", jalur: "/dewasa-ayu/otonan" }]} />
       <div className="da-crumbs">
         <Link href="/dewasa-ayu">Dewasa Ayu</Link>
         <span aria-hidden="true">/</span>

@@ -1,10 +1,18 @@
 import Link from "next/link";
 import ContentLayout from "../../../components/ContentLayout";
+import { LdRemah } from "../../../components/DataTerstruktur";
 
 export const metadata = {
   title: "Istilah Wariga: Arti Pawukon, Wewaran, Wuku, Sasih | Dewasa Ayu",
   description:
-    "Glosarium istilah wariga Bali — pawukon, wewaran (ekawara sampai dasawara), wuku, sasih, penanggal, dan panglong — dijelaskan singkat dan mudah dipahami."
+    "Glosarium istilah wariga Bali — pawukon, wewaran (ekawara sampai dasawara), wuku, sasih, penanggal, dan panglong — dijelaskan singkat dan mudah dipahami.",
+  alternates: { canonical: "/dewasa-ayu/istilah" },
+  openGraph: {
+    type: "article",
+    url: "/dewasa-ayu/istilah",
+    title: "Istilah Wariga: Arti Pawukon, Wewaran, Wuku, Sasih | Dewasa Ayu",
+    description: "Glosarium istilah wariga Bali — pawukon, wewaran (ekawara sampai dasawara), wuku, sasih, penanggal, dan panglong — dijelaskan singkat dan mudah dipahami."
+  }
 };
 
 const terms = [
@@ -53,6 +61,7 @@ const terms = [
 export default function IstilahPage() {
   return (
     <ContentLayout>
+      <LdRemah jejak={[{ nama: "Beranda", jalur: "/" }, { nama: "Dewasa Ayu", jalur: "/dewasa-ayu" }, { nama: "Istilah Wariga", jalur: "/dewasa-ayu/istilah" }]} />
       <div className="da-crumbs">
         <Link href="/dewasa-ayu">Dewasa Ayu</Link>
         <span aria-hidden="true">/</span>

@@ -1,10 +1,18 @@
 import Link from "next/link";
 import ContentLayout from "../../components/ContentLayout";
+import { LdArtikel, LdRemah } from "../../components/DataTerstruktur";
 
 export const metadata = {
   title: "Dewasa Ayu — Arti, Cara Menghitung, dan Hari Baik dalam Hindu Bali",
   description:
-    "Panduan lengkap dewasa ayu: apa itu hari baik menurut kalender Bali, istilah pawukon, wewaran, dan wuku, otonan, hingga cara memilih hari baik untuk pernikahan."
+    "Panduan lengkap dewasa ayu: apa itu hari baik menurut kalender Bali, istilah pawukon, wewaran, dan wuku, otonan, hingga cara memilih hari baik untuk pernikahan.",
+  alternates: { canonical: "/dewasa-ayu" },
+  openGraph: {
+    type: "article",
+    url: "/dewasa-ayu",
+    title: "Dewasa Ayu — Arti, Cara Menghitung, dan Hari Baik dalam Hindu Bali",
+    description: "Panduan lengkap dewasa ayu: apa itu hari baik menurut kalender Bali, istilah pawukon, wewaran, dan wuku, otonan, hingga cara memilih hari baik untuk pernikahan."
+  }
 };
 
 const hubLinks = [
@@ -43,6 +51,8 @@ const hubLinks = [
 export default function DewasaAyuHub() {
   return (
     <ContentLayout>
+      <LdArtikel judul={metadata.title} deskripsi={metadata.description} jalur="/dewasa-ayu" />
+      <LdRemah jejak={[{ nama: "Beranda", jalur: "/" }, { nama: "Dewasa Ayu", jalur: "/dewasa-ayu" }]} />
       <div className="da-hero">
         <span className="eyebrow"><i aria-hidden="true">✦</i> Panduan Dewasa Ayu</span>
         <h1>Hari baik, dijelaskan dari akarnya.</h1>

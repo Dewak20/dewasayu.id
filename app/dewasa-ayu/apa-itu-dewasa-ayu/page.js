@@ -1,15 +1,24 @@
 import Link from "next/link";
 import ContentLayout from "../../../components/ContentLayout";
+import { LdRemah } from "../../../components/DataTerstruktur";
 
 export const metadata = {
   title: "Apa itu Dewasa Ayu? Pengertian Hari Baik dalam Hindu Bali",
   description:
-    "Penjelasan lengkap apa itu dewasa ayu, dua sistem kalender yang membentuknya (pawukon dan sasih), dan siapa yang berwenang menetapkannya."
+    "Penjelasan lengkap apa itu dewasa ayu, dua sistem kalender yang membentuknya (pawukon dan sasih), dan siapa yang berwenang menetapkannya.",
+  alternates: { canonical: "/dewasa-ayu/apa-itu-dewasa-ayu" },
+  openGraph: {
+    type: "article",
+    url: "/dewasa-ayu/apa-itu-dewasa-ayu",
+    title: "Apa itu Dewasa Ayu? Pengertian Hari Baik dalam Hindu Bali",
+    description: "Penjelasan lengkap apa itu dewasa ayu, dua sistem kalender yang membentuknya (pawukon dan sasih), dan siapa yang berwenang menetapkannya."
+  }
 };
 
 export default function ApaItuDewasaAyu() {
   return (
     <ContentLayout>
+      <LdRemah jejak={[{ nama: "Beranda", jalur: "/" }, { nama: "Dewasa Ayu", jalur: "/dewasa-ayu" }, { nama: "Apa itu Dewasa Ayu", jalur: "/dewasa-ayu/apa-itu-dewasa-ayu" }]} />
       <div className="da-crumbs">
         <Link href="/dewasa-ayu">Dewasa Ayu</Link>
         <span aria-hidden="true">/</span>

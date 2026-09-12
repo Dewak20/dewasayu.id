@@ -5,7 +5,14 @@ import KalkulatorOtonan from "../../../components/KalkulatorOtonan";
 export const metadata = {
   title: "Kalkulator Otonan — Hitung Otonan dari Tanggal Lahir",
   description:
-    "Hitung otonan dari tanggal lahir: wewaran kelahiran (saptawara, pancawara, wuku) dan tanggal otonan berikutnya yang berulang tiap 210 hari."
+    "Hitung otonan dari tanggal lahir: wewaran kelahiran (saptawara, pancawara, wuku) dan tanggal otonan berikutnya yang berulang tiap 210 hari.",
+  alternates: { canonical: "/kalender/otonan" },
+  openGraph: {
+    type: "article",
+    url: "/kalender/otonan",
+    title: "Kalkulator Otonan — Hitung Otonan dari Tanggal Lahir",
+    description: "Hitung otonan dari tanggal lahir: wewaran kelahiran (saptawara, pancawara, wuku) dan tanggal otonan berikutnya yang berulang tiap 210 hari."
+  }
 };
 
 export default function OtonanPage() {

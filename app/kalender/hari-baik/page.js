@@ -5,7 +5,14 @@ import CariHariBaik from "../../../components/CariHariBaik";
 export const metadata = {
   title: "Cari Hari Baik — Dewasa Ayu Pawiwahan dan Upacara Lain",
   description:
-    "Cari dewasa ayu pada rentang tanggal pilihanmu: pernikahan, yadnya, membangun, usaha, sampai pertanian — lengkap dengan alasan ala dan ayunya."
+    "Cari dewasa ayu pada rentang tanggal pilihanmu: pernikahan, yadnya, membangun, usaha, sampai pertanian — lengkap dengan alasan ala dan ayunya.",
+  alternates: { canonical: "/kalender/hari-baik" },
+  openGraph: {
+    type: "article",
+    url: "/kalender/hari-baik",
+    title: "Cari Hari Baik — Dewasa Ayu Pawiwahan dan Upacara Lain",
+    description: "Cari dewasa ayu pada rentang tanggal pilihanmu: pernikahan, yadnya, membangun, usaha, sampai pertanian — lengkap dengan alasan ala dan ayunya."
+  }
 };
 
 export default function HariBaikPage() {

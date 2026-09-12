@@ -4,7 +4,14 @@ import { getAllArticles } from "../../../lib/artikel";
 
 export const metadata = {
   title: "Artikel Dewasa Ayu — Catatan Seputar Hari Baik & Wariga Bali",
-  description: "Kumpulan artikel pendek seputar dewasa ayu, wariga, dan tradisi Hindu Bali yang relevan untuk persiapan pernikahan."
+  description: "Kumpulan artikel pendek seputar dewasa ayu, wariga, dan tradisi Hindu Bali yang relevan untuk persiapan pernikahan.",
+  alternates: { canonical: "/dewasa-ayu/artikel" },
+  openGraph: {
+    type: "article",
+    url: "/dewasa-ayu/artikel",
+    title: "Artikel Dewasa Ayu — Catatan Seputar Hari Baik & Wariga Bali",
+    description: "Kumpulan artikel pendek seputar dewasa ayu, wariga, dan tradisi Hindu Bali yang relevan untuk persiapan pernikahan."
+  }
 };
 
 const dateFormatter = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", year: "numeric" });

@@ -1,5 +1,11 @@
 # Rencana Penyelesaian Kalender Bali
 
+> **Sudah dijalankan.** Enam dari tujuh tahap selesai; Tahap 4 sebagian karena
+> menunggu satu masukan dari luar. Rinciannya ada di tiap tahap, ringkasannya di
+> [Ringkasan urutan](#ringkasan-urutan) dan [Yang tersisa](#yang-tersisa) di
+> bawah. Tiap tahap ditulis ulang dengan hasil sebenarnya — termasuk tiga tempat
+> di mana temuan di lapangan membantah dugaan rencana ini sendiri.
+
 Status awal: mesin kalender di `lib/bali-calendar/` sudah jalan dan tervalidasi
 (pawukon 5.607 hari, 19 field harian × 730 hari, 365 hari daftar dewasa, 30
 tanggal acak — semua cocok dengan kalenderbali.org). Yang tersisa adalah
@@ -8,6 +14,9 @@ melengkapi cakupan, menutup lubang data, dan merapikan sisi pengguna.
 Dokumen ini memecah sisa pekerjaan jadi tujuh tahap. Tiap tahap berdiri sendiri
 dan bisa di-commit terpisah — urutannya boleh digeser, catatan ketergantungan
 ada di masing-masing tahap.
+
+Angka validasi terkini ada di `lib/bali-calendar/README.md`; jalankan sendiri
+dengan `npm test`.
 
 ---
 
@@ -346,7 +355,7 @@ panel detail memuat tafsir.
 
 ---
 
-## Tahap 7 — Pengerasan & kerapian — SEBAGIAN
+## Tahap 7 — Pengerasan & kerapian — SELESAI
 
 1. **Validator masuk npm** — `npm test` menjalankan validator. Ditambah juga
    `npm run kalender:build` untuk membangun ulang data dari fixtures.
@@ -358,15 +367,32 @@ panel detail memuat tafsir.
    menyebut Kalender Bali Digital (I Wayan Nuarsa, Universitas Udayana) sebagai
    penyusun korpus terstrukturnya, sambil menegaskan aturan wariga itu sendiri
    pengetahuan adat milik bersama.
-4. **Kerentanan npm** — *belum dikerjakan, sesuai catatan tahap ini untuk
-   menanganinya terpisah.* Tapi satu koreksi: perbaikannya **bukan** lompatan
-   versi. `npm audit fix --force` akan memasang **next@15.5.25** dari 15.5.2 —
-   naik patch di dalam 15.5, bukan pindah mayor. Ada 3 kerentanan (1 kritis, 2
-   tinggi) di next, postcss, dan sharp. Keputusan menjalankannya ada di tangan
-   pemilik proyek.
-5. **Merge branch** — *belum dikerjakan.* Seluruh pekerjaan ini masih di
-   `feature/keuangan-wave1` dan belum di-commit. Pemindahan branch dan commit
-   menunggu keputusan pemilik proyek.
+4. **Kerentanan npm** — `npm audit fix --force` dijalankan: **next 15.5.2 →
+   15.5.25** dan **sharp 0.34.5 → 0.35.4**. Kerentanan turun dari 3 (1 kritis, 2
+   tinggi) jadi **2 (1 tinggi, 1 sedang)**; yang kritis hilang. Build dan
+   validator tidak berubah hasilnya. npm ikut melonggarkan pin next dari
+   `"15.5.2"` jadi `"^15.5.25"`.
+
+   Kekhawatiran awal tahap ini — bahwa `--force` akan melompat versi Next —
+   ternyata benar, tapi baru pada putaran kedua. Putaran pertama hanya naik
+   patch. Sisanya rantai `postcss` yang dikunci `next@15.5.25` sendiri, dan
+   menutupnya menuntut **next@16.3.5**, sebuah breaking change. **Ditahan
+   sengaja** supaya jadi pekerjaan tersendiri dengan pengujiannya sendiri —
+   keempat advisory-nya soal `sourceMappingURL` dan output stringify di jalur
+   build, bukan runtime yang menerima input pengguna.
+5. **Merge branch** — selesai. Pekerjaan dipindah dari `feature/keuangan-wave1`
+   ke **`feature/kalender-bali`**, di-commit jadi enam commit, lalu di-*fast
+   forward* ke **`main`** dan di-push. `main` tertinggal 12 commit, bukan 6 —
+   jadi merge ini sekaligus menerbitkan pekerjaan lama yang belum pernah sampai
+   ke `main`: modul keuangan adat, Wave 1-3, fondasi Supabase, desain ulang
+   landing, dan hub SEO. `feature/keuangan-wave1` sudah dihapus setelah
+   dipastikan tidak punya commit unik.
+
+   Commit per tahap yang masing-masing bisa di-build tidak bisa dibuat: tidak
+   ada satu pun pekerjaan kalender ini yang pernah di-commit sebagai titik
+   pisah, sementara `index.js`, `build.py`, `scrape.py`, `validate.mjs`, dan
+   `KalenderBali.js` disentuh hampir semua tahap. Jadi pemecahannya per lapisan
+   — mesin, antarmuka, konten, pengerasan, dokumen — dan tiap commit utuh.
 
 
 **Langkah:**
@@ -393,20 +419,51 @@ panel detail memuat tafsir.
 
 ## Ringkasan urutan
 
-| Tahap | Isi | Bergantung pada | Bisa diparalelkan? |
-|---|---|---|---|
-| 1 | Rerainan & hari penting | — | — |
-| 2 | Otonan masuk skoring | sumber aturan harus ketemu dulu | ya |
-| 3 | Tutup lubang korpus dewasa | — | ya, scraping jalan di latar |
-| 4 | Cross-check 2 sumber lain | — | ya |
-| 5 | Mobile, aksesibilitas, URL | idealnya setelah 1 & 3 | — |
-| 6 | Konten & SEO | setelah 1, 3, 5 | — |
-| 7 | Pengerasan & kerapian | terakhir | sebagian |
+| Tahap | Isi | Status |
+|---|---|---|
+| 1 | Rerainan & hari penting | selesai |
+| 2 | Otonan masuk skoring | selesai — sumbernya `karyaayu.php`, bukan `carijodoh.php` |
+| 3 | Tutup lubang korpus dewasa | selesai |
+| 4 | Cross-check 2 sumber lain | **sebagian** — menunggu identitas situs ketiga |
+| 5 | Mobile, aksesibilitas, URL | selesai |
+| 6 | Konten & SEO | selesai, kecuali piodalan (di luar cakupan) |
+| 7 | Pengerasan & kerapian | selesai |
 
-**Kalau harus memilih tiga saja:** Tahap 1 (dampak pengguna terbesar), Tahap 2
-(itu pembedanya), Tahap 5 poin mobile (karena belum pernah dicek sama sekali,
-jadi risikonya tidak diketahui).
+## Yang tersisa
 
-**Tahap 2 adalah satu-satunya yang bisa gagal karena alasan di luar kendali** —
-kalau sumber aturan kecocokan otonan tidak ada di situs mana pun, tahap itu
-menunggu buku wariga. Semua tahap lain modalnya sudah lengkap.
+1. **Situs ketiga untuk cross-check.** Identitasnya tidak tercatat di repo mana
+   pun. Ini satu-satunya butir yang benar-benar menunggu masukan dari luar.
+   Tanpa itu, klaim "tiga sumber sepakat" belum bisa dibuat — apalagi setelah
+   ketahuan dua di antaranya penulisnya sama.
+2. **Dua kerentanan `postcss`** yang menuntut next@16. Ditahan sengaja; lihat
+   Tahap 7 butir 4.
+
+## Yang sengaja di luar cakupan
+
+Bukan pekerjaan tertunda — ketiganya punya alasan tertulis di
+`lib/bali-calendar/README.md`:
+
+- **Piodalan** — terikat pura tertentu, tidak deterministik dari kalender saja.
+- **Kala Muncrat tanpa bobot** — polanya "Soma Pon Merakih" mustahil terjadi
+  (Soma di wuku Merakih selalu Paing), jadi aturannya tidak pernah aktif di
+  mesin ini maupun di situs sumbernya. Koreksinya tidak ditebak.
+- **Tujuh hari selisih rerainan** — dua di luar rentang sasih yang didukung,
+  lima di pergantian era penanggalan 1993/1995 tempat label sasih mesin meleset
+  satu sasih. Validator mencetak ketujuhnya per tanggal supaya regresi baru
+  tidak tenggelam di balik angka ringkasan.
+
+## Catatan yang layak diingat
+
+**Tahap 2 sempat diperkirakan bisa gagal karena alasan di luar kendali** — dan
+dugaan itu setengah benar. `carijodoh.php` dan `jodoh.php` memang cuma ramalan
+kecocokan pasangan, persis seperti yang dikhawatirkan. Yang menyelamatkan adalah
+halaman yang tidak ada dalam daftar kandidat: `karyaayu.php`.
+
+**Tahap 4 justru yang premisnya runtuh**, bukan Tahap 2. kalenderbali.com dan
+kalenderbali.org disusun orang yang sama (I Wayan Nuarsa, Universitas Udayana —
+tertulis di footer keduanya), jadi kesepakatan keduanya tidak membuktikan apa
+pun soal kebenaran.
+
+**Tahap 4 juga yang membuka jalan buat Tahap 3 butir 5.** Wewukon hampir
+dinyatakan di luar cakupan sampai tampilan klasik kalenderbali.com menunjukkan
+label-label itu ada di kepala kolom wuku, bukan di hari.

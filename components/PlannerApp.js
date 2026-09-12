@@ -1,6 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+
+// Korpus 220 aturan ala-ayuning dewasa ~200 kB dan hanya dipakai kartu acara.
+// Dimuat terpisah supaya tidak ikut bundel awal planner.
+const CatatanDewasa = dynamic(() => import("./CatatanDewasa"), { ssr: false });
 import initialData from "../data/wedding-data.json";
 
 const STORE_KEY = "dewasa-ayu-planner-v2";
@@ -208,7 +213,7 @@ function RangkaianAcaraView({ data, patchData, notify }) {
   return <><PageIntro kicker="TAHAPAN PAWIWAHAN" title="Rangkaian Acara" text="Daftar acara dari lamaran sampai resepsi — mis. Ngidih, Mekala-kalaan, Resepsi. Tanggal di sini dipakai countdown, rundown, dan kalender." action={<button className="main-button" onClick={() => setModal(true)}>＋ Tambah acara</button>} />
     <div className="data-alert"><strong>Catatan:</strong> urutan &amp; tanggal tiap acara ditentukan kedua keluarga bersama pemangku sesuai <em>desa-kala-patra</em>. Ini catatan perencanaanmu, bukan patokan adat.</div>
     {sorted.length === 0 ? <section className="workspace-card"><Empty text="Belum ada acara. Tambahkan tahapan seperti Ngidih, Pawiwahan, atau Resepsi beserta tanggalnya." /></section>
-      : <div className="event-grid">{sorted.map((event) => { const days = event.date ? Math.ceil((new Date(event.date) - new Date()) / 86400000) : null; return <article className="event-card editable" key={event.id}><input className="event-name-input" value={event.name} onChange={(e) => update(event.id, "name", e.target.value)} placeholder="Nama acara" /><input type="date" value={event.date?.slice(0, 10) || ""} onChange={(e) => update(event.id, "date", e.target.value)} /><em>{days === null ? "Tanggal belum diatur" : days < 0 ? "Sudah lewat" : `${days} hari lagi`}</em><button className="delete-x" onClick={() => remove(event.id)}>×</button></article>; })}</div>}
+      : <div className="event-grid">{sorted.map((event) => { const days = event.date ? Math.ceil((new Date(event.date) - new Date()) / 86400000) : null; return <article className="event-card editable" key={event.id}><input className="event-name-input" value={event.name} onChange={(e) => update(event.id, "name", e.target.value)} placeholder="Nama acara" /><input type="date" value={event.date?.slice(0, 10) || ""} onChange={(e) => update(event.id, "date", e.target.value)} /><em>{days === null ? "Tanggal belum diatur" : days < 0 ? "Sudah lewat" : `${days} hari lagi`}</em><CatatanDewasa tanggal={event.date} /><button className="delete-x" onClick={() => remove(event.id)}>×</button></article>; })}</div>}
     {modal && <Modal title="Tambah Acara" onClose={() => setModal(false)}><form className="editor-form" onSubmit={add}><Field wide label="Nama acara"><input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="mis. Ngidih / Pawiwahan / Resepsi" /></Field><Field label="Tanggal"><input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} /></Field><FormActions onCancel={() => setModal(false)} /></form></Modal>}
   </>;
 }

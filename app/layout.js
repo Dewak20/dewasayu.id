@@ -14,9 +14,10 @@ export const metadata = {
   // metadataBase membuat seluruh URL relatif (openGraph, canonical, gambar)
   // diselesaikan jadi absolut — syarat agar pratinjau tautan bekerja.
   metadataBase: new URL(SITE_URL),
+  // Tanpa `template`: tiap halaman sudah menulis judul SEO-nya sendiri secara
+  // utuh, jadi menambah sufiks otomatis hanya membuatnya ganda dan kepanjangan.
   title: {
-    default: "Dewasa Ayu — Hari Baik & Persiapan Pernikahan Bali",
-    template: "%s — Dewasa Ayu"
+    default: "Dewasa Ayu — Hari Baik & Persiapan Pernikahan Bali"
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,

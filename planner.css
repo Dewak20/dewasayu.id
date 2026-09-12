@@ -908,8 +908,9 @@
   background: var(--ink);
 }
 
+.prewed-foto { position: relative; overflow: hidden; min-height: 0; }
 .prewed-feature img { width: 100%; height: 100%; object-fit: cover; }
-.prewed-feature > div { display: flex; flex-direction: column; justify-content: center; padding: clamp(18px, 1.8vw, 26px); color: #fff; }
+.prewed-feature > .prewed-teks { display: flex; flex-direction: column; justify-content: center; padding: clamp(18px, 1.8vw, 26px); color: #fff; }
 .prewed-feature span { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #cbd6cd; }
 .prewed-feature strong { margin: 11px 0; font: 400 clamp(18px, 1.4vw, 23px)/1.25 var(--font-marcellus), Georgia, serif; }
 .prewed-feature p { margin: 0; font-size: 13px; line-height: 1.6; color: #d2dad4; }
@@ -1256,8 +1257,8 @@
 
   /* Teks konsep prewedding pindah ke atas foto, bukan disembunyikan. */
   .prewed-feature { grid-template-columns: repeat(3, 1fr); height: auto; }
-  .prewed-feature > div { grid-column: 1 / -1; order: -1; padding: 18px 20px; }
-  .prewed-feature img { height: 130px; }
+  .prewed-feature > .prewed-teks { grid-column: 1 / -1; order: -1; padding: 18px 20px; }
+  .prewed-foto { height: 130px; }
 
   .location-grid,
   .box-grid { grid-template-columns: 1fr 1fr; }
@@ -1306,7 +1307,7 @@
   .quick-modules button { padding: 15px; }
   .quick-modules strong { font-size: 15px; }
   .list-toolbar { grid-template-columns: 1fr; }
-  .prewed-feature img { height: 100px; }
+  .prewed-foto { height: 100px; }
   .checklist-list article { grid-template-columns: 34px 1fr; }
   .checklist-list .row-actions { grid-column: 2; }
   .checklist-list select { grid-column: 2; justify-self: start; }

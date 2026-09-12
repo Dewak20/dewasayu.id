@@ -21,27 +21,27 @@
       {
         "id": "fund-17",
         "name": "Pria",
-        "amount": 100000000.0
+        "amount": 100000000
       },
       {
         "id": "fund-18",
         "name": "Keluarga Pria",
-        "amount": 100000000.0
+        "amount": 100000000
       },
       {
         "id": "fund-19",
         "name": "Wanita",
-        "amount": 100000000.0
+        "amount": 100000000
       },
       {
         "id": "fund-20",
         "name": "Keluarga Wanita",
-        "amount": 100000000.0
+        "amount": 100000000
       },
       {
         "id": "fund-21",
         "name": "Tetangga",
-        "amount": 100000000000.0
+        "amount": 100000000000
       }
     ]
   },
@@ -49,120 +49,120 @@
     {
       "id": "prewedding",
       "name": "Prewedding",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "mcu-pra-nikah",
       "name": "MCU Pra Nikah",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "pre-marital-booster",
       "name": "Pre Marital Booster",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "cincin",
       "name": "Cincin",
-      "allocation": 20000000.0,
-      "actual": 10000000.0,
+      "allocation": 20000000,
+      "actual": 10000000,
       "completed": true
     },
     {
       "id": "mua-ngidih",
       "name": "MUA Ngidih",
-      "allocation": 3000000.0,
-      "actual": 2000000.0,
+      "allocation": 3000000,
+      "actual": 2000000,
       "completed": false
     },
     {
       "id": "acara-ngidih",
       "name": "Acara Ngidih",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "pakaian-ngidih",
       "name": "Pakaian Ngidih",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "banten",
       "name": "Banten",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "mua-nganten-resepsi",
       "name": "MUA Nganten&Resepsi",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "pakaian-nganten",
       "name": "Pakaian Nganten",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "mua-keluarga",
       "name": "MUA Keluarga",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "hari-h-resepsi",
       "name": "Hari H&Resepsi",
-      "allocation": 10000000.0,
-      "actual": 20000000.0,
+      "allocation": 10000000,
+      "actual": 20000000,
       "completed": false
     },
     {
       "id": "dokumentasi",
       "name": "Dokumentasi",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "seserahan",
       "name": "Seserahan",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "wedding-essential",
       "name": "Wedding Essential",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "alat-alat-lainnya",
       "name": "Alat-alat Lainnya",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     },
     {
       "id": "transport",
       "name": "Transport",
-      "allocation": 0.0,
-      "actual": 0.0,
+      "allocation": 0,
+      "actual": 0,
       "completed": false
     }
   ],
@@ -173,7 +173,7 @@
       "name": "DP Griya",
       "category": "Hari H&Resepsi",
       "paymentType": "DP",
-      "amount": 20000000.0,
+      "amount": 20000000,
       "note": "Ini hanya contoh ya",
       "vendor": "",
       "status": "paid"
@@ -184,7 +184,7 @@
       "name": "DP cincin",
       "category": "Cincin",
       "paymentType": "DP",
-      "amount": 10000000.0,
+      "amount": 10000000,
       "note": "Ini hanya contoh ya",
       "vendor": "",
       "status": "paid"
@@ -195,7 +195,7 @@
       "name": "Pelunasan MUA ngidih",
       "category": "MUA Ngidih",
       "paymentType": "Pelunasan",
-      "amount": 2000000.0,
+      "amount": 2000000,
       "note": "Ini hanya contoh ya",
       "vendor": "",
       "status": "paid"
@@ -555,7 +555,7 @@
       "packages": [
         {
           "name": "Premium",
-          "ownerPrice": 7000000.0,
+          "ownerPrice": 7000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung & Resepsi"
@@ -574,7 +574,7 @@
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 9000000.0,
+          "ownerPrice": 9000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung & Resepsi"
@@ -594,7 +594,7 @@
         },
         {
           "name": "Platinum",
-          "ownerPrice": 12000000.0,
+          "ownerPrice": 12000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung & Resepsi"
@@ -614,7 +614,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 200000.0,
+          "ownerPrice": 200000,
           "teamPrice": 0,
           "includes": [
             "Pendamping"
@@ -622,7 +622,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 500000.0,
+          "ownerPrice": 500000,
           "teamPrice": 0,
           "includes": [
             "Transport"
@@ -639,7 +639,7 @@
       "packages": [
         {
           "name": "Standart",
-          "ownerPrice": 7000000.0,
+          "ownerPrice": 7000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung"
@@ -647,7 +647,7 @@
         },
         {
           "name": "Standart",
-          "ownerPrice": 6000000.0,
+          "ownerPrice": 6000000,
           "teamPrice": 0,
           "includes": [
             "Resepsi"
@@ -655,7 +655,7 @@
         },
         {
           "name": "Standart",
-          "ownerPrice": 10000000.0,
+          "ownerPrice": 10000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung & Resepsi"
@@ -663,7 +663,7 @@
         },
         {
           "name": "Elegant",
-          "ownerPrice": 9000000.0,
+          "ownerPrice": 9000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung"
@@ -671,7 +671,7 @@
         },
         {
           "name": "Elegant",
-          "ownerPrice": 7000000.0,
+          "ownerPrice": 7000000,
           "teamPrice": 0,
           "includes": [
             "Resepsi"
@@ -679,7 +679,7 @@
         },
         {
           "name": "Elegant",
-          "ownerPrice": 14000000.0,
+          "ownerPrice": 14000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung & Resepsi"
@@ -687,7 +687,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 3200000.0,
+          "ownerPrice": 3200000,
           "teamPrice": 0,
           "includes": [
             "Payas Ngidih"
@@ -695,7 +695,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 400000.0,
+          "ownerPrice": 400000,
           "teamPrice": 0,
           "includes": [
             "Pendamping"
@@ -703,7 +703,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 200000.0,
+          "ownerPrice": 200000,
           "teamPrice": 0,
           "includes": [
             "Transport"
@@ -721,7 +721,7 @@
         {
           "name": "Payas Only Make up and Haid Do",
           "ownerPrice": 0,
-          "teamPrice": 2500000.0,
+          "teamPrice": 2500000,
           "includes": [
             "Bunga Pendek"
           ]
@@ -729,7 +729,7 @@
         {
           "name": "Payas Only Make up and Haid Do",
           "ownerPrice": 0,
-          "teamPrice": 3000000.0,
+          "teamPrice": 3000000,
           "includes": [
             "Bunga Madya Tinggi"
           ]
@@ -737,7 +737,7 @@
         {
           "name": "Payas Only Make up and Haid Do",
           "ownerPrice": 0,
-          "teamPrice": 3250000.0,
+          "teamPrice": 3250000,
           "includes": [
             "Bunga Pendek Exclusive"
           ]
@@ -745,7 +745,7 @@
         {
           "name": "Payas Only Make up and Haid Do",
           "ownerPrice": 0,
-          "teamPrice": 4250000.0,
+          "teamPrice": 4250000,
           "includes": [
             "Bunga Madya Tinggi Exclusive"
           ]
@@ -753,7 +753,7 @@
         {
           "name": "Pawiwahan Payas Agung dan Madya",
           "ownerPrice": 0,
-          "teamPrice": 5500000.0,
+          "teamPrice": 5500000,
           "includes": [
             "Silver"
           ]
@@ -761,7 +761,7 @@
         {
           "name": "Pawiwahan Payas Agung dan Madya",
           "ownerPrice": 0,
-          "teamPrice": 7500000.0,
+          "teamPrice": 7500000,
           "includes": [
             "Gold"
           ]
@@ -769,7 +769,7 @@
         {
           "name": "Pawiwahan Payas Agung dan Madya",
           "ownerPrice": 0,
-          "teamPrice": 10000000.0,
+          "teamPrice": 10000000,
           "includes": [
             "Platinum"
           ]
@@ -777,14 +777,14 @@
         {
           "name": "Pawiwahan Payas Agung dan Madya",
           "ownerPrice": 0,
-          "teamPrice": 12500000.0,
+          "teamPrice": 12500000,
           "includes": [
             "Exclusive"
           ]
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 750000.0,
+          "ownerPrice": 750000,
           "teamPrice": 0,
           "includes": [
             "Transport"
@@ -802,7 +802,7 @@
         {
           "name": "Paket Custom",
           "ownerPrice": 0,
-          "teamPrice": 2000000.0,
+          "teamPrice": 2000000,
           "includes": [
             "Payas Ngidih (Wanita)"
           ]
@@ -810,7 +810,7 @@
         {
           "name": "Paket Custom",
           "ownerPrice": 0,
-          "teamPrice": 3000000.0,
+          "teamPrice": 3000000,
           "includes": [
             "Payas Resepsi (Couple)"
           ]
@@ -818,7 +818,7 @@
         {
           "name": "Paket Custom",
           "ownerPrice": 0,
-          "teamPrice": 400000.0,
+          "teamPrice": 400000,
           "includes": [
             "Transport Payangan"
           ]
@@ -826,7 +826,7 @@
         {
           "name": "Paket Custom",
           "ownerPrice": 0,
-          "teamPrice": 350000.0,
+          "teamPrice": 350000,
           "includes": [
             "Transport Griya"
           ]
@@ -834,7 +834,7 @@
         {
           "name": "Paket Custom",
           "ownerPrice": 0,
-          "teamPrice": 300000.0,
+          "teamPrice": 300000,
           "includes": [
             "Pendamping"
           ]
@@ -865,7 +865,7 @@
       "packages": [
         {
           "name": "By Owner",
-          "ownerPrice": 3318000.0,
+          "ownerPrice": 3318000,
           "teamPrice": 0,
           "includes": [
             "Payas Ngidih"
@@ -873,7 +873,7 @@
         },
         {
           "name": "By Owner",
-          "ownerPrice": 8518000.0,
+          "ownerPrice": 8518000,
           "teamPrice": 0,
           "includes": [
             "Payas Resepsi"
@@ -881,7 +881,7 @@
         },
         {
           "name": "By Owner",
-          "ownerPrice": 9918000.0,
+          "ownerPrice": 9918000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung"
@@ -890,7 +890,7 @@
         {
           "name": "By Team",
           "ownerPrice": 0,
-          "teamPrice": 2518000.0,
+          "teamPrice": 2518000,
           "includes": [
             "Payas Ngidih"
           ]
@@ -898,7 +898,7 @@
         {
           "name": "By Team",
           "ownerPrice": 0,
-          "teamPrice": 5918000.0,
+          "teamPrice": 5918000,
           "includes": [
             "Payas Resepsi"
           ]
@@ -906,14 +906,14 @@
         {
           "name": "By Team",
           "ownerPrice": 0,
-          "teamPrice": 6418000.0,
+          "teamPrice": 6418000,
           "includes": [
             "Payas Agung"
           ]
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 750000.0,
+          "ownerPrice": 750000,
           "teamPrice": 0,
           "includes": [
             "Transport"
@@ -921,14 +921,14 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 650000.0,
+          "ownerPrice": 650000,
           "teamPrice": 0,
           "includes": []
         },
         {
           "name": "Lainnya",
           "ownerPrice": 0,
-          "teamPrice": 450000.0,
+          "teamPrice": 450000,
           "includes": [
             "Pendamping"
           ]
@@ -959,7 +959,7 @@
       "packages": [
         {
           "name": "Gold",
-          "ownerPrice": 15000000.0,
+          "ownerPrice": 15000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung",
@@ -968,7 +968,7 @@
         },
         {
           "name": "Diamond",
-          "ownerPrice": 20000000.0,
+          "ownerPrice": 20000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung",
@@ -977,7 +977,7 @@
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 25000000.0,
+          "ownerPrice": 25000000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung",
@@ -987,7 +987,7 @@
         {
           "name": "Gold",
           "ownerPrice": 0,
-          "teamPrice": 5500000.0,
+          "teamPrice": 5500000,
           "includes": [
             "Payas Agung"
           ]
@@ -995,7 +995,7 @@
         {
           "name": "Gold",
           "ownerPrice": 0,
-          "teamPrice": 5000000.0,
+          "teamPrice": 5000000,
           "includes": [
             "Payas Resepsi"
           ]
@@ -1003,7 +1003,7 @@
         {
           "name": "Diamond",
           "ownerPrice": 0,
-          "teamPrice": 7500000.0,
+          "teamPrice": 7500000,
           "includes": [
             "Payas Agung"
           ]
@@ -1011,7 +1011,7 @@
         {
           "name": "Diamond",
           "ownerPrice": 0,
-          "teamPrice": 7000000.0,
+          "teamPrice": 7000000,
           "includes": [
             "Payas Resepsi"
           ]
@@ -1019,7 +1019,7 @@
         {
           "name": "Exclusive",
           "ownerPrice": 0,
-          "teamPrice": 12000000.0,
+          "teamPrice": 12000000,
           "includes": [
             "Payas Agung"
           ]
@@ -1027,7 +1027,7 @@
         {
           "name": "Exclusive",
           "ownerPrice": 0,
-          "teamPrice": 10000000.0,
+          "teamPrice": 10000000,
           "includes": [
             "Payas Resepsi"
           ]
@@ -1052,7 +1052,7 @@
       "packages": [
         {
           "name": "Start From*",
-          "ownerPrice": 1500000.0,
+          "ownerPrice": 1500000,
           "teamPrice": 0,
           "includes": [
             "Payas Ngidih"
@@ -1060,7 +1060,7 @@
         },
         {
           "name": "Start From*",
-          "ownerPrice": 5000000.0,
+          "ownerPrice": 5000000,
           "teamPrice": 0,
           "includes": [
             "Payas Madya",
@@ -1069,7 +1069,7 @@
         },
         {
           "name": "Start From*",
-          "ownerPrice": 4000000.0,
+          "ownerPrice": 4000000,
           "teamPrice": 0,
           "includes": [
             "Payas Modif"
@@ -1086,7 +1086,7 @@
       "packages": [
         {
           "name": "Custom",
-          "ownerPrice": 11500000.0,
+          "ownerPrice": 11500000,
           "teamPrice": 0,
           "includes": [
             "Payas Madya (bride only, no costum)"
@@ -1094,7 +1094,7 @@
         },
         {
           "name": "Custom",
-          "ownerPrice": 5000000.0,
+          "ownerPrice": 5000000,
           "teamPrice": 0,
           "includes": [
             "Payas resepsi"
@@ -1102,7 +1102,7 @@
         },
         {
           "name": "Custom",
-          "ownerPrice": 1000000.0,
+          "ownerPrice": 1000000,
           "teamPrice": 0,
           "includes": [
             "Payas Laki-laki"
@@ -1110,7 +1110,7 @@
         },
         {
           "name": "Transport",
-          "ownerPrice": 350000.0,
+          "ownerPrice": 350000,
           "teamPrice": 0,
           "includes": [
             "Gianyar"
@@ -1127,7 +1127,7 @@
       "packages": [
         {
           "name": "Gold",
-          "ownerPrice": 13500000.0,
+          "ownerPrice": 13500000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi 1 hari"
@@ -1135,7 +1135,7 @@
         },
         {
           "name": "Gold",
-          "ownerPrice": 14000000.0,
+          "ownerPrice": 14000000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi beda hari"
@@ -1143,7 +1143,7 @@
         },
         {
           "name": "Gold",
-          "ownerPrice": 8500000.0,
+          "ownerPrice": 8500000,
           "teamPrice": 0,
           "includes": [
             "Agung sepasang"
@@ -1151,7 +1151,7 @@
         },
         {
           "name": "Gold",
-          "ownerPrice": 6500000.0,
+          "ownerPrice": 6500000,
           "teamPrice": 0,
           "includes": [
             "Resepsi sepasang"
@@ -1159,7 +1159,7 @@
         },
         {
           "name": "Diamond",
-          "ownerPrice": 15500000.0,
+          "ownerPrice": 15500000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi 1 hari"
@@ -1167,7 +1167,7 @@
         },
         {
           "name": "Diamond",
-          "ownerPrice": 16000000.0,
+          "ownerPrice": 16000000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi beda hari"
@@ -1175,7 +1175,7 @@
         },
         {
           "name": "Diamond",
-          "ownerPrice": 10000000.0,
+          "ownerPrice": 10000000,
           "teamPrice": 0,
           "includes": [
             "Agung sepasang"
@@ -1183,7 +1183,7 @@
         },
         {
           "name": "Diamond",
-          "ownerPrice": 7000000.0,
+          "ownerPrice": 7000000,
           "teamPrice": 0,
           "includes": [
             "Resepsi sepasang"
@@ -1191,7 +1191,7 @@
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 18500000.0,
+          "ownerPrice": 18500000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi 1 hari"
@@ -1199,7 +1199,7 @@
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 19000000.0,
+          "ownerPrice": 19000000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi beda hari"
@@ -1207,7 +1207,7 @@
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 12500000.0,
+          "ownerPrice": 12500000,
           "teamPrice": 0,
           "includes": [
             "Agung sepasang"
@@ -1215,7 +1215,7 @@
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 8000000.0,
+          "ownerPrice": 8000000,
           "teamPrice": 0,
           "includes": [
             "Resepsi sepasang"
@@ -1223,7 +1223,7 @@
         },
         {
           "name": "Request Baru",
-          "ownerPrice": 29000000.0,
+          "ownerPrice": 29000000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi 1 hari"
@@ -1231,7 +1231,7 @@
         },
         {
           "name": "Request Baru",
-          "ownerPrice": 29500000.0,
+          "ownerPrice": 29500000,
           "teamPrice": 0,
           "includes": [
             "Agung&resepsi beda hari"
@@ -1239,7 +1239,7 @@
         },
         {
           "name": "Request Baru",
-          "ownerPrice": 19000000.0,
+          "ownerPrice": 19000000,
           "teamPrice": 0,
           "includes": [
             "Agung sepasang"
@@ -1247,7 +1247,7 @@
         },
         {
           "name": "Request Baru",
-          "ownerPrice": 14000000.0,
+          "ownerPrice": 14000000,
           "teamPrice": 0,
           "includes": [
             "Resepsi sepasang"
@@ -1256,7 +1256,7 @@
         {
           "name": "Gold",
           "ownerPrice": 0,
-          "teamPrice": 8000000.0,
+          "teamPrice": 8000000,
           "includes": [
             "Agung&resepsi 1 hari"
           ]
@@ -1264,7 +1264,7 @@
         {
           "name": "Gold",
           "ownerPrice": 0,
-          "teamPrice": 8500000.0,
+          "teamPrice": 8500000,
           "includes": [
             "Agung&resepsi beda hari"
           ]
@@ -1272,7 +1272,7 @@
         {
           "name": "Gold",
           "ownerPrice": 0,
-          "teamPrice": 5500000.0,
+          "teamPrice": 5500000,
           "includes": [
             "Agung sepasang"
           ]
@@ -1280,7 +1280,7 @@
         {
           "name": "Gold",
           "ownerPrice": 0,
-          "teamPrice": 4500000.0,
+          "teamPrice": 4500000,
           "includes": [
             "Resepsi sepasang"
           ]
@@ -1288,7 +1288,7 @@
         {
           "name": "Diamond",
           "ownerPrice": 0,
-          "teamPrice": 10000000.0,
+          "teamPrice": 10000000,
           "includes": [
             "Agung&resepsi 1 hari"
           ]
@@ -1296,7 +1296,7 @@
         {
           "name": "Diamond",
           "ownerPrice": 0,
-          "teamPrice": 10500000.0,
+          "teamPrice": 10500000,
           "includes": [
             "Agung&resepsi beda hari"
           ]
@@ -1304,7 +1304,7 @@
         {
           "name": "Diamond",
           "ownerPrice": 0,
-          "teamPrice": 6500000.0,
+          "teamPrice": 6500000,
           "includes": [
             "Agung sepasang"
           ]
@@ -1312,7 +1312,7 @@
         {
           "name": "Diamond",
           "ownerPrice": 0,
-          "teamPrice": 5500000.0,
+          "teamPrice": 5500000,
           "includes": [
             "Resepsi sepasang"
           ]
@@ -1320,7 +1320,7 @@
         {
           "name": "Exclusive",
           "ownerPrice": 0,
-          "teamPrice": 12500000.0,
+          "teamPrice": 12500000,
           "includes": [
             "Agung&resepsi 1 hari"
           ]
@@ -1328,7 +1328,7 @@
         {
           "name": "Exclusive",
           "ownerPrice": 0,
-          "teamPrice": 13000000.0,
+          "teamPrice": 13000000,
           "includes": [
             "Agung&resepsi beda hari"
           ]
@@ -1336,7 +1336,7 @@
         {
           "name": "Exclusive",
           "ownerPrice": 0,
-          "teamPrice": 9000000.0,
+          "teamPrice": 9000000,
           "includes": [
             "Agung sepasang"
           ]
@@ -1344,7 +1344,7 @@
         {
           "name": "Exclusive",
           "ownerPrice": 0,
-          "teamPrice": 6500000.0,
+          "teamPrice": 6500000,
           "includes": [
             "Resepsi sepasang"
           ]
@@ -1352,7 +1352,7 @@
         {
           "name": "Request Baru",
           "ownerPrice": 0,
-          "teamPrice": 26000000.0,
+          "teamPrice": 26000000,
           "includes": [
             "Agung&resepsi 1 hari"
           ]
@@ -1360,7 +1360,7 @@
         {
           "name": "Request Baru",
           "ownerPrice": 0,
-          "teamPrice": 26500000.0,
+          "teamPrice": 26500000,
           "includes": [
             "Agung&resepsi beda hari"
           ]
@@ -1368,7 +1368,7 @@
         {
           "name": "Request Baru",
           "ownerPrice": 0,
-          "teamPrice": 17000000.0,
+          "teamPrice": 17000000,
           "includes": [
             "Agung sepasang"
           ]
@@ -1376,7 +1376,7 @@
         {
           "name": "Request Baru",
           "ownerPrice": 0,
-          "teamPrice": 11000000.0,
+          "teamPrice": 11000000,
           "includes": [
             "Resepsi sepasang"
           ]
@@ -1398,7 +1398,7 @@
       "packages": [
         {
           "name": "Custom",
-          "ownerPrice": 3500000.0,
+          "ownerPrice": 3500000,
           "teamPrice": 0,
           "includes": [
             "Payas Madya"
@@ -1406,7 +1406,7 @@
         },
         {
           "name": "Custom",
-          "ownerPrice": 4500000.0,
+          "ownerPrice": 4500000,
           "teamPrice": 0,
           "includes": [
             "Retouch resepsi"
@@ -1414,7 +1414,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 450000.0,
+          "ownerPrice": 450000,
           "teamPrice": 0,
           "includes": [
             "Pendamping"
@@ -1439,7 +1439,7 @@
       "packages": [
         {
           "name": "Custom",
-          "ownerPrice": 2500000.0,
+          "ownerPrice": 2500000,
           "teamPrice": 0,
           "includes": [
             "Ngidih"
@@ -1447,7 +1447,7 @@
         },
         {
           "name": "Custom",
-          "ownerPrice": 5000000.0,
+          "ownerPrice": 5000000,
           "teamPrice": 0,
           "includes": [
             "Resepsi"
@@ -1488,7 +1488,7 @@
       "packages": [
         {
           "name": "Custom",
-          "ownerPrice": 9000000.0,
+          "ownerPrice": 9000000,
           "teamPrice": 0,
           "includes": [
             "Ngidih+resepsi"
@@ -1496,7 +1496,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 650000.0,
+          "ownerPrice": 650000,
           "teamPrice": 0,
           "includes": [
             "Transport Payangan"
@@ -1521,7 +1521,7 @@
       "packages": [
         {
           "name": "Paket",
-          "ownerPrice": 5000000.0,
+          "ownerPrice": 5000000,
           "teamPrice": 0,
           "includes": [
             "Payas Ngidih (MU&HD)"
@@ -1529,7 +1529,7 @@
         },
         {
           "name": "Paket",
-          "ownerPrice": 9500000.0,
+          "ownerPrice": 9500000,
           "teamPrice": 0,
           "includes": [
             "Payas Madya (MU,HD,WD)"
@@ -1537,7 +1537,7 @@
         },
         {
           "name": "Paket",
-          "ownerPrice": 13500000.0,
+          "ownerPrice": 13500000,
           "teamPrice": 0,
           "includes": [
             "Payas Agung"
@@ -1545,7 +1545,7 @@
         },
         {
           "name": "Paket",
-          "ownerPrice": 8000000.0,
+          "ownerPrice": 8000000,
           "teamPrice": 0,
           "includes": [
             "Payas Resepsi"
@@ -1561,7 +1561,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 1500000.0,
+          "ownerPrice": 1500000,
           "teamPrice": 0,
           "includes": [
             "Pendamping"
@@ -1579,7 +1579,7 @@
         {
           "name": "Custom",
           "ownerPrice": 0,
-          "teamPrice": 3000000.0,
+          "teamPrice": 3000000,
           "includes": [
             "Payas Ngidih (MU&HD)",
             "Payas Madya (MU,HD,WD)"
@@ -1588,7 +1588,7 @@
         {
           "name": "Lainnya",
           "ownerPrice": 0,
-          "teamPrice": 400000.0,
+          "teamPrice": 400000,
           "includes": [
             "Transport Payangan"
           ]
@@ -1596,7 +1596,7 @@
         {
           "name": "Lainnya",
           "ownerPrice": 0,
-          "teamPrice": 300000.0,
+          "teamPrice": 300000,
           "includes": [
             "Transport Blahbatuh"
           ]
@@ -1604,7 +1604,7 @@
         {
           "name": "Lainnya",
           "ownerPrice": 0,
-          "teamPrice": 350000.0,
+          "teamPrice": 350000,
           "includes": [
             "Pendamping"
           ]
@@ -1620,7 +1620,7 @@
       "packages": [
         {
           "name": "Custom",
-          "ownerPrice": 3500000.0,
+          "ownerPrice": 3500000,
           "teamPrice": 0,
           "includes": [
             "Payas Ngidih"
@@ -1628,7 +1628,7 @@
         },
         {
           "name": "Custom",
-          "ownerPrice": 5500000.0,
+          "ownerPrice": 5500000,
           "teamPrice": 0,
           "includes": [
             "Payas Resepsi"
@@ -1636,7 +1636,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 500000.0,
+          "ownerPrice": 500000,
           "teamPrice": 0,
           "includes": [
             "Transport Payangan"
@@ -1644,7 +1644,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 350000.0,
+          "ownerPrice": 350000,
           "teamPrice": 0,
           "includes": [
             "Transport Blahbatuh"
@@ -1652,7 +1652,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 450000.0,
+          "ownerPrice": 450000,
           "teamPrice": 0,
           "includes": [
             "Pendamping"
@@ -1684,7 +1684,7 @@
       "packages": [
         {
           "name": "Paket",
-          "ownerPrice": 4000000.0,
+          "ownerPrice": 4000000,
           "teamPrice": 0,
           "includes": [
             "Payas Ngidih"
@@ -1693,79 +1693,79 @@
         {
           "name": "Paket",
           "ownerPrice": 0,
-          "teamPrice": 3000000.0,
+          "teamPrice": 3000000,
           "includes": [
             "Payas Ngidih"
           ]
         },
         {
           "name": "Gold",
-          "ownerPrice": 7000000.0,
-          "teamPrice": 6500000.0,
+          "ownerPrice": 7000000,
+          "teamPrice": 6500000,
           "includes": [
             "Payas Agung"
           ]
         },
         {
           "name": "Gold",
-          "ownerPrice": 6000000.0,
-          "teamPrice": 5500000.0,
+          "ownerPrice": 6000000,
+          "teamPrice": 5500000,
           "includes": [
             "Payas Resepsi"
           ]
         },
         {
           "name": "Gold",
-          "ownerPrice": 12000000.0,
-          "teamPrice": 11000000.0,
+          "ownerPrice": 12000000,
+          "teamPrice": 11000000,
           "includes": [
             "1 day service (Agung+resepsi)"
           ]
         },
         {
           "name": "Diamond",
-          "ownerPrice": 12000000.0,
-          "teamPrice": 10000000.0,
+          "ownerPrice": 12000000,
+          "teamPrice": 10000000,
           "includes": [
             "Payas Agung"
           ]
         },
         {
           "name": "Diamond",
-          "ownerPrice": 9000000.0,
-          "teamPrice": 8000000.0,
+          "ownerPrice": 9000000,
+          "teamPrice": 8000000,
           "includes": [
             "Payas Resepsi"
           ]
         },
         {
           "name": "Diamond",
-          "ownerPrice": 19000000.0,
-          "teamPrice": 16000000.0,
+          "ownerPrice": 19000000,
+          "teamPrice": 16000000,
           "includes": [
             "1 day service (Agung+resepsi)"
           ]
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 17000000.0,
-          "teamPrice": 15000000.0,
+          "ownerPrice": 17000000,
+          "teamPrice": 15000000,
           "includes": [
             "Payas Agung"
           ]
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 15000000.0,
-          "teamPrice": 13000000.0,
+          "ownerPrice": 15000000,
+          "teamPrice": 13000000,
           "includes": [
             "Payas Resepsi"
           ]
         },
         {
           "name": "Exclusive",
-          "ownerPrice": 30000000.0,
-          "teamPrice": 25000000.0,
+          "ownerPrice": 30000000,
+          "teamPrice": 25000000,
           "includes": [
             "1 day service (Agung+resepsi)"
           ]
@@ -1791,7 +1791,7 @@
       "packages": [
         {
           "name": "Custom",
-          "ownerPrice": 1500000.0,
+          "ownerPrice": 1500000,
           "teamPrice": 0,
           "includes": [
             "Payas Ngidih"
@@ -1799,7 +1799,7 @@
         },
         {
           "name": "Custom",
-          "ownerPrice": 2500000.0,
+          "ownerPrice": 2500000,
           "teamPrice": 0,
           "includes": [
             "Payas Hari H"
@@ -1807,7 +1807,7 @@
         },
         {
           "name": "Custom",
-          "ownerPrice": 3500000.0,
+          "ownerPrice": 3500000,
           "teamPrice": 0,
           "includes": [
             "Payas Resepsi"
@@ -1815,7 +1815,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 350000.0,
+          "ownerPrice": 350000,
           "teamPrice": 0,
           "includes": [
             "Transport"
@@ -1823,7 +1823,7 @@
         },
         {
           "name": "Lainnya",
-          "ownerPrice": 250000.0,
+          "ownerPrice": 250000,
           "teamPrice": 0,
           "includes": [
             "Pendamping"
@@ -1836,397 +1836,397 @@
     {
       "id": "location-5",
       "name": "Art Center",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-6",
       "name": "Air Terjun Blangsinga",
-      "price": 300000.0,
+      "price": 300000,
       "note": ""
     },
     {
       "id": "location-7",
       "name": "Bajrasandi/renon",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-8",
       "name": "Big Garden Corner",
-      "price": 300000.0,
+      "price": 300000,
       "note": ""
     },
     {
       "id": "location-9",
       "name": "Benoa (sea safari)",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-10",
       "name": "Bali Farm",
-      "price": 2500000.0,
+      "price": 2500000,
       "note": ""
     },
     {
       "id": "location-11",
       "name": "Brown cafe",
-      "price": 150000.0,
+      "price": 150000,
       "note": "per person"
     },
     {
       "id": "location-12",
       "name": "Bukit asah",
-      "price": 500000.0,
+      "price": 500000,
       "note": "Diluar tiket perorang"
     },
     {
       "id": "location-13",
       "name": "Cafe Cosmic Sanur",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-14",
       "name": "Cafe Neun",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-15",
       "name": "Cafe Elago",
-      "price": 950000.0,
+      "price": 950000,
       "note": ""
     },
     {
       "id": "location-16",
       "name": "Cafe Mirror",
-      "price": 3500000.0,
+      "price": 3500000,
       "note": "3 jam"
     },
     {
       "id": "location-17",
       "name": "Cafe Sama sama",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-18",
       "name": "Desa Tenganan",
-      "price": 250000.0,
+      "price": 250000,
       "note": ""
     },
     {
       "id": "location-19",
       "name": "Danau buyan/tamblingan",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-20",
       "name": "Danau Ulundanu",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-21",
       "name": "Este Leisure",
-      "price": 1200000.0,
+      "price": 1200000,
       "note": ""
     },
     {
       "id": "location-22",
       "name": "Galih Ukir",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-23",
       "name": "Hidden Garden Studio",
-      "price": 150000.0,
+      "price": 150000,
       "note": "Perjam"
     },
     {
       "id": "location-24",
       "name": "Komaneka",
-      "price": 2500000.0,
+      "price": 2500000,
       "note": ""
     },
     {
       "id": "location-25",
       "name": "Kuda/unta mertasari",
-      "price": 700000.0,
+      "price": 700000,
       "note": ""
     },
     {
       "id": "location-26",
       "name": "Kuda pantai saba",
-      "price": 700000.0,
+      "price": 700000,
       "note": ""
     },
     {
       "id": "location-27",
       "name": "Kuda Pantai Nyanyi",
-      "price": 700000.0,
+      "price": 700000,
       "note": ""
     },
     {
       "id": "location-28",
       "name": "Kebun raya bedugul",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-29",
       "name": "Kertagosa",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-30",
       "name": "Museum Bali",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-31",
       "name": "Mousca Studio",
-      "price": 250000.0,
+      "price": 250000,
       "note": ""
     },
     {
       "id": "location-32",
       "name": "Museum Lukisan",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-33",
       "name": "Museum Blanco Ubud",
-      "price": 1500000.0,
+      "price": 1500000,
       "note": ""
     },
     {
       "id": "location-34",
       "name": "Museum Pendet",
-      "price": 850000.0,
+      "price": 850000,
       "note": ""
     },
     {
       "id": "location-35",
       "name": "Museum Njana Tilem",
-      "price": 1500000.0,
+      "price": 1500000,
       "note": ""
     },
     {
       "id": "location-36",
       "name": "Monkey Forest",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-37",
       "name": "Montana Cafe",
-      "price": 800000.0,
+      "price": 800000,
       "note": ""
     },
     {
       "id": "location-38",
       "name": "Omma Day Club",
-      "price": 1500000.0,
+      "price": 1500000,
       "note": ""
     },
     {
       "id": "location-39",
       "name": "Pantai Balangan",
-      "price": 750000.0,
+      "price": 750000,
       "note": ""
     },
     {
       "id": "location-40",
       "name": "Pantai Saba",
-      "price": 300000.0,
+      "price": 300000,
       "note": "lokasi rumput"
     },
     {
       "id": "location-41",
       "name": "Pantai Geger",
-      "price": 400000.0,
+      "price": 400000,
       "note": ""
     },
     {
       "id": "location-42",
       "name": "Pantai Nyanyi",
-      "price": 25000.0,
+      "price": 25000,
       "note": ""
     },
     {
       "id": "location-43",
       "name": "Pantai Mengening",
-      "price": 300000.0,
+      "price": 300000,
       "note": ""
     },
     {
       "id": "location-44",
       "name": "Pantai Melasti",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-45",
       "name": "Pantai Pasut",
-      "price": 300000.0,
+      "price": 300000,
       "note": ""
     },
     {
       "id": "location-46",
       "name": "Prana Spa",
-      "price": 1800000.0,
+      "price": 1800000,
       "note": ""
     },
     {
       "id": "location-47",
       "name": "Pura Sangeh",
-      "price": 250000.0,
+      "price": 250000,
       "note": ""
     },
     {
       "id": "location-48",
       "name": "Pura Tanah Lot",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-49",
       "name": "Puri Langon",
-      "price": 1500000.0,
+      "price": 1500000,
       "note": ""
     },
     {
       "id": "location-50",
       "name": "Puri Jero Kuta",
-      "price": 400000.0,
+      "price": 400000,
       "note": ""
     },
     {
       "id": "location-51",
       "name": "Puri Sibang Kaja",
-      "price": 350000.0,
+      "price": 350000,
       "note": ""
     },
     {
       "id": "location-52",
       "name": "Puri Gerana Sangeh",
-      "price": 350000.0,
+      "price": 350000,
       "note": ""
     },
     {
       "id": "location-53",
       "name": "Puri Tresna Villa",
-      "price": 550000.0,
+      "price": 550000,
       "note": ""
     },
     {
       "id": "location-54",
       "name": "Puri Anom",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-55",
       "name": "Puri Rangki",
-      "price": 1500000.0,
+      "price": 1500000,
       "note": ""
     },
     {
       "id": "location-56",
       "name": "Puri Karangasem",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-57",
       "name": "Puri Blahbatuh",
-      "price": 400000.0,
+      "price": 400000,
       "note": ""
     },
     {
       "id": "location-58",
       "name": "Panglipuran",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-59",
       "name": "Pitaloka",
-      "price": 200000.0,
+      "price": 200000,
       "note": "Per pax"
     },
     {
       "id": "location-60",
       "name": "Rumah Luwih",
-      "price": 350000.0,
+      "price": 350000,
       "note": ""
     },
     {
       "id": "location-61",
       "name": "Royal Pitamaha",
-      "price": 1500000.0,
+      "price": 1500000,
       "note": ""
     },
     {
       "id": "location-62",
       "name": "Rumah Gemuk Bali",
-      "price": 2000000.0,
+      "price": 2000000,
       "note": "Weekday"
     },
     {
       "id": "location-63",
       "name": "Saren Kawan",
-      "price": 350000.0,
+      "price": 350000,
       "note": ""
     },
     {
       "id": "location-64",
       "name": "Secret Garden",
-      "price": 500000.0,
+      "price": 500000,
       "note": ""
     },
     {
       "id": "location-65",
       "name": "Studio BM",
-      "price": 250000.0,
+      "price": 250000,
       "note": "Per Jam"
     },
     {
       "id": "location-66",
       "name": "Taman Ujung",
-      "price": 1000000.0,
+      "price": 1000000,
       "note": ""
     },
     {
       "id": "location-67",
       "name": "Taman Dedari",
-      "price": 600000.0,
+      "price": 600000,
       "note": ""
     },
     {
       "id": "location-68",
       "name": "Tirta Gangga",
-      "price": 700000.0,
+      "price": 700000,
       "note": ""
     },
     {
       "id": "location-69",
       "name": "Unta Hotel Hilton",
-      "price": 1100000.0,
+      "price": 1100000,
       "note": ""
     },
     {
       "id": "location-70",
       "name": "Waskita Mandala",
-      "price": 400000.0,
+      "price": 400000,
       "note": ""
     }
   ],
@@ -2260,7 +2260,7 @@
       "box": "Box 1",
       "item": "Cincin",
       "vendor": "",
-      "price": 0.0,
+      "price": 0,
       "done": false
     },
     {
@@ -2268,7 +2268,7 @@
       "box": "Box 2",
       "item": "Emas 1000 gr",
       "vendor": "",
-      "price": 0.0,
+      "price": 0,
       "done": false
     },
     {
@@ -2276,7 +2276,7 @@
       "box": "",
       "item": "Liontin",
       "vendor": "",
-      "price": 0.0,
+      "price": 0,
       "done": false
     },
     {
@@ -2284,7 +2284,7 @@
       "box": "Box 3",
       "item": "",
       "vendor": "",
-      "price": 0.0,
+      "price": 0,
       "done": false
     }
   ],
@@ -2686,5913 +2686,6 @@
       "column": "J",
       "width": 874,
       "height": 712
-    }
-  ],
-  "rawSheets": [
-    {
-      "name": "Summary",
-      "cells": [
-        {
-          "cell": "H2",
-          "value": "NGIDIH"
-        },
-        {
-          "cell": "I2",
-          "value": "HARI H & RESEPSI"
-        },
-        {
-          "cell": "H3",
-          "value": "2028-03-10T00:00:00"
-        },
-        {
-          "cell": "I3",
-          "value": "2028-06-05T00:00:00"
-        },
-        {
-          "cell": "B6",
-          "value": "Wedding Planner"
-        },
-        {
-          "cell": "H6",
-          "value": "COUNTDOWN"
-        },
-        {
-          "cell": "H7",
-          "value": 564
-        },
-        {
-          "cell": "I7",
-          "value": 651
-        },
-        {
-          "cell": "B8",
-          "value": "Rama & Sita"
-        },
-        {
-          "cell": "H9",
-          "value": "Days Left 🔥"
-        },
-        {
-          "cell": "I9",
-          "value": "Days Left 🔥"
-        },
-        {
-          "cell": "B11",
-          "value": "List"
-        },
-        {
-          "cell": "C11",
-          "value": "Budget"
-        },
-        {
-          "cell": "F11",
-          "value": "Checklist"
-        },
-        {
-          "cell": "H11",
-          "value": "Total Budget Wedding"
-        },
-        {
-          "cell": "I11",
-          "value": 100400000000
-        },
-        {
-          "cell": "C12",
-          "value": "Alokasi"
-        },
-        {
-          "cell": "D12",
-          "value": "Aktual"
-        },
-        {
-          "cell": "E12",
-          "value": "Selisih"
-        },
-        {
-          "cell": "H12",
-          "value": "Total Alokasi Budget"
-        },
-        {
-          "cell": "I12",
-          "value": 33000000
-        },
-        {
-          "cell": "B13",
-          "value": "Prewedding"
-        },
-        {
-          "cell": "C13",
-          "value": 0.0
-        },
-        {
-          "cell": "D13",
-          "value": 0
-        },
-        {
-          "cell": "E13",
-          "value": 0
-        },
-        {
-          "cell": "F13",
-          "value": false
-        },
-        {
-          "cell": "H13",
-          "value": "Total Pengeluaran"
-        },
-        {
-          "cell": "I13",
-          "value": 0
-        },
-        {
-          "cell": "B14",
-          "value": "MCU Pra Nikah"
-        },
-        {
-          "cell": "C14",
-          "value": 0.0
-        },
-        {
-          "cell": "D14",
-          "value": 0
-        },
-        {
-          "cell": "E14",
-          "value": 0
-        },
-        {
-          "cell": "F14",
-          "value": false
-        },
-        {
-          "cell": "H14",
-          "value": "Selisih (Budget-Pengeluaran)"
-        },
-        {
-          "cell": "I14",
-          "value": 100400000000
-        },
-        {
-          "cell": "B15",
-          "value": "Pre Marital Booster"
-        },
-        {
-          "cell": "C15",
-          "value": 0.0
-        },
-        {
-          "cell": "D15",
-          "value": 0
-        },
-        {
-          "cell": "E15",
-          "value": 0
-        },
-        {
-          "cell": "F15",
-          "value": false
-        },
-        {
-          "cell": "B16",
-          "value": "Cincin"
-        },
-        {
-          "cell": "C16",
-          "value": 20000000.0
-        },
-        {
-          "cell": "E16",
-          "value": 20000000
-        },
-        {
-          "cell": "F16",
-          "value": true
-        },
-        {
-          "cell": "H16",
-          "value": "Wedding Budget"
-        },
-        {
-          "cell": "B17",
-          "value": "MUA Ngidih"
-        },
-        {
-          "cell": "C17",
-          "value": 3000000.0
-        },
-        {
-          "cell": "E17",
-          "value": 3000000
-        },
-        {
-          "cell": "F17",
-          "value": false
-        },
-        {
-          "cell": "H17",
-          "value": "Pria"
-        },
-        {
-          "cell": "I17",
-          "value": 100000000.0
-        },
-        {
-          "cell": "B18",
-          "value": "Acara Ngidih"
-        },
-        {
-          "cell": "C18",
-          "value": 0.0
-        },
-        {
-          "cell": "D18",
-          "value": 0
-        },
-        {
-          "cell": "E18",
-          "value": 0
-        },
-        {
-          "cell": "F18",
-          "value": false
-        },
-        {
-          "cell": "H18",
-          "value": "Keluarga Pria"
-        },
-        {
-          "cell": "I18",
-          "value": 100000000.0
-        },
-        {
-          "cell": "B19",
-          "value": "Pakaian Ngidih"
-        },
-        {
-          "cell": "C19",
-          "value": 0.0
-        },
-        {
-          "cell": "D19",
-          "value": 0
-        },
-        {
-          "cell": "E19",
-          "value": 0
-        },
-        {
-          "cell": "F19",
-          "value": false
-        },
-        {
-          "cell": "H19",
-          "value": "Wanita"
-        },
-        {
-          "cell": "I19",
-          "value": 100000000.0
-        },
-        {
-          "cell": "B20",
-          "value": "Banten"
-        },
-        {
-          "cell": "C20",
-          "value": 0.0
-        },
-        {
-          "cell": "D20",
-          "value": 0
-        },
-        {
-          "cell": "E20",
-          "value": 0
-        },
-        {
-          "cell": "F20",
-          "value": false
-        },
-        {
-          "cell": "H20",
-          "value": "Keluarga Wanita"
-        },
-        {
-          "cell": "I20",
-          "value": 100000000.0
-        },
-        {
-          "cell": "B21",
-          "value": "MUA Nganten&Resepsi"
-        },
-        {
-          "cell": "C21",
-          "value": 0.0
-        },
-        {
-          "cell": "D21",
-          "value": 0
-        },
-        {
-          "cell": "E21",
-          "value": 0
-        },
-        {
-          "cell": "F21",
-          "value": false
-        },
-        {
-          "cell": "H21",
-          "value": "Tetangga"
-        },
-        {
-          "cell": "I21",
-          "value": 100000000000.0
-        },
-        {
-          "cell": "B22",
-          "value": "Pakaian Nganten"
-        },
-        {
-          "cell": "C22",
-          "value": 0.0
-        },
-        {
-          "cell": "D22",
-          "value": 0
-        },
-        {
-          "cell": "E22",
-          "value": 0
-        },
-        {
-          "cell": "F22",
-          "value": false
-        },
-        {
-          "cell": "H22",
-          "value": "Total"
-        },
-        {
-          "cell": "I22",
-          "value": 100400000000
-        },
-        {
-          "cell": "B23",
-          "value": "MUA Keluarga"
-        },
-        {
-          "cell": "C23",
-          "value": 0.0
-        },
-        {
-          "cell": "D23",
-          "value": 0
-        },
-        {
-          "cell": "E23",
-          "value": 0
-        },
-        {
-          "cell": "F23",
-          "value": false
-        },
-        {
-          "cell": "B24",
-          "value": "Hari H&Resepsi"
-        },
-        {
-          "cell": "C24",
-          "value": 10000000.0
-        },
-        {
-          "cell": "E24",
-          "value": 10000000
-        },
-        {
-          "cell": "F24",
-          "value": false
-        },
-        {
-          "cell": "B25",
-          "value": "Dokumentasi"
-        },
-        {
-          "cell": "C25",
-          "value": 0.0
-        },
-        {
-          "cell": "D25",
-          "value": 0
-        },
-        {
-          "cell": "E25",
-          "value": 0
-        },
-        {
-          "cell": "F25",
-          "value": false
-        },
-        {
-          "cell": "B26",
-          "value": "Seserahan"
-        },
-        {
-          "cell": "C26",
-          "value": 0.0
-        },
-        {
-          "cell": "D26",
-          "value": 0
-        },
-        {
-          "cell": "E26",
-          "value": 0
-        },
-        {
-          "cell": "F26",
-          "value": false
-        },
-        {
-          "cell": "B27",
-          "value": "Wedding Essential"
-        },
-        {
-          "cell": "C27",
-          "value": 0.0
-        },
-        {
-          "cell": "D27",
-          "value": 0
-        },
-        {
-          "cell": "E27",
-          "value": 0
-        },
-        {
-          "cell": "F27",
-          "value": false
-        },
-        {
-          "cell": "B28",
-          "value": "Alat-alat Lainnya"
-        },
-        {
-          "cell": "C28",
-          "value": 0.0
-        },
-        {
-          "cell": "D28",
-          "value": 0
-        },
-        {
-          "cell": "E28",
-          "value": 0
-        },
-        {
-          "cell": "F28",
-          "value": false
-        },
-        {
-          "cell": "B29",
-          "value": "Transport"
-        },
-        {
-          "cell": "C29",
-          "value": 0.0
-        },
-        {
-          "cell": "D29",
-          "value": 0
-        },
-        {
-          "cell": "E29",
-          "value": 0
-        },
-        {
-          "cell": "F29",
-          "value": false
-        },
-        {
-          "cell": "B30",
-          "value": "Beauty Essential"
-        },
-        {
-          "cell": "C30",
-          "value": 0.0
-        },
-        {
-          "cell": "D30",
-          "value": 0
-        },
-        {
-          "cell": "E30",
-          "value": 0
-        },
-        {
-          "cell": "F30",
-          "value": false
-        },
-        {
-          "cell": "B34",
-          "value": "Note!"
-        },
-        {
-          "cell": "B35",
-          "value": "TOLONG \"MAKE A COPY\" YA, DIAKUN KALIAN BIAR YANG LAIN BISA PAKAI JUGA"
-        },
-        {
-          "cell": "B36",
-          "value": "Caranya, setelah kalian buka file ini, klik \"file\" dan klik \"make a copy/buat salinan\" :)"
-        },
-        {
-          "cell": "B37",
-          "value": "Halo kakak2 seperjuangan, note ini nanti bisa kalian hapus ya"
-        },
-        {
-          "cell": "B38",
-          "value": "Aku jelasin sedikit disini"
-        },
-        {
-          "cell": "B39",
-          "value": "Budget alokasi silahkan kalian isi sendiri berapa kira2 budget kalian"
-        },
-        {
-          "cell": "B40",
-          "value": "Budget aktual nanti ga perlu kalian otak atik, tinggal kalian isi aja di bagian pengeluaran, nanti otomatis akan masuk ke budget aktual ya"
-        },
-        {
-          "cell": "B41",
-          "value": "TAPI, kalau kalian nambah list baru, kalian tinggal copy format budget aktual dikolom yg lain, kemudian ganti namanya sesuai dengan nama list "
-        },
-        {
-          "cell": "B42",
-          "value": "contoh  =SUMIF(Pengeluaran!E:E, \"Pakaian Ngidih\", Pengeluaran!G:G) nah tinggal ganti nama \"pakaian ngidih\"nya dengan nama list kalian"
-        },
-        {
-          "cell": "B43",
-          "value": "Ketika kalian menambahkan item list baru, akan otomatis masuk ke bagian dropdown pengeluaran ya"
-        },
-        {
-          "cell": "B44",
-          "value": "Dibagian Budget wedding juga tinggal kalian isi berapa, nanti akan otomatis masuk ke tabel diatasnya"
-        },
-        {
-          "cell": "B45",
-          "value": "Biar cantik dan semangat buat plannernya, untuk gambar bunga, silahkan kalian pilih yg mana (ada dibagian belakang ya), nanti tinggal hapus yang tidak dipakai :D"
-        }
-      ]
-    },
-    {
-      "name": "Pengeluaran",
-      "cells": [
-        {
-          "cell": "B2",
-          "value": "💸Pengeluaran 💸"
-        },
-        {
-          "cell": "B4",
-          "value": "No"
-        },
-        {
-          "cell": "C4",
-          "value": "Tanggal"
-        },
-        {
-          "cell": "D4",
-          "value": "Detail Pengeluaran"
-        },
-        {
-          "cell": "E4",
-          "value": "Kategori"
-        },
-        {
-          "cell": "F4",
-          "value": "Pembayaran"
-        },
-        {
-          "cell": "G4",
-          "value": "Nominal"
-        },
-        {
-          "cell": "H4",
-          "value": "Keterangan"
-        },
-        {
-          "cell": "B5",
-          "value": 1.0
-        },
-        {
-          "cell": "C5",
-          "value": "2025-04-04T00:00:00"
-        },
-        {
-          "cell": "D5",
-          "value": "DP Griya"
-        },
-        {
-          "cell": "E5",
-          "value": "Hari H&Resepsi"
-        },
-        {
-          "cell": "F5",
-          "value": "DP"
-        },
-        {
-          "cell": "G5",
-          "value": 20000000.0
-        },
-        {
-          "cell": "H5",
-          "value": "Ini hanya contoh ya"
-        },
-        {
-          "cell": "B6",
-          "value": 2.0
-        },
-        {
-          "cell": "C6",
-          "value": "2025-04-05T00:00:00"
-        },
-        {
-          "cell": "D6",
-          "value": "DP cincin"
-        },
-        {
-          "cell": "E6",
-          "value": "Cincin"
-        },
-        {
-          "cell": "F6",
-          "value": "DP"
-        },
-        {
-          "cell": "G6",
-          "value": 10000000.0
-        },
-        {
-          "cell": "H6",
-          "value": "Ini hanya contoh ya"
-        },
-        {
-          "cell": "B7",
-          "value": 3.0
-        },
-        {
-          "cell": "C7",
-          "value": "2025-04-06T00:00:00"
-        },
-        {
-          "cell": "D7",
-          "value": "Pelunasan MUA ngidih"
-        },
-        {
-          "cell": "E7",
-          "value": "MUA Ngidih"
-        },
-        {
-          "cell": "F7",
-          "value": "Pelunasan"
-        },
-        {
-          "cell": "G7",
-          "value": 2000000.0
-        },
-        {
-          "cell": "H7",
-          "value": "Ini hanya contoh ya"
-        },
-        {
-          "cell": "B8",
-          "value": 4.0
-        },
-        {
-          "cell": "C8",
-          "value": "2025-04-07T00:00:00"
-        },
-        {
-          "cell": "G8",
-          "value": 0.0
-        },
-        {
-          "cell": "B9",
-          "value": 5.0
-        },
-        {
-          "cell": "C9",
-          "value": "2025-04-08T00:00:00"
-        },
-        {
-          "cell": "G9",
-          "value": 0.0
-        },
-        {
-          "cell": "B10",
-          "value": 6.0
-        },
-        {
-          "cell": "C10",
-          "value": "2025-04-09T00:00:00"
-        },
-        {
-          "cell": "G10",
-          "value": 0.0
-        },
-        {
-          "cell": "B11",
-          "value": 7.0
-        },
-        {
-          "cell": "C11",
-          "value": "2025-04-10T00:00:00"
-        },
-        {
-          "cell": "G11",
-          "value": 0.0
-        },
-        {
-          "cell": "B12",
-          "value": 8.0
-        },
-        {
-          "cell": "C12",
-          "value": "2025-04-11T00:00:00"
-        },
-        {
-          "cell": "G12",
-          "value": 0.0
-        },
-        {
-          "cell": "B13",
-          "value": 9.0
-        },
-        {
-          "cell": "C13",
-          "value": "2025-04-12T00:00:00"
-        },
-        {
-          "cell": "G13",
-          "value": 0.0
-        },
-        {
-          "cell": "B14",
-          "value": 10.0
-        },
-        {
-          "cell": "C14",
-          "value": "2025-04-13T00:00:00"
-        },
-        {
-          "cell": "G14",
-          "value": 0.0
-        },
-        {
-          "cell": "B15",
-          "value": 11.0
-        },
-        {
-          "cell": "C15",
-          "value": "2025-04-14T00:00:00"
-        },
-        {
-          "cell": "G15",
-          "value": 0.0
-        },
-        {
-          "cell": "B16",
-          "value": 12.0
-        },
-        {
-          "cell": "C16",
-          "value": "2025-04-15T00:00:00"
-        },
-        {
-          "cell": "G16",
-          "value": 0.0
-        },
-        {
-          "cell": "B17",
-          "value": 13.0
-        },
-        {
-          "cell": "C17",
-          "value": "2025-04-16T00:00:00"
-        },
-        {
-          "cell": "G17",
-          "value": 0.0
-        },
-        {
-          "cell": "B18",
-          "value": 14.0
-        },
-        {
-          "cell": "C18",
-          "value": "2025-04-17T00:00:00"
-        },
-        {
-          "cell": "G18",
-          "value": 0.0
-        },
-        {
-          "cell": "B19",
-          "value": 15.0
-        },
-        {
-          "cell": "C19",
-          "value": "2025-04-18T00:00:00"
-        },
-        {
-          "cell": "G19",
-          "value": 0.0
-        },
-        {
-          "cell": "B20",
-          "value": 16.0
-        },
-        {
-          "cell": "C20",
-          "value": "2025-04-19T00:00:00"
-        },
-        {
-          "cell": "G20",
-          "value": 0.0
-        },
-        {
-          "cell": "B21",
-          "value": 17.0
-        },
-        {
-          "cell": "C21",
-          "value": "2025-04-20T00:00:00"
-        },
-        {
-          "cell": "G21",
-          "value": 0.0
-        },
-        {
-          "cell": "B22",
-          "value": 18.0
-        },
-        {
-          "cell": "C22",
-          "value": "2025-04-21T00:00:00"
-        },
-        {
-          "cell": "G22",
-          "value": 0.0
-        },
-        {
-          "cell": "B23",
-          "value": 19.0
-        },
-        {
-          "cell": "C23",
-          "value": "2025-04-22T00:00:00"
-        },
-        {
-          "cell": "G23",
-          "value": 0.0
-        },
-        {
-          "cell": "B24",
-          "value": 20.0
-        },
-        {
-          "cell": "C24",
-          "value": "2025-04-23T00:00:00"
-        },
-        {
-          "cell": "G24",
-          "value": 0.0
-        },
-        {
-          "cell": "J24",
-          "value": "Note"
-        },
-        {
-          "cell": "B25",
-          "value": 21.0
-        },
-        {
-          "cell": "C25",
-          "value": "2025-04-24T00:00:00"
-        },
-        {
-          "cell": "G25",
-          "value": 0.0
-        },
-        {
-          "cell": "J25",
-          "value": "Kategori akan menyesuaikan \"list\" disheet sebelumnya"
-        },
-        {
-          "cell": "B26",
-          "value": 22.0
-        },
-        {
-          "cell": "C26",
-          "value": "2025-04-25T00:00:00"
-        },
-        {
-          "cell": "G26",
-          "value": 0.0
-        },
-        {
-          "cell": "J26",
-          "value": "Yang penting dibagian aktual budgetnya sudah sesuai namanya"
-        },
-        {
-          "cell": "B27",
-          "value": 23.0
-        },
-        {
-          "cell": "C27",
-          "value": "2025-04-26T00:00:00"
-        },
-        {
-          "cell": "G27",
-          "value": 0.0
-        },
-        {
-          "cell": "B28",
-          "value": 24.0
-        },
-        {
-          "cell": "C28",
-          "value": "2025-04-27T00:00:00"
-        },
-        {
-          "cell": "G28",
-          "value": 0.0
-        },
-        {
-          "cell": "B29",
-          "value": 25.0
-        },
-        {
-          "cell": "C29",
-          "value": "2025-04-28T00:00:00"
-        },
-        {
-          "cell": "G29",
-          "value": 0.0
-        },
-        {
-          "cell": "B30",
-          "value": 26.0
-        },
-        {
-          "cell": "C30",
-          "value": "2025-04-29T00:00:00"
-        },
-        {
-          "cell": "G30",
-          "value": 0.0
-        },
-        {
-          "cell": "B31",
-          "value": 27.0
-        },
-        {
-          "cell": "C31",
-          "value": "2025-04-30T00:00:00"
-        },
-        {
-          "cell": "G31",
-          "value": 0.0
-        },
-        {
-          "cell": "B32",
-          "value": 28.0
-        },
-        {
-          "cell": "C32",
-          "value": "2025-05-01T00:00:00"
-        },
-        {
-          "cell": "G32",
-          "value": 0.0
-        },
-        {
-          "cell": "B33",
-          "value": 29.0
-        },
-        {
-          "cell": "C33",
-          "value": "2025-06-10T00:00:00"
-        },
-        {
-          "cell": "G33",
-          "value": 0.0
-        },
-        {
-          "cell": "B34",
-          "value": 30.0
-        },
-        {
-          "cell": "C34",
-          "value": "2025-06-11T00:00:00"
-        },
-        {
-          "cell": "G34",
-          "value": 0.0
-        },
-        {
-          "cell": "B35",
-          "value": 31.0
-        },
-        {
-          "cell": "C35",
-          "value": "2025-06-12T00:00:00"
-        },
-        {
-          "cell": "G35",
-          "value": 0.0
-        },
-        {
-          "cell": "B36",
-          "value": 32.0
-        },
-        {
-          "cell": "C36",
-          "value": "2025-06-13T00:00:00"
-        },
-        {
-          "cell": "G36",
-          "value": 0.0
-        },
-        {
-          "cell": "B37",
-          "value": 33.0
-        },
-        {
-          "cell": "C37",
-          "value": "2025-06-14T00:00:00"
-        },
-        {
-          "cell": "G37",
-          "value": 0.0
-        },
-        {
-          "cell": "B38",
-          "value": 34.0
-        },
-        {
-          "cell": "C38",
-          "value": "2025-06-15T00:00:00"
-        },
-        {
-          "cell": "G38",
-          "value": 0.0
-        },
-        {
-          "cell": "B39",
-          "value": 35.0
-        },
-        {
-          "cell": "C39",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G39",
-          "value": 0.0
-        },
-        {
-          "cell": "B40",
-          "value": 36.0
-        },
-        {
-          "cell": "C40",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G40",
-          "value": 0.0
-        },
-        {
-          "cell": "B41",
-          "value": 37.0
-        },
-        {
-          "cell": "C41",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G41",
-          "value": 0.0
-        },
-        {
-          "cell": "B42",
-          "value": 38.0
-        },
-        {
-          "cell": "C42",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G42",
-          "value": 0.0
-        },
-        {
-          "cell": "B43",
-          "value": 39.0
-        },
-        {
-          "cell": "C43",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G43",
-          "value": 0.0
-        },
-        {
-          "cell": "B44",
-          "value": 40.0
-        },
-        {
-          "cell": "C44",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G44",
-          "value": 0.0
-        },
-        {
-          "cell": "B45",
-          "value": 41.0
-        },
-        {
-          "cell": "C45",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G45",
-          "value": 0.0
-        },
-        {
-          "cell": "B46",
-          "value": 42.0
-        },
-        {
-          "cell": "C46",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G46",
-          "value": 0.0
-        },
-        {
-          "cell": "B47",
-          "value": 43.0
-        },
-        {
-          "cell": "C47",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G47",
-          "value": 0.0
-        },
-        {
-          "cell": "B48",
-          "value": 44.0
-        },
-        {
-          "cell": "C48",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G48",
-          "value": 0.0
-        },
-        {
-          "cell": "B49",
-          "value": 45.0
-        },
-        {
-          "cell": "C49",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G49",
-          "value": 0.0
-        },
-        {
-          "cell": "B50",
-          "value": 46.0
-        },
-        {
-          "cell": "C50",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G50",
-          "value": 0.0
-        },
-        {
-          "cell": "B51",
-          "value": 47.0
-        },
-        {
-          "cell": "C51",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G51",
-          "value": 0.0
-        },
-        {
-          "cell": "B52",
-          "value": 48.0
-        },
-        {
-          "cell": "C52",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G52",
-          "value": 0.0
-        },
-        {
-          "cell": "B53",
-          "value": 49.0
-        },
-        {
-          "cell": "C53",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G53",
-          "value": 0.0
-        },
-        {
-          "cell": "B54",
-          "value": 50.0
-        },
-        {
-          "cell": "C54",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G54",
-          "value": 0.0
-        },
-        {
-          "cell": "B55",
-          "value": 40.0
-        },
-        {
-          "cell": "C55",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G55",
-          "value": 0.0
-        },
-        {
-          "cell": "B56",
-          "value": 41.0
-        },
-        {
-          "cell": "C56",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G56",
-          "value": 0.0
-        },
-        {
-          "cell": "B57",
-          "value": 42.0
-        },
-        {
-          "cell": "C57",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G57",
-          "value": 0.0
-        },
-        {
-          "cell": "B58",
-          "value": 43.0
-        },
-        {
-          "cell": "C58",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G58",
-          "value": 0.0
-        },
-        {
-          "cell": "B59",
-          "value": 44.0
-        },
-        {
-          "cell": "C59",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G59",
-          "value": 0.0
-        },
-        {
-          "cell": "B60",
-          "value": 45.0
-        },
-        {
-          "cell": "C60",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G60",
-          "value": 0.0
-        },
-        {
-          "cell": "B61",
-          "value": 46.0
-        },
-        {
-          "cell": "C61",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G61",
-          "value": 0.0
-        },
-        {
-          "cell": "B62",
-          "value": 47.0
-        },
-        {
-          "cell": "C62",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G62",
-          "value": 0.0
-        },
-        {
-          "cell": "B63",
-          "value": 48.0
-        },
-        {
-          "cell": "C63",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G63",
-          "value": 0.0
-        },
-        {
-          "cell": "B64",
-          "value": 49.0
-        },
-        {
-          "cell": "C64",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G64",
-          "value": 0.0
-        },
-        {
-          "cell": "B65",
-          "value": 50.0
-        },
-        {
-          "cell": "C65",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G65",
-          "value": 0.0
-        },
-        {
-          "cell": "B66",
-          "value": 51.0
-        },
-        {
-          "cell": "C66",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G66",
-          "value": 0.0
-        },
-        {
-          "cell": "B67",
-          "value": 52.0
-        },
-        {
-          "cell": "C67",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G67",
-          "value": 0.0
-        },
-        {
-          "cell": "B68",
-          "value": 53.0
-        },
-        {
-          "cell": "C68",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G68",
-          "value": 0.0
-        },
-        {
-          "cell": "B69",
-          "value": 54.0
-        },
-        {
-          "cell": "C69",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G69",
-          "value": 0.0
-        },
-        {
-          "cell": "B70",
-          "value": 55.0
-        },
-        {
-          "cell": "C70",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G70",
-          "value": 0.0
-        },
-        {
-          "cell": "B71",
-          "value": 56.0
-        },
-        {
-          "cell": "C71",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G71",
-          "value": 0.0
-        },
-        {
-          "cell": "B72",
-          "value": 57.0
-        },
-        {
-          "cell": "C72",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G72",
-          "value": 0.0
-        },
-        {
-          "cell": "B73",
-          "value": 58.0
-        },
-        {
-          "cell": "C73",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G73",
-          "value": 0.0
-        },
-        {
-          "cell": "B74",
-          "value": 59.0
-        },
-        {
-          "cell": "C74",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G74",
-          "value": 0.0
-        },
-        {
-          "cell": "B75",
-          "value": 60.0
-        },
-        {
-          "cell": "C75",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G75",
-          "value": 0.0
-        },
-        {
-          "cell": "B76",
-          "value": 61.0
-        },
-        {
-          "cell": "C76",
-          "value": "2025-04-01T00:00:00"
-        },
-        {
-          "cell": "G76",
-          "value": 0.0
-        }
-      ]
-    },
-    {
-      "name": "Checklist",
-      "cells": [
-        {
-          "cell": "A2",
-          "value": "TO DO"
-        },
-        {
-          "cell": "B2",
-          "value": "STATUS"
-        },
-        {
-          "cell": "C2",
-          "value": "DONE"
-        },
-        {
-          "cell": "D2",
-          "value": "VENDOR"
-        },
-        {
-          "cell": "E2",
-          "value": "DUE DATE"
-        },
-        {
-          "cell": "F2",
-          "value": "SISA HARI"
-        },
-        {
-          "cell": "G2",
-          "value": "CATATAN LAIN"
-        },
-        {
-          "cell": "A3",
-          "value": "Mulai Pre Marital Booster H-6"
-        },
-        {
-          "cell": "C3",
-          "value": false
-        },
-        {
-          "cell": "F3",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A4",
-          "value": "Mulai Pre Marital Booster H-3"
-        },
-        {
-          "cell": "C4",
-          "value": false
-        },
-        {
-          "cell": "F4",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A5",
-          "value": "Pertemuan Keluarga"
-        },
-        {
-          "cell": "C5",
-          "value": false
-        },
-        {
-          "cell": "F5",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A6",
-          "value": "Nyari Duasa"
-        },
-        {
-          "cell": "C6",
-          "value": false
-        },
-        {
-          "cell": "F6",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A7",
-          "value": "MCU Pra Nikah"
-        },
-        {
-          "cell": "C7",
-          "value": false
-        },
-        {
-          "cell": "F7",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A8",
-          "value": "Cari Vendor Prewedding"
-        },
-        {
-          "cell": "C8",
-          "value": false
-        },
-        {
-          "cell": "F8",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A9",
-          "value": "Beli cincin nikah"
-        },
-        {
-          "cell": "C9",
-          "value": false
-        },
-        {
-          "cell": "F9",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A10",
-          "value": "Booking MUA Ngidih"
-        },
-        {
-          "cell": "C10",
-          "value": false
-        },
-        {
-          "cell": "F10",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A11",
-          "value": "Booking MUA pria"
-        },
-        {
-          "cell": "C11",
-          "value": false
-        },
-        {
-          "cell": "F11",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A12",
-          "value": "Cari Griya"
-        },
-        {
-          "cell": "C12",
-          "value": false
-        },
-        {
-          "cell": "F12",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A13",
-          "value": "Sewa Box seserahan"
-        },
-        {
-          "cell": "C13",
-          "value": false
-        },
-        {
-          "cell": "F13",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A14",
-          "value": "Booking MUA Resepsi"
-        },
-        {
-          "cell": "C14",
-          "value": false
-        },
-        {
-          "cell": "F14",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A15",
-          "value": "Beli Kebaya Seragam Keluarga"
-        },
-        {
-          "cell": "C15",
-          "value": false
-        },
-        {
-          "cell": "F15",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A16",
-          "value": "Beli setelan ngidih"
-        },
-        {
-          "cell": "C16",
-          "value": false
-        },
-        {
-          "cell": "F16",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A17",
-          "value": "Beli setelan natab"
-        },
-        {
-          "cell": "C17",
-          "value": false
-        },
-        {
-          "cell": "F17",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A18",
-          "value": "Jahit kebaya"
-        },
-        {
-          "cell": "C18",
-          "value": false
-        },
-        {
-          "cell": "F18",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A19",
-          "value": "Jahit Safari"
-        },
-        {
-          "cell": "C19",
-          "value": false
-        },
-        {
-          "cell": "F19",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A20",
-          "value": "Beli baju prewedding casual"
-        },
-        {
-          "cell": "C20",
-          "value": false
-        },
-        {
-          "cell": "F20",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A21",
-          "value": "Aksesoris prewedding casual"
-        },
-        {
-          "cell": "C21",
-          "value": false
-        },
-        {
-          "cell": "F21",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A22",
-          "value": "Beli Sandal nikah"
-        },
-        {
-          "cell": "C22",
-          "value": false
-        },
-        {
-          "cell": "F22",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A23",
-          "value": "Beli seserahan"
-        },
-        {
-          "cell": "C23",
-          "value": false
-        },
-        {
-          "cell": "F23",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A24",
-          "value": "Beli salin sok"
-        },
-        {
-          "cell": "C24",
-          "value": false
-        },
-        {
-          "cell": "F24",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A25",
-          "value": "Design logo Souvenir"
-        },
-        {
-          "cell": "C25",
-          "value": false
-        },
-        {
-          "cell": "F25",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A26",
-          "value": "Beli Souvenir"
-        },
-        {
-          "cell": "C26",
-          "value": false
-        },
-        {
-          "cell": "F26",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A27",
-          "value": "Prewedding Kasual"
-        },
-        {
-          "cell": "C27",
-          "value": false
-        },
-        {
-          "cell": "F27",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A28",
-          "value": "Hitung Jumlah Undangan"
-        },
-        {
-          "cell": "C28",
-          "value": false
-        },
-        {
-          "cell": "F28",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A29",
-          "value": "Prewedding Adat"
-        },
-        {
-          "cell": "C29",
-          "value": false
-        },
-        {
-          "cell": "F29",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A30",
-          "value": "Persiapan Administrasi Nikah"
-        },
-        {
-          "cell": "C30",
-          "value": false
-        },
-        {
-          "cell": "F30",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A31",
-          "value": "Foto Nikah"
-        },
-        {
-          "cell": "C31",
-          "value": false
-        },
-        {
-          "cell": "F31",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A32",
-          "value": "Daftar KUA"
-        },
-        {
-          "cell": "C32",
-          "value": false
-        },
-        {
-          "cell": "F32",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A33",
-          "value": "Bikin Undangan Digital"
-        },
-        {
-          "cell": "C33",
-          "value": false
-        },
-        {
-          "cell": "F33",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A34",
-          "value": "Bikin Undangan cetak"
-        },
-        {
-          "cell": "C34",
-          "value": false
-        },
-        {
-          "cell": "F34",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A35",
-          "value": "Buat buku tamu"
-        },
-        {
-          "cell": "C35",
-          "value": false
-        },
-        {
-          "cell": "F35",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A36",
-          "value": "Photografer"
-        },
-        {
-          "cell": "C36",
-          "value": false
-        },
-        {
-          "cell": "F36",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A37",
-          "value": "Cari cuti"
-        },
-        {
-          "cell": "C37",
-          "value": false
-        },
-        {
-          "cell": "F37",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A38",
-          "value": "NailGel"
-        },
-        {
-          "cell": "C38",
-          "value": false
-        },
-        {
-          "cell": "F38",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A39",
-          "value": "Facial couple"
-        },
-        {
-          "cell": "C39",
-          "value": false
-        },
-        {
-          "cell": "F39",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "A40",
-          "value": "Skin Prep"
-        },
-        {
-          "cell": "C40",
-          "value": false
-        },
-        {
-          "cell": "F40",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C41",
-          "value": false
-        },
-        {
-          "cell": "F41",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C42",
-          "value": false
-        },
-        {
-          "cell": "F42",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C43",
-          "value": false
-        },
-        {
-          "cell": "F43",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C44",
-          "value": false
-        },
-        {
-          "cell": "F44",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C45",
-          "value": false
-        },
-        {
-          "cell": "F45",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C46",
-          "value": false
-        },
-        {
-          "cell": "F46",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C47",
-          "value": false
-        },
-        {
-          "cell": "F47",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C48",
-          "value": false
-        },
-        {
-          "cell": "F48",
-          "value": "-46257 Hari"
-        },
-        {
-          "cell": "C49",
-          "value": false
-        },
-        {
-          "cell": "F49",
-          "value": "-46257 Hari"
-        }
-      ]
-    },
-    {
-      "name": "MUA",
-      "cells": [
-        {
-          "cell": "B1",
-          "value": "Make Up Artist per 2025"
-        },
-        {
-          "cell": "B3",
-          "value": "No"
-        },
-        {
-          "cell": "C3",
-          "value": "Vendor"
-        },
-        {
-          "cell": "D3",
-          "value": "Package"
-        },
-        {
-          "cell": "E3",
-          "value": "Include"
-        },
-        {
-          "cell": "F3",
-          "value": "Harga by Owner"
-        },
-        {
-          "cell": "G3",
-          "value": "Harga by Team"
-        },
-        {
-          "cell": "H3",
-          "value": "Sosial Media"
-        },
-        {
-          "cell": "I3",
-          "value": "Kontak"
-        },
-        {
-          "cell": "J3",
-          "value": "Available"
-        },
-        {
-          "cell": "B4",
-          "value": 1.0
-        },
-        {
-          "cell": "C4",
-          "value": "Taksuning Bali"
-        },
-        {
-          "cell": "D4",
-          "value": "Premium"
-        },
-        {
-          "cell": "E4",
-          "value": "Payas Agung & Resepsi"
-        },
-        {
-          "cell": "F4",
-          "value": 7000000.0
-        },
-        {
-          "cell": "G4",
-          "value": "-"
-        },
-        {
-          "cell": "I4",
-          "value": "0819-9917-1725"
-        },
-        {
-          "cell": "J4",
-          "value": "By Owner"
-        },
-        {
-          "cell": "E5",
-          "value": "Kostum"
-        },
-        {
-          "cell": "E6",
-          "value": "Make Up"
-        },
-        {
-          "cell": "E7",
-          "value": "Hair Do"
-        },
-        {
-          "cell": "E8",
-          "value": "Aksesoris"
-        },
-        {
-          "cell": "D9",
-          "value": "Exclusive"
-        },
-        {
-          "cell": "E9",
-          "value": "Payas Agung & Resepsi"
-        },
-        {
-          "cell": "F9",
-          "value": 9000000.0
-        },
-        {
-          "cell": "G9",
-          "value": "-"
-        },
-        {
-          "cell": "E10",
-          "value": "Kostum Mix baru&lama"
-        },
-        {
-          "cell": "E11",
-          "value": "Make Up"
-        },
-        {
-          "cell": "E12",
-          "value": "Hair Do"
-        },
-        {
-          "cell": "E13",
-          "value": "Aksesoris"
-        },
-        {
-          "cell": "E14",
-          "value": "Rias 1 Pendamping"
-        },
-        {
-          "cell": "D15",
-          "value": "Platinum"
-        },
-        {
-          "cell": "E15",
-          "value": "Payas Agung & Resepsi"
-        },
-        {
-          "cell": "F15",
-          "value": 12000000.0
-        },
-        {
-          "cell": "G15",
-          "value": "-"
-        },
-        {
-          "cell": "E16",
-          "value": "Kostum Mix baru&lama"
-        },
-        {
-          "cell": "E17",
-          "value": "Make Up"
-        },
-        {
-          "cell": "E18",
-          "value": "Hair Do"
-        },
-        {
-          "cell": "E19",
-          "value": "Aksesoris"
-        },
-        {
-          "cell": "E20",
-          "value": "Rias 2 Pendamping"
-        },
-        {
-          "cell": "D21",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E21",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "F21",
-          "value": 200000.0
-        },
-        {
-          "cell": "E22",
-          "value": "Transport"
-        },
-        {
-          "cell": "F22",
-          "value": 500000.0
-        },
-        {
-          "cell": "B23",
-          "value": 2.0
-        },
-        {
-          "cell": "C23",
-          "value": "MoreMua"
-        },
-        {
-          "cell": "D23",
-          "value": "Standart"
-        },
-        {
-          "cell": "E23",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F23",
-          "value": 7000000.0
-        },
-        {
-          "cell": "I23",
-          "value": "0821-4706-9180"
-        },
-        {
-          "cell": "E24",
-          "value": "Resepsi"
-        },
-        {
-          "cell": "F24",
-          "value": 6000000.0
-        },
-        {
-          "cell": "E25",
-          "value": "Payas Agung & Resepsi"
-        },
-        {
-          "cell": "F25",
-          "value": 10000000.0
-        },
-        {
-          "cell": "D26",
-          "value": "Elegant"
-        },
-        {
-          "cell": "E26",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F26",
-          "value": 9000000.0
-        },
-        {
-          "cell": "E27",
-          "value": "Resepsi"
-        },
-        {
-          "cell": "F27",
-          "value": 7000000.0
-        },
-        {
-          "cell": "E28",
-          "value": "Payas Agung & Resepsi"
-        },
-        {
-          "cell": "F28",
-          "value": 14000000.0
-        },
-        {
-          "cell": "D29",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E29",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "F29",
-          "value": 3200000.0
-        },
-        {
-          "cell": "E30",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "F30",
-          "value": 400000.0
-        },
-        {
-          "cell": "E31",
-          "value": "Transport"
-        },
-        {
-          "cell": "F31",
-          "value": 200000.0
-        },
-        {
-          "cell": "B32",
-          "value": 3.0
-        },
-        {
-          "cell": "C32",
-          "value": "Gek Mas Natural Klasik"
-        },
-        {
-          "cell": "D32",
-          "value": "Payas Only Make up and Haid Do"
-        },
-        {
-          "cell": "E32",
-          "value": "Bunga Pendek"
-        },
-        {
-          "cell": "G32",
-          "value": 2500000.0
-        },
-        {
-          "cell": "I32",
-          "value": "0896-0583-2288"
-        },
-        {
-          "cell": "J32",
-          "value": "By Team"
-        },
-        {
-          "cell": "E33",
-          "value": "Bunga Madya Tinggi"
-        },
-        {
-          "cell": "G33",
-          "value": 3000000.0
-        },
-        {
-          "cell": "E34",
-          "value": "Bunga Pendek Exclusive"
-        },
-        {
-          "cell": "G34",
-          "value": 3250000.0
-        },
-        {
-          "cell": "E35",
-          "value": "Bunga Madya Tinggi Exclusive"
-        },
-        {
-          "cell": "G35",
-          "value": 4250000.0
-        },
-        {
-          "cell": "D36",
-          "value": "Pawiwahan Payas Agung dan Madya"
-        },
-        {
-          "cell": "E36",
-          "value": "Silver"
-        },
-        {
-          "cell": "G36",
-          "value": 5500000.0
-        },
-        {
-          "cell": "E37",
-          "value": "Gold"
-        },
-        {
-          "cell": "G37",
-          "value": 7500000.0
-        },
-        {
-          "cell": "E38",
-          "value": "Platinum"
-        },
-        {
-          "cell": "G38",
-          "value": 10000000.0
-        },
-        {
-          "cell": "E39",
-          "value": "Exclusive"
-        },
-        {
-          "cell": "G39",
-          "value": 12500000.0
-        },
-        {
-          "cell": "D40",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E40",
-          "value": "Transport"
-        },
-        {
-          "cell": "F40",
-          "value": 750000.0
-        },
-        {
-          "cell": "B41",
-          "value": 4.0
-        },
-        {
-          "cell": "C41",
-          "value": "MakeUp by Utari Dharma"
-        },
-        {
-          "cell": "D41",
-          "value": "Paket Custom"
-        },
-        {
-          "cell": "E41",
-          "value": "Payas Ngidih (Wanita)"
-        },
-        {
-          "cell": "G41",
-          "value": 2000000.0
-        },
-        {
-          "cell": "I41",
-          "value": "0895-3690-36091"
-        },
-        {
-          "cell": "J41",
-          "value": "By Team"
-        },
-        {
-          "cell": "E42",
-          "value": "Payas Resepsi (Couple)"
-        },
-        {
-          "cell": "G42",
-          "value": 3000000.0
-        },
-        {
-          "cell": "E43",
-          "value": "Transport Payangan"
-        },
-        {
-          "cell": "G43",
-          "value": 400000.0
-        },
-        {
-          "cell": "E44",
-          "value": "Transport Griya"
-        },
-        {
-          "cell": "G44",
-          "value": 350000.0
-        },
-        {
-          "cell": "E45",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "G45",
-          "value": 300000.0
-        },
-        {
-          "cell": "B46",
-          "value": 5.0
-        },
-        {
-          "cell": "C46",
-          "value": "Sri Maharyeni"
-        },
-        {
-          "cell": "D46",
-          "value": "Paket Custom"
-        },
-        {
-          "cell": "I46",
-          "value": "0895-2086-1801"
-        },
-        {
-          "cell": "J46",
-          "value": "By Owner"
-        },
-        {
-          "cell": "B50",
-          "value": 6.0
-        },
-        {
-          "cell": "C50",
-          "value": "Ishana MUA"
-        },
-        {
-          "cell": "D50",
-          "value": "By Owner"
-        },
-        {
-          "cell": "E50",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "F50",
-          "value": 3318000.0
-        },
-        {
-          "cell": "H50",
-          "value": "https://ishanamua.com/wp-content/uploads/2024/10/Oktober-Pricelist-Wedding.pdf.pdf"
-        },
-        {
-          "cell": "I50",
-          "value": "0819-3630-0009"
-        },
-        {
-          "cell": "J50",
-          "value": "By Team"
-        },
-        {
-          "cell": "E51",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F51",
-          "value": 8518000.0
-        },
-        {
-          "cell": "E52",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F52",
-          "value": 9918000.0
-        },
-        {
-          "cell": "D53",
-          "value": "By Team"
-        },
-        {
-          "cell": "E53",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "G53",
-          "value": 2518000.0
-        },
-        {
-          "cell": "E54",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "G54",
-          "value": 5918000.0
-        },
-        {
-          "cell": "E55",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "G55",
-          "value": 6418000.0
-        },
-        {
-          "cell": "D56",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E56",
-          "value": "Transport"
-        },
-        {
-          "cell": "F56",
-          "value": 750000.0
-        },
-        {
-          "cell": "F57",
-          "value": 650000.0
-        },
-        {
-          "cell": "E58",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "G58",
-          "value": 450000.0
-        },
-        {
-          "cell": "B59",
-          "value": 7.0
-        },
-        {
-          "cell": "C59",
-          "value": "Make Up By Yuniari"
-        },
-        {
-          "cell": "B60",
-          "value": 8.0
-        },
-        {
-          "cell": "C60",
-          "value": "CahyaDewi"
-        },
-        {
-          "cell": "D60",
-          "value": "Gold"
-        },
-        {
-          "cell": "E60",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F60",
-          "value": 15000000.0
-        },
-        {
-          "cell": "I60",
-          "value": "0819-9000-3999"
-        },
-        {
-          "cell": "E61",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F61",
-          "value": 15000000.0
-        },
-        {
-          "cell": "D62",
-          "value": "Diamond"
-        },
-        {
-          "cell": "E62",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F62",
-          "value": 20000000.0
-        },
-        {
-          "cell": "E63",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F63",
-          "value": 20000000.0
-        },
-        {
-          "cell": "D64",
-          "value": "Exclusive"
-        },
-        {
-          "cell": "E64",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F64",
-          "value": 25000000.0
-        },
-        {
-          "cell": "E65",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F65",
-          "value": 25000000.0
-        },
-        {
-          "cell": "D66",
-          "value": "Gold"
-        },
-        {
-          "cell": "E66",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "G66",
-          "value": 5500000.0
-        },
-        {
-          "cell": "E67",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "G67",
-          "value": 5000000.0
-        },
-        {
-          "cell": "D68",
-          "value": "Diamond"
-        },
-        {
-          "cell": "E68",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "G68",
-          "value": 7500000.0
-        },
-        {
-          "cell": "E69",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "G69",
-          "value": 7000000.0
-        },
-        {
-          "cell": "D70",
-          "value": "Exclusive"
-        },
-        {
-          "cell": "E70",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "G70",
-          "value": 12000000.0
-        },
-        {
-          "cell": "E71",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "G71",
-          "value": 10000000.0
-        },
-        {
-          "cell": "D72",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E72",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "E73",
-          "value": "Transport"
-        },
-        {
-          "cell": "B74",
-          "value": 9.0
-        },
-        {
-          "cell": "C74",
-          "value": "Tirta Harum"
-        },
-        {
-          "cell": "D74",
-          "value": "Start From*"
-        },
-        {
-          "cell": "E74",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "F74",
-          "value": 1500000.0
-        },
-        {
-          "cell": "I74",
-          "value": "0812-3977-4679"
-        },
-        {
-          "cell": "E75",
-          "value": "Payas Madya"
-        },
-        {
-          "cell": "F75",
-          "value": 5000000.0
-        },
-        {
-          "cell": "E76",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F76",
-          "value": 5000000.0
-        },
-        {
-          "cell": "E77",
-          "value": "Payas Modif"
-        },
-        {
-          "cell": "F77",
-          "value": 4000000.0
-        },
-        {
-          "cell": "B78",
-          "value": 11.0
-        },
-        {
-          "cell": "C78",
-          "value": "Makeupbycokmirah"
-        },
-        {
-          "cell": "D78",
-          "value": "Custom"
-        },
-        {
-          "cell": "E78",
-          "value": "Payas Madya (bride only, no costum)"
-        },
-        {
-          "cell": "F78",
-          "value": 11500000.0
-        },
-        {
-          "cell": "H78",
-          "value": "https://www.instagram.com/makeupbycokmirah?igsh=MWNjOXY3d256bDhhYw=="
-        },
-        {
-          "cell": "I78",
-          "value": "087863003733"
-        },
-        {
-          "cell": "E79",
-          "value": "Payas resepsi"
-        },
-        {
-          "cell": "F79",
-          "value": 5000000.0
-        },
-        {
-          "cell": "E80",
-          "value": "Payas Laki-laki"
-        },
-        {
-          "cell": "F80",
-          "value": 1000000.0
-        },
-        {
-          "cell": "D81",
-          "value": "Transport"
-        },
-        {
-          "cell": "E81",
-          "value": "Gianyar"
-        },
-        {
-          "cell": "F81",
-          "value": 350000.0
-        },
-        {
-          "cell": "B82",
-          "value": 12.0
-        },
-        {
-          "cell": "C82",
-          "value": "Maharupa makeup"
-        },
-        {
-          "cell": "D82",
-          "value": "Gold"
-        },
-        {
-          "cell": "E82",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "F82",
-          "value": 13500000.0
-        },
-        {
-          "cell": "I82",
-          "value": "0878-6047-5476"
-        },
-        {
-          "cell": "J82",
-          "value": "By owner jam 1 subuh, by Team jam 5 pagi"
-        },
-        {
-          "cell": "E83",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "F83",
-          "value": 14000000.0
-        },
-        {
-          "cell": "E84",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "F84",
-          "value": 8500000.0
-        },
-        {
-          "cell": "E85",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "F85",
-          "value": 6500000.0
-        },
-        {
-          "cell": "D86",
-          "value": "Diamond"
-        },
-        {
-          "cell": "E86",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "F86",
-          "value": 15500000.0
-        },
-        {
-          "cell": "E87",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "F87",
-          "value": 16000000.0
-        },
-        {
-          "cell": "E88",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "F88",
-          "value": 10000000.0
-        },
-        {
-          "cell": "E89",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "F89",
-          "value": 7000000.0
-        },
-        {
-          "cell": "D90",
-          "value": "Exclusive"
-        },
-        {
-          "cell": "E90",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "F90",
-          "value": 18500000.0
-        },
-        {
-          "cell": "E91",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "F91",
-          "value": 19000000.0
-        },
-        {
-          "cell": "E92",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "F92",
-          "value": 12500000.0
-        },
-        {
-          "cell": "E93",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "F93",
-          "value": 8000000.0
-        },
-        {
-          "cell": "D94",
-          "value": "Request Baru"
-        },
-        {
-          "cell": "E94",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "F94",
-          "value": 29000000.0
-        },
-        {
-          "cell": "E95",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "F95",
-          "value": 29500000.0
-        },
-        {
-          "cell": "E96",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "F96",
-          "value": 19000000.0
-        },
-        {
-          "cell": "E97",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "F97",
-          "value": 14000000.0
-        },
-        {
-          "cell": "D98",
-          "value": "Gold"
-        },
-        {
-          "cell": "E98",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "G98",
-          "value": 8000000.0
-        },
-        {
-          "cell": "E99",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "G99",
-          "value": 8500000.0
-        },
-        {
-          "cell": "E100",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "G100",
-          "value": 5500000.0
-        },
-        {
-          "cell": "E101",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "G101",
-          "value": 4500000.0
-        },
-        {
-          "cell": "D102",
-          "value": "Diamond"
-        },
-        {
-          "cell": "E102",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "G102",
-          "value": 10000000.0
-        },
-        {
-          "cell": "E103",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "G103",
-          "value": 10500000.0
-        },
-        {
-          "cell": "E104",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "G104",
-          "value": 6500000.0
-        },
-        {
-          "cell": "E105",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "G105",
-          "value": 5500000.0
-        },
-        {
-          "cell": "D106",
-          "value": "Exclusive"
-        },
-        {
-          "cell": "E106",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "G106",
-          "value": 12500000.0
-        },
-        {
-          "cell": "E107",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "G107",
-          "value": 13000000.0
-        },
-        {
-          "cell": "E108",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "G108",
-          "value": 9000000.0
-        },
-        {
-          "cell": "E109",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "G109",
-          "value": 6500000.0
-        },
-        {
-          "cell": "D110",
-          "value": "Request Baru"
-        },
-        {
-          "cell": "E110",
-          "value": "Agung&resepsi 1 hari"
-        },
-        {
-          "cell": "G110",
-          "value": 26000000.0
-        },
-        {
-          "cell": "E111",
-          "value": "Agung&resepsi beda hari"
-        },
-        {
-          "cell": "G111",
-          "value": 26500000.0
-        },
-        {
-          "cell": "E112",
-          "value": "Agung sepasang"
-        },
-        {
-          "cell": "G112",
-          "value": 17000000.0
-        },
-        {
-          "cell": "E113",
-          "value": "Resepsi sepasang"
-        },
-        {
-          "cell": "G113",
-          "value": 11000000.0
-        },
-        {
-          "cell": "D114",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "B115",
-          "value": 13.0
-        },
-        {
-          "cell": "C115",
-          "value": "Make up by Ruby"
-        },
-        {
-          "cell": "D115",
-          "value": "Custom"
-        },
-        {
-          "cell": "E115",
-          "value": "Payas Madya"
-        },
-        {
-          "cell": "F115",
-          "value": 3500000.0
-        },
-        {
-          "cell": "I115",
-          "value": "0823-4000-1758"
-        },
-        {
-          "cell": "E116",
-          "value": "Retouch resepsi"
-        },
-        {
-          "cell": "F116",
-          "value": 4500000.0
-        },
-        {
-          "cell": "D117",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E117",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "F117",
-          "value": 450000.0
-        },
-        {
-          "cell": "E118",
-          "value": "Transport"
-        },
-        {
-          "cell": "F118",
-          "value": "include"
-        },
-        {
-          "cell": "B119",
-          "value": 14.0
-        },
-        {
-          "cell": "C119",
-          "value": "Kalika Rias"
-        },
-        {
-          "cell": "D119",
-          "value": "Custom"
-        },
-        {
-          "cell": "E119",
-          "value": "Ngidih"
-        },
-        {
-          "cell": "F119",
-          "value": 2500000.0
-        },
-        {
-          "cell": "I119",
-          "value": "08179743652"
-        },
-        {
-          "cell": "E120",
-          "value": "Resepsi"
-        },
-        {
-          "cell": "F120",
-          "value": 5000000.0
-        },
-        {
-          "cell": "D121",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E121",
-          "value": "Transport"
-        },
-        {
-          "cell": "E122",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "B123",
-          "value": 15.0
-        },
-        {
-          "cell": "C123",
-          "value": "Ngurah Obo"
-        },
-        {
-          "cell": "H123",
-          "value": "https://www.instagram.com/ngurahobo2?igsh=MTZxd29kZ2Fxb3h1Zw=="
-        },
-        {
-          "cell": "I123",
-          "value": "081353689366"
-        },
-        {
-          "cell": "B124",
-          "value": 16.0
-        },
-        {
-          "cell": "C124",
-          "value": "Prada Bali Wedding"
-        },
-        {
-          "cell": "D124",
-          "value": "Custom"
-        },
-        {
-          "cell": "E124",
-          "value": "Ngidih+resepsi"
-        },
-        {
-          "cell": "F124",
-          "value": 9000000.0
-        },
-        {
-          "cell": "I124",
-          "value": "081237916979"
-        },
-        {
-          "cell": "D125",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E125",
-          "value": "Transport Payangan"
-        },
-        {
-          "cell": "F125",
-          "value": 650000.0
-        },
-        {
-          "cell": "E126",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "B127",
-          "value": 17.0
-        },
-        {
-          "cell": "C127",
-          "value": "Indira Laksmi"
-        },
-        {
-          "cell": "E127",
-          "value": "Payas Ngidih (MU&HD)"
-        },
-        {
-          "cell": "F127",
-          "value": 5000000.0
-        },
-        {
-          "cell": "I127",
-          "value": "0881082121659"
-        },
-        {
-          "cell": "E128",
-          "value": "Payas Madya (MU,HD,WD)"
-        },
-        {
-          "cell": "F128",
-          "value": 9500000.0
-        },
-        {
-          "cell": "E129",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F129",
-          "value": 13500000.0
-        },
-        {
-          "cell": "E130",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F130",
-          "value": 8000000.0
-        },
-        {
-          "cell": "D131",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E131",
-          "value": "Transport"
-        },
-        {
-          "cell": "E132",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "F132",
-          "value": 1500000.0
-        },
-        {
-          "cell": "B133",
-          "value": 18.0
-        },
-        {
-          "cell": "C133",
-          "value": "Srik Bali Wedding"
-        },
-        {
-          "cell": "D133",
-          "value": "Custom"
-        },
-        {
-          "cell": "E133",
-          "value": "Payas Ngidih (MU&HD)"
-        },
-        {
-          "cell": "G133",
-          "value": 3000000.0
-        },
-        {
-          "cell": "I133",
-          "value": "085737110443"
-        },
-        {
-          "cell": "J133",
-          "value": "by team"
-        },
-        {
-          "cell": "E134",
-          "value": "Payas Madya (MU,HD,WD)"
-        },
-        {
-          "cell": "G134",
-          "value": 3000000.0
-        },
-        {
-          "cell": "D135",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E135",
-          "value": "Transport Payangan"
-        },
-        {
-          "cell": "G135",
-          "value": 400000.0
-        },
-        {
-          "cell": "E136",
-          "value": "Transport Blahbatuh"
-        },
-        {
-          "cell": "G136",
-          "value": 300000.0
-        },
-        {
-          "cell": "E137",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "G137",
-          "value": 350000.0
-        },
-        {
-          "cell": "B138",
-          "value": 19.0
-        },
-        {
-          "cell": "C138",
-          "value": "Sense of Mika"
-        },
-        {
-          "cell": "D138",
-          "value": "Custom"
-        },
-        {
-          "cell": "E138",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "F138",
-          "value": 3500000.0
-        },
-        {
-          "cell": "H138",
-          "value": "https://www.instagram.com/senseofmika?igsh=MTBkbnZjam02YzQ1"
-        },
-        {
-          "cell": "I138",
-          "value": "081239172090"
-        },
-        {
-          "cell": "E139",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F139",
-          "value": 5500000.0
-        },
-        {
-          "cell": "D140",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E140",
-          "value": "Transport Payangan"
-        },
-        {
-          "cell": "F140",
-          "value": 500000.0
-        },
-        {
-          "cell": "E141",
-          "value": "Transport Blahbatuh"
-        },
-        {
-          "cell": "F141",
-          "value": 350000.0
-        },
-        {
-          "cell": "E142",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "F142",
-          "value": 450000.0
-        },
-        {
-          "cell": "B143",
-          "value": 20.0
-        },
-        {
-          "cell": "C143",
-          "value": "F'Ayas MUA"
-        },
-        {
-          "cell": "H143",
-          "value": "https://www.instagram.com/fayas_mua?igsh=MWg2cWxpZWwyanA1cQ=="
-        },
-        {
-          "cell": "I143",
-          "value": "0878-6575-2099"
-        },
-        {
-          "cell": "B144",
-          "value": 21.0
-        },
-        {
-          "cell": "C144",
-          "value": "Nayaka Bali Makeup"
-        },
-        {
-          "cell": "E144",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "F144",
-          "value": 4000000.0
-        },
-        {
-          "cell": "I144",
-          "value": "0877-7190-9192"
-        },
-        {
-          "cell": "J144",
-          "value": "by Owner"
-        },
-        {
-          "cell": "E145",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "G145",
-          "value": 3000000.0
-        },
-        {
-          "cell": "D146",
-          "value": "Gold"
-        },
-        {
-          "cell": "E146",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F146",
-          "value": 7000000.0
-        },
-        {
-          "cell": "G146",
-          "value": 6500000.0
-        },
-        {
-          "cell": "E147",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F147",
-          "value": 6000000.0
-        },
-        {
-          "cell": "G147",
-          "value": 5500000.0
-        },
-        {
-          "cell": "E148",
-          "value": "1 day service (Agung+resepsi)"
-        },
-        {
-          "cell": "F148",
-          "value": 12000000.0
-        },
-        {
-          "cell": "G148",
-          "value": 11000000.0
-        },
-        {
-          "cell": "D149",
-          "value": "Diamond"
-        },
-        {
-          "cell": "E149",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F149",
-          "value": 12000000.0
-        },
-        {
-          "cell": "G149",
-          "value": 10000000.0
-        },
-        {
-          "cell": "E150",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F150",
-          "value": 9000000.0
-        },
-        {
-          "cell": "G150",
-          "value": 8000000.0
-        },
-        {
-          "cell": "E151",
-          "value": "1 day service (Agung+resepsi)"
-        },
-        {
-          "cell": "F151",
-          "value": 19000000.0
-        },
-        {
-          "cell": "G151",
-          "value": 16000000.0
-        },
-        {
-          "cell": "D152",
-          "value": "Exclusive"
-        },
-        {
-          "cell": "E152",
-          "value": "Payas Agung"
-        },
-        {
-          "cell": "F152",
-          "value": 17000000.0
-        },
-        {
-          "cell": "G152",
-          "value": 15000000.0
-        },
-        {
-          "cell": "E153",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F153",
-          "value": 15000000.0
-        },
-        {
-          "cell": "G153",
-          "value": 13000000.0
-        },
-        {
-          "cell": "E154",
-          "value": "1 day service (Agung+resepsi)"
-        },
-        {
-          "cell": "F154",
-          "value": 30000000.0
-        },
-        {
-          "cell": "G154",
-          "value": 25000000.0
-        },
-        {
-          "cell": "D155",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E155",
-          "value": "Transport Payangan"
-        },
-        {
-          "cell": "E156",
-          "value": "Transport Blahbatuh"
-        },
-        {
-          "cell": "E157",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "B158",
-          "value": 22.0
-        },
-        {
-          "cell": "C158",
-          "value": "Detam Wedding"
-        },
-        {
-          "cell": "D158",
-          "value": "Custom"
-        },
-        {
-          "cell": "E158",
-          "value": "Payas Ngidih"
-        },
-        {
-          "cell": "F158",
-          "value": 1500000.0
-        },
-        {
-          "cell": "I158",
-          "value": "0822-3657-3884"
-        },
-        {
-          "cell": "J158",
-          "value": "By owner"
-        },
-        {
-          "cell": "E159",
-          "value": "Payas Hari H"
-        },
-        {
-          "cell": "F159",
-          "value": 2500000.0
-        },
-        {
-          "cell": "E160",
-          "value": "Payas Resepsi"
-        },
-        {
-          "cell": "F160",
-          "value": 3500000.0
-        },
-        {
-          "cell": "D161",
-          "value": "Lainnya"
-        },
-        {
-          "cell": "E161",
-          "value": "Transport"
-        },
-        {
-          "cell": "F161",
-          "value": 350000.0
-        },
-        {
-          "cell": "E162",
-          "value": "Pendamping"
-        },
-        {
-          "cell": "F162",
-          "value": 250000.0
-        }
-      ]
-    },
-    {
-      "name": "Prewedding",
-      "cells": [
-        {
-          "cell": "B1",
-          "value": "PREWEDDING✨"
-        },
-        {
-          "cell": "B3",
-          "value": "TEMPAT PREWEDDING"
-        },
-        {
-          "cell": "F3",
-          "value": "Bli Dek Maharupa"
-        },
-        {
-          "cell": "J3",
-          "value": "Praba Royal Wedding"
-        },
-        {
-          "cell": "B4",
-          "value": "Tempat"
-        },
-        {
-          "cell": "C4",
-          "value": "Harga /2025"
-        },
-        {
-          "cell": "D4",
-          "value": "Keterangan"
-        },
-        {
-          "cell": "F4",
-          "value": "0878-6047-5476"
-        },
-        {
-          "cell": "J4",
-          "value": "0819-9957-7648"
-        },
-        {
-          "cell": "B5",
-          "value": "Art Center"
-        },
-        {
-          "cell": "C5",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B6",
-          "value": "Air Terjun Blangsinga"
-        },
-        {
-          "cell": "C6",
-          "value": 300000.0
-        },
-        {
-          "cell": "B7",
-          "value": "Bajrasandi/renon"
-        },
-        {
-          "cell": "C7",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B8",
-          "value": "Big Garden Corner"
-        },
-        {
-          "cell": "C8",
-          "value": 300000.0
-        },
-        {
-          "cell": "B9",
-          "value": "Benoa (sea safari)"
-        },
-        {
-          "cell": "C9",
-          "value": 500000.0
-        },
-        {
-          "cell": "B10",
-          "value": "Bali Farm"
-        },
-        {
-          "cell": "C10",
-          "value": 2500000.0
-        },
-        {
-          "cell": "B11",
-          "value": "Brown cafe"
-        },
-        {
-          "cell": "C11",
-          "value": 150000.0
-        },
-        {
-          "cell": "D11",
-          "value": "per person"
-        },
-        {
-          "cell": "B12",
-          "value": "Bukit asah"
-        },
-        {
-          "cell": "C12",
-          "value": 500000.0
-        },
-        {
-          "cell": "D12",
-          "value": "Diluar tiket perorang"
-        },
-        {
-          "cell": "B13",
-          "value": "Cafe Cosmic Sanur"
-        },
-        {
-          "cell": "C13",
-          "value": 500000.0
-        },
-        {
-          "cell": "B14",
-          "value": "Cafe Neun"
-        },
-        {
-          "cell": "C14",
-          "value": 500000.0
-        },
-        {
-          "cell": "B15",
-          "value": "Cafe Elago"
-        },
-        {
-          "cell": "C15",
-          "value": 950000.0
-        },
-        {
-          "cell": "B16",
-          "value": "Cafe Mirror"
-        },
-        {
-          "cell": "C16",
-          "value": 3500000.0
-        },
-        {
-          "cell": "D16",
-          "value": "3 jam"
-        },
-        {
-          "cell": "B17",
-          "value": "Cafe Sama sama"
-        },
-        {
-          "cell": "C17",
-          "value": 500000.0
-        },
-        {
-          "cell": "B18",
-          "value": "Desa Tenganan"
-        },
-        {
-          "cell": "C18",
-          "value": 250000.0
-        },
-        {
-          "cell": "B19",
-          "value": "Danau buyan/tamblingan"
-        },
-        {
-          "cell": "C19",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B20",
-          "value": "Danau Ulundanu"
-        },
-        {
-          "cell": "C20",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B21",
-          "value": "Este Leisure"
-        },
-        {
-          "cell": "C21",
-          "value": 1200000.0
-        },
-        {
-          "cell": "B22",
-          "value": "Galih Ukir"
-        },
-        {
-          "cell": "C22",
-          "value": 500000.0
-        },
-        {
-          "cell": "B23",
-          "value": "Hidden Garden Studio"
-        },
-        {
-          "cell": "C23",
-          "value": 150000.0
-        },
-        {
-          "cell": "D23",
-          "value": "Perjam"
-        },
-        {
-          "cell": "B24",
-          "value": "Komaneka"
-        },
-        {
-          "cell": "C24",
-          "value": 2500000.0
-        },
-        {
-          "cell": "B25",
-          "value": "Kuda/unta mertasari"
-        },
-        {
-          "cell": "C25",
-          "value": 700000.0
-        },
-        {
-          "cell": "B26",
-          "value": "Kuda pantai saba"
-        },
-        {
-          "cell": "C26",
-          "value": 700000.0
-        },
-        {
-          "cell": "B27",
-          "value": "Kuda Pantai Nyanyi"
-        },
-        {
-          "cell": "C27",
-          "value": 700000.0
-        },
-        {
-          "cell": "B28",
-          "value": "Kebun raya bedugul"
-        },
-        {
-          "cell": "C28",
-          "value": 500000.0
-        },
-        {
-          "cell": "B29",
-          "value": "Kertagosa"
-        },
-        {
-          "cell": "C29",
-          "value": 500000.0
-        },
-        {
-          "cell": "B30",
-          "value": "Museum Bali"
-        },
-        {
-          "cell": "C30",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B31",
-          "value": "Mousca Studio"
-        },
-        {
-          "cell": "C31",
-          "value": 250000.0
-        },
-        {
-          "cell": "B32",
-          "value": "Museum Lukisan"
-        },
-        {
-          "cell": "C32",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B33",
-          "value": "Museum Blanco Ubud"
-        },
-        {
-          "cell": "C33",
-          "value": 1500000.0
-        },
-        {
-          "cell": "B34",
-          "value": "Museum Pendet"
-        },
-        {
-          "cell": "C34",
-          "value": 850000.0
-        },
-        {
-          "cell": "B35",
-          "value": "Museum Njana Tilem"
-        },
-        {
-          "cell": "C35",
-          "value": 1500000.0
-        },
-        {
-          "cell": "B36",
-          "value": "Monkey Forest"
-        },
-        {
-          "cell": "C36",
-          "value": 500000.0
-        },
-        {
-          "cell": "B37",
-          "value": "Montana Cafe"
-        },
-        {
-          "cell": "C37",
-          "value": 800000.0
-        },
-        {
-          "cell": "F37",
-          "value": "Dewa Snapshot"
-        },
-        {
-          "cell": "J37",
-          "value": "Note!"
-        },
-        {
-          "cell": "B38",
-          "value": "Omma Day Club"
-        },
-        {
-          "cell": "C38",
-          "value": 1500000.0
-        },
-        {
-          "cell": "F38",
-          "value": "0812-3963-0603"
-        },
-        {
-          "cell": "J38",
-          "value": "Maaf disini cuma dikit pilihannya ya, memang saya maunya cuma 3 photografer ini :)"
-        },
-        {
-          "cell": "B39",
-          "value": "Pantai Balangan"
-        },
-        {
-          "cell": "C39",
-          "value": 750000.0
-        },
-        {
-          "cell": "J39",
-          "value": "Kalau mau disini bisa diisi list dari photografer yang kalian mau bandingkan :)"
-        },
-        {
-          "cell": "B40",
-          "value": "Pantai Saba"
-        },
-        {
-          "cell": "C40",
-          "value": 300000.0
-        },
-        {
-          "cell": "D40",
-          "value": "lokasi rumput"
-        },
-        {
-          "cell": "B41",
-          "value": "Pantai Geger"
-        },
-        {
-          "cell": "C41",
-          "value": 400000.0
-        },
-        {
-          "cell": "B42",
-          "value": "Pantai Nyanyi"
-        },
-        {
-          "cell": "C42",
-          "value": 25000.0
-        },
-        {
-          "cell": "B43",
-          "value": "Pantai Mengening"
-        },
-        {
-          "cell": "C43",
-          "value": 300000.0
-        },
-        {
-          "cell": "B44",
-          "value": "Pantai Melasti"
-        },
-        {
-          "cell": "C44",
-          "value": 500000.0
-        },
-        {
-          "cell": "B45",
-          "value": "Pantai Pasut"
-        },
-        {
-          "cell": "C45",
-          "value": 300000.0
-        },
-        {
-          "cell": "B46",
-          "value": "Prana Spa"
-        },
-        {
-          "cell": "C46",
-          "value": 1800000.0
-        },
-        {
-          "cell": "B47",
-          "value": "Pura Sangeh"
-        },
-        {
-          "cell": "C47",
-          "value": 250000.0
-        },
-        {
-          "cell": "B48",
-          "value": "Pura Tanah Lot"
-        },
-        {
-          "cell": "C48",
-          "value": 500000.0
-        },
-        {
-          "cell": "B49",
-          "value": "Puri Langon"
-        },
-        {
-          "cell": "C49",
-          "value": 1500000.0
-        },
-        {
-          "cell": "B50",
-          "value": "Puri Jero Kuta"
-        },
-        {
-          "cell": "C50",
-          "value": 400000.0
-        },
-        {
-          "cell": "B51",
-          "value": "Puri Sibang Kaja"
-        },
-        {
-          "cell": "C51",
-          "value": 350000.0
-        },
-        {
-          "cell": "B52",
-          "value": "Puri Gerana Sangeh"
-        },
-        {
-          "cell": "C52",
-          "value": 350000.0
-        },
-        {
-          "cell": "B53",
-          "value": "Puri Tresna Villa"
-        },
-        {
-          "cell": "C53",
-          "value": 550000.0
-        },
-        {
-          "cell": "B54",
-          "value": "Puri Anom"
-        },
-        {
-          "cell": "C54",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B55",
-          "value": "Puri Rangki"
-        },
-        {
-          "cell": "C55",
-          "value": 1500000.0
-        },
-        {
-          "cell": "B56",
-          "value": "Puri Karangasem"
-        },
-        {
-          "cell": "C56",
-          "value": 500000.0
-        },
-        {
-          "cell": "B57",
-          "value": "Puri Blahbatuh"
-        },
-        {
-          "cell": "C57",
-          "value": 400000.0
-        },
-        {
-          "cell": "B58",
-          "value": "Panglipuran"
-        },
-        {
-          "cell": "C58",
-          "value": 500000.0
-        },
-        {
-          "cell": "B59",
-          "value": "Pitaloka"
-        },
-        {
-          "cell": "C59",
-          "value": 200000.0
-        },
-        {
-          "cell": "D59",
-          "value": "Per pax"
-        },
-        {
-          "cell": "B60",
-          "value": "Rumah Luwih"
-        },
-        {
-          "cell": "C60",
-          "value": 350000.0
-        },
-        {
-          "cell": "B61",
-          "value": "Royal Pitamaha"
-        },
-        {
-          "cell": "C61",
-          "value": 1500000.0
-        },
-        {
-          "cell": "B62",
-          "value": "Rumah Gemuk Bali"
-        },
-        {
-          "cell": "C62",
-          "value": 2000000.0
-        },
-        {
-          "cell": "D62",
-          "value": "Weekday"
-        },
-        {
-          "cell": "B63",
-          "value": "Saren Kawan"
-        },
-        {
-          "cell": "C63",
-          "value": 350000.0
-        },
-        {
-          "cell": "B64",
-          "value": "Secret Garden"
-        },
-        {
-          "cell": "C64",
-          "value": 500000.0
-        },
-        {
-          "cell": "B65",
-          "value": "Studio BM"
-        },
-        {
-          "cell": "C65",
-          "value": 250000.0
-        },
-        {
-          "cell": "D65",
-          "value": "Per Jam"
-        },
-        {
-          "cell": "B66",
-          "value": "Taman Ujung"
-        },
-        {
-          "cell": "C66",
-          "value": 1000000.0
-        },
-        {
-          "cell": "B67",
-          "value": "Taman Dedari"
-        },
-        {
-          "cell": "C67",
-          "value": 600000.0
-        },
-        {
-          "cell": "B68",
-          "value": "Tirta Gangga"
-        },
-        {
-          "cell": "C68",
-          "value": 700000.0
-        },
-        {
-          "cell": "B69",
-          "value": "Unta Hotel Hilton"
-        },
-        {
-          "cell": "C69",
-          "value": 1100000.0
-        },
-        {
-          "cell": "B70",
-          "value": "Waskita Mandala"
-        },
-        {
-          "cell": "C70",
-          "value": 400000.0
-        }
-      ]
-    },
-    {
-      "name": "Daftar Undangan",
-      "cells": [
-        {
-          "cell": "B2",
-          "value": "Daftar Undangan"
-        },
-        {
-          "cell": "B4",
-          "value": "Undangan Calon Pengantin Pria"
-        },
-        {
-          "cell": "F4",
-          "value": "Undangan Orangtua Calon Pengantin Pria"
-        },
-        {
-          "cell": "N4",
-          "value": "Undangan Calon Pengantin Wanita"
-        },
-        {
-          "cell": "R4",
-          "value": "Undangan OrangtuaCalon Pengantin Wanita"
-        },
-        {
-          "cell": "B5",
-          "value": "No"
-        },
-        {
-          "cell": "C5",
-          "value": "Nama"
-        },
-        {
-          "cell": "D5",
-          "value": "Prioritas"
-        },
-        {
-          "cell": "E5",
-          "value": "Jumlah"
-        },
-        {
-          "cell": "F5",
-          "value": "No"
-        },
-        {
-          "cell": "G5",
-          "value": "Nama"
-        },
-        {
-          "cell": "H5",
-          "value": "Prioritas"
-        },
-        {
-          "cell": "I5",
-          "value": "Jumlah"
-        },
-        {
-          "cell": "N5",
-          "value": "No"
-        },
-        {
-          "cell": "O5",
-          "value": "Nama"
-        },
-        {
-          "cell": "P5",
-          "value": "Prioritas"
-        },
-        {
-          "cell": "Q5",
-          "value": "Jumlah"
-        },
-        {
-          "cell": "R5",
-          "value": "No"
-        },
-        {
-          "cell": "S5",
-          "value": "Nama"
-        },
-        {
-          "cell": "T5",
-          "value": "Prioritas"
-        },
-        {
-          "cell": "U5",
-          "value": "Jumlah"
-        },
-        {
-          "cell": "B6",
-          "value": 1.0
-        },
-        {
-          "cell": "F6",
-          "value": 1.0
-        },
-        {
-          "cell": "N6",
-          "value": 1.0
-        },
-        {
-          "cell": "R6",
-          "value": 1.0
-        },
-        {
-          "cell": "B7",
-          "value": 2.0
-        },
-        {
-          "cell": "F7",
-          "value": 2.0
-        },
-        {
-          "cell": "K7",
-          "value": "Jumlah Undangan Pengantin Pria"
-        },
-        {
-          "cell": "L7",
-          "value": "Jumlah Undangan Pengantin Wanita"
-        },
-        {
-          "cell": "N7",
-          "value": 2.0
-        },
-        {
-          "cell": "R7",
-          "value": 2.0
-        },
-        {
-          "cell": "B8",
-          "value": 3.0
-        },
-        {
-          "cell": "F8",
-          "value": 3.0
-        },
-        {
-          "cell": "N8",
-          "value": 3.0
-        },
-        {
-          "cell": "R8",
-          "value": 3.0
-        },
-        {
-          "cell": "B9",
-          "value": 4.0
-        },
-        {
-          "cell": "F9",
-          "value": 4.0
-        },
-        {
-          "cell": "N9",
-          "value": 4.0
-        },
-        {
-          "cell": "R9",
-          "value": 4.0
-        },
-        {
-          "cell": "B10",
-          "value": 5.0
-        },
-        {
-          "cell": "F10",
-          "value": 5.0
-        },
-        {
-          "cell": "K10",
-          "value": 0
-        },
-        {
-          "cell": "L10",
-          "value": 0
-        },
-        {
-          "cell": "N10",
-          "value": 5.0
-        },
-        {
-          "cell": "R10",
-          "value": 5.0
-        },
-        {
-          "cell": "B11",
-          "value": 6.0
-        },
-        {
-          "cell": "F11",
-          "value": 6.0
-        },
-        {
-          "cell": "N11",
-          "value": 6.0
-        },
-        {
-          "cell": "R11",
-          "value": 6.0
-        },
-        {
-          "cell": "B12",
-          "value": 7.0
-        },
-        {
-          "cell": "F12",
-          "value": 7.0
-        },
-        {
-          "cell": "N12",
-          "value": 7.0
-        },
-        {
-          "cell": "R12",
-          "value": 7.0
-        },
-        {
-          "cell": "B13",
-          "value": 8.0
-        },
-        {
-          "cell": "F13",
-          "value": 8.0
-        },
-        {
-          "cell": "N13",
-          "value": 8.0
-        },
-        {
-          "cell": "R13",
-          "value": 8.0
-        },
-        {
-          "cell": "B14",
-          "value": 9.0
-        },
-        {
-          "cell": "F14",
-          "value": 9.0
-        },
-        {
-          "cell": "K14",
-          "value": "Total Undangan"
-        },
-        {
-          "cell": "N14",
-          "value": 9.0
-        },
-        {
-          "cell": "R14",
-          "value": 9.0
-        },
-        {
-          "cell": "B15",
-          "value": 10.0
-        },
-        {
-          "cell": "F15",
-          "value": 10.0
-        },
-        {
-          "cell": "N15",
-          "value": 10.0
-        },
-        {
-          "cell": "R15",
-          "value": 10.0
-        },
-        {
-          "cell": "B16",
-          "value": 11.0
-        },
-        {
-          "cell": "F16",
-          "value": 11.0
-        },
-        {
-          "cell": "K16",
-          "value": 0
-        },
-        {
-          "cell": "N16",
-          "value": 11.0
-        },
-        {
-          "cell": "R16",
-          "value": 11.0
-        },
-        {
-          "cell": "B17",
-          "value": 12.0
-        },
-        {
-          "cell": "F17",
-          "value": 12.0
-        },
-        {
-          "cell": "N17",
-          "value": 12.0
-        },
-        {
-          "cell": "R17",
-          "value": 12.0
-        },
-        {
-          "cell": "B18",
-          "value": 13.0
-        },
-        {
-          "cell": "F18",
-          "value": 13.0
-        },
-        {
-          "cell": "N18",
-          "value": 13.0
-        },
-        {
-          "cell": "R18",
-          "value": 13.0
-        },
-        {
-          "cell": "B19",
-          "value": 14.0
-        },
-        {
-          "cell": "F19",
-          "value": 14.0
-        },
-        {
-          "cell": "N19",
-          "value": 14.0
-        },
-        {
-          "cell": "R19",
-          "value": 14.0
-        },
-        {
-          "cell": "B20",
-          "value": 15.0
-        },
-        {
-          "cell": "F20",
-          "value": 15.0
-        },
-        {
-          "cell": "K20",
-          "value": "Total Undangan"
-        },
-        {
-          "cell": "N20",
-          "value": 15.0
-        },
-        {
-          "cell": "R20",
-          "value": 15.0
-        },
-        {
-          "cell": "B21",
-          "value": 16.0
-        },
-        {
-          "cell": "F21",
-          "value": 16.0
-        },
-        {
-          "cell": "K21",
-          "value": "(Menikah digriya dengan waktu siang-sore)"
-        },
-        {
-          "cell": "N21",
-          "value": 16.0
-        },
-        {
-          "cell": "R21",
-          "value": 16.0
-        },
-        {
-          "cell": "B22",
-          "value": 17.0
-        },
-        {
-          "cell": "F22",
-          "value": 17.0
-        },
-        {
-          "cell": "K22",
-          "value": 0
-        },
-        {
-          "cell": "N22",
-          "value": 17.0
-        },
-        {
-          "cell": "R22",
-          "value": 17.0
-        },
-        {
-          "cell": "B23",
-          "value": 18.0
-        },
-        {
-          "cell": "F23",
-          "value": 18.0
-        },
-        {
-          "cell": "N23",
-          "value": 18.0
-        },
-        {
-          "cell": "R23",
-          "value": 18.0
-        },
-        {
-          "cell": "B24",
-          "value": 19.0
-        },
-        {
-          "cell": "F24",
-          "value": 19.0
-        },
-        {
-          "cell": "N24",
-          "value": 19.0
-        },
-        {
-          "cell": "R24",
-          "value": 19.0
-        },
-        {
-          "cell": "B25",
-          "value": 20.0
-        },
-        {
-          "cell": "F25",
-          "value": 20.0
-        },
-        {
-          "cell": "N25",
-          "value": 20.0
-        },
-        {
-          "cell": "R25",
-          "value": 20.0
-        },
-        {
-          "cell": "B26",
-          "value": 21.0
-        },
-        {
-          "cell": "F26",
-          "value": 21.0
-        },
-        {
-          "cell": "K26",
-          "value": "Total Undangan"
-        },
-        {
-          "cell": "N26",
-          "value": 21.0
-        },
-        {
-          "cell": "R26",
-          "value": 21.0
-        },
-        {
-          "cell": "B27",
-          "value": 22.0
-        },
-        {
-          "cell": "F27",
-          "value": 22.0
-        },
-        {
-          "cell": "K27",
-          "value": "(Menikah dirumah hingga malam)"
-        },
-        {
-          "cell": "N27",
-          "value": 22.0
-        },
-        {
-          "cell": "R27",
-          "value": 22.0
-        },
-        {
-          "cell": "B28",
-          "value": 23.0
-        },
-        {
-          "cell": "F28",
-          "value": 23.0
-        },
-        {
-          "cell": "K28",
-          "value": 0
-        },
-        {
-          "cell": "N28",
-          "value": 23.0
-        },
-        {
-          "cell": "R28",
-          "value": 23.0
-        },
-        {
-          "cell": "B29",
-          "value": 24.0
-        },
-        {
-          "cell": "F29",
-          "value": 24.0
-        },
-        {
-          "cell": "N29",
-          "value": 24.0
-        },
-        {
-          "cell": "R29",
-          "value": 24.0
-        },
-        {
-          "cell": "B30",
-          "value": 25.0
-        },
-        {
-          "cell": "F30",
-          "value": 25.0
-        },
-        {
-          "cell": "N30",
-          "value": 25.0
-        },
-        {
-          "cell": "R30",
-          "value": 25.0
-        },
-        {
-          "cell": "B31",
-          "value": 26.0
-        },
-        {
-          "cell": "F31",
-          "value": 26.0
-        },
-        {
-          "cell": "N31",
-          "value": 26.0
-        },
-        {
-          "cell": "R31",
-          "value": 26.0
-        },
-        {
-          "cell": "B32",
-          "value": 27.0
-        },
-        {
-          "cell": "F32",
-          "value": 27.0
-        },
-        {
-          "cell": "N32",
-          "value": 27.0
-        },
-        {
-          "cell": "R32",
-          "value": 27.0
-        },
-        {
-          "cell": "B33",
-          "value": 28.0
-        },
-        {
-          "cell": "F33",
-          "value": 28.0
-        },
-        {
-          "cell": "N33",
-          "value": 28.0
-        },
-        {
-          "cell": "R33",
-          "value": 28.0
-        },
-        {
-          "cell": "B34",
-          "value": 29.0
-        },
-        {
-          "cell": "F34",
-          "value": 29.0
-        },
-        {
-          "cell": "N34",
-          "value": 29.0
-        },
-        {
-          "cell": "R34",
-          "value": 29.0
-        },
-        {
-          "cell": "B35",
-          "value": 30.0
-        },
-        {
-          "cell": "F35",
-          "value": 30.0
-        },
-        {
-          "cell": "N35",
-          "value": 30.0
-        },
-        {
-          "cell": "R35",
-          "value": 30.0
-        },
-        {
-          "cell": "B36",
-          "value": 31.0
-        },
-        {
-          "cell": "F36",
-          "value": 31.0
-        },
-        {
-          "cell": "N36",
-          "value": 31.0
-        },
-        {
-          "cell": "R36",
-          "value": 31.0
-        },
-        {
-          "cell": "B37",
-          "value": 32.0
-        },
-        {
-          "cell": "F37",
-          "value": 32.0
-        },
-        {
-          "cell": "N37",
-          "value": 32.0
-        },
-        {
-          "cell": "R37",
-          "value": 32.0
-        },
-        {
-          "cell": "B38",
-          "value": 33.0
-        },
-        {
-          "cell": "F38",
-          "value": 33.0
-        },
-        {
-          "cell": "N38",
-          "value": 33.0
-        },
-        {
-          "cell": "R38",
-          "value": 33.0
-        },
-        {
-          "cell": "B39",
-          "value": 34.0
-        },
-        {
-          "cell": "F39",
-          "value": 34.0
-        },
-        {
-          "cell": "N39",
-          "value": 34.0
-        },
-        {
-          "cell": "R39",
-          "value": 34.0
-        },
-        {
-          "cell": "B40",
-          "value": 35.0
-        },
-        {
-          "cell": "F40",
-          "value": 35.0
-        },
-        {
-          "cell": "N40",
-          "value": 35.0
-        },
-        {
-          "cell": "R40",
-          "value": 35.0
-        },
-        {
-          "cell": "B41",
-          "value": 36.0
-        },
-        {
-          "cell": "F41",
-          "value": 36.0
-        },
-        {
-          "cell": "N41",
-          "value": 36.0
-        },
-        {
-          "cell": "R41",
-          "value": 36.0
-        },
-        {
-          "cell": "B42",
-          "value": 37.0
-        },
-        {
-          "cell": "F42",
-          "value": 37.0
-        },
-        {
-          "cell": "N42",
-          "value": 37.0
-        },
-        {
-          "cell": "R42",
-          "value": 37.0
-        },
-        {
-          "cell": "B43",
-          "value": 38.0
-        },
-        {
-          "cell": "F43",
-          "value": 38.0
-        },
-        {
-          "cell": "N43",
-          "value": 38.0
-        },
-        {
-          "cell": "R43",
-          "value": 38.0
-        },
-        {
-          "cell": "B44",
-          "value": 39.0
-        },
-        {
-          "cell": "F44",
-          "value": 39.0
-        },
-        {
-          "cell": "N44",
-          "value": 39.0
-        },
-        {
-          "cell": "R44",
-          "value": 39.0
-        },
-        {
-          "cell": "B45",
-          "value": 40.0
-        },
-        {
-          "cell": "F45",
-          "value": 40.0
-        },
-        {
-          "cell": "N45",
-          "value": 40.0
-        },
-        {
-          "cell": "R45",
-          "value": 40.0
-        },
-        {
-          "cell": "B46",
-          "value": 41.0
-        },
-        {
-          "cell": "F46",
-          "value": 41.0
-        },
-        {
-          "cell": "N46",
-          "value": 41.0
-        },
-        {
-          "cell": "R46",
-          "value": 41.0
-        },
-        {
-          "cell": "B47",
-          "value": 42.0
-        },
-        {
-          "cell": "F47",
-          "value": 42.0
-        },
-        {
-          "cell": "N47",
-          "value": 42.0
-        },
-        {
-          "cell": "R47",
-          "value": 42.0
-        },
-        {
-          "cell": "B48",
-          "value": 43.0
-        },
-        {
-          "cell": "F48",
-          "value": 43.0
-        },
-        {
-          "cell": "N48",
-          "value": 43.0
-        },
-        {
-          "cell": "R48",
-          "value": 43.0
-        },
-        {
-          "cell": "B49",
-          "value": 44.0
-        },
-        {
-          "cell": "F49",
-          "value": 44.0
-        },
-        {
-          "cell": "N49",
-          "value": 44.0
-        },
-        {
-          "cell": "R49",
-          "value": 44.0
-        },
-        {
-          "cell": "B50",
-          "value": 45.0
-        },
-        {
-          "cell": "F50",
-          "value": 45.0
-        },
-        {
-          "cell": "N50",
-          "value": 45.0
-        },
-        {
-          "cell": "R50",
-          "value": 45.0
-        },
-        {
-          "cell": "B51",
-          "value": 46.0
-        },
-        {
-          "cell": "F51",
-          "value": 46.0
-        },
-        {
-          "cell": "N51",
-          "value": 46.0
-        },
-        {
-          "cell": "R51",
-          "value": 46.0
-        },
-        {
-          "cell": "B52",
-          "value": 47.0
-        },
-        {
-          "cell": "F52",
-          "value": 47.0
-        },
-        {
-          "cell": "N52",
-          "value": 47.0
-        },
-        {
-          "cell": "R52",
-          "value": 47.0
-        },
-        {
-          "cell": "B53",
-          "value": 48.0
-        },
-        {
-          "cell": "F53",
-          "value": 48.0
-        },
-        {
-          "cell": "N53",
-          "value": 48.0
-        },
-        {
-          "cell": "R53",
-          "value": 48.0
-        },
-        {
-          "cell": "B54",
-          "value": 49.0
-        },
-        {
-          "cell": "F54",
-          "value": 49.0
-        },
-        {
-          "cell": "N54",
-          "value": 49.0
-        },
-        {
-          "cell": "R54",
-          "value": 49.0
-        },
-        {
-          "cell": "B55",
-          "value": 50.0
-        },
-        {
-          "cell": "F55",
-          "value": 50.0
-        },
-        {
-          "cell": "N55",
-          "value": 50.0
-        },
-        {
-          "cell": "R55",
-          "value": 50.0
-        },
-        {
-          "cell": "I58",
-          "value": "NOTE!"
-        },
-        {
-          "cell": "I59",
-          "value": "Jadi ada 2 total undangan ya, semua sudah dikalikan 2 (perhitungan undangan datang membawa pasangan atau teman) kemudian yang dikurangi 20% dan ditambahkan 20%"
-        },
-        {
-          "cell": "I60",
-          "value": "Yang pertama total undangan dikurang 20% karena jika waktu yang digunakan saat resepsi adalah di hari kerja dan ada batas waktunya pagi-sore."
-        },
-        {
-          "cell": "I61",
-          "value": "Akan jarang yang datang dengan keluarga (lebih banyak dengan rombongan teman kerjanya)"
-        },
-        {
-          "cell": "I62",
-          "value": "Jika kalian ambil griya dan slotnya malam atau resepsi full dirumah, kemungkinan undangan akan membawa serta keluarganya, jadi bisa ditambahkan 20% jaga-jaga"
-        }
-      ]
-    },
-    {
-      "name": "Souvenir dan Seserahan",
-      "cells": [
-        {
-          "cell": "B2",
-          "value": "Souvenir"
-        },
-        {
-          "cell": "B4",
-          "value": "VENDOR"
-        },
-        {
-          "cell": "C4",
-          "value": "ITEM"
-        },
-        {
-          "cell": "D4",
-          "value": "HARGA"
-        },
-        {
-          "cell": "E4",
-          "value": "LINK"
-        },
-        {
-          "cell": "B5",
-          "value": "Item"
-        },
-        {
-          "cell": "B6",
-          "value": "Harga"
-        },
-        {
-          "cell": "B7",
-          "value": "Link"
-        },
-        {
-          "cell": "B11",
-          "value": "Seserahan"
-        },
-        {
-          "cell": "B13",
-          "value": "BOX"
-        },
-        {
-          "cell": "C13",
-          "value": "ISIAN"
-        },
-        {
-          "cell": "D13",
-          "value": "VENDOR"
-        },
-        {
-          "cell": "E13",
-          "value": "HARGA"
-        },
-        {
-          "cell": "F13",
-          "value": "Check"
-        },
-        {
-          "cell": "B14",
-          "value": "Box 1"
-        },
-        {
-          "cell": "C14",
-          "value": "Cincin"
-        },
-        {
-          "cell": "E14",
-          "value": 0.0
-        },
-        {
-          "cell": "F14",
-          "value": false
-        },
-        {
-          "cell": "B15",
-          "value": "Box 2"
-        },
-        {
-          "cell": "C15",
-          "value": "Emas 1000 gr"
-        },
-        {
-          "cell": "E15",
-          "value": 0.0
-        },
-        {
-          "cell": "F15",
-          "value": false
-        },
-        {
-          "cell": "C16",
-          "value": "Liontin"
-        },
-        {
-          "cell": "E16",
-          "value": 0.0
-        },
-        {
-          "cell": "F16",
-          "value": false
-        },
-        {
-          "cell": "B17",
-          "value": "Box 3"
-        },
-        {
-          "cell": "E17",
-          "value": 0.0
-        },
-        {
-          "cell": "F17",
-          "value": false
-        },
-        {
-          "cell": "E18",
-          "value": 0.0
-        },
-        {
-          "cell": "F18",
-          "value": false
-        },
-        {
-          "cell": "E19",
-          "value": 0.0
-        },
-        {
-          "cell": "F19",
-          "value": false
-        },
-        {
-          "cell": "E20",
-          "value": 0.0
-        },
-        {
-          "cell": "F20",
-          "value": false
-        },
-        {
-          "cell": "E21",
-          "value": 0.0
-        },
-        {
-          "cell": "F21",
-          "value": false
-        },
-        {
-          "cell": "E22",
-          "value": 0.0
-        },
-        {
-          "cell": "F22",
-          "value": false
-        },
-        {
-          "cell": "E23",
-          "value": 0.0
-        },
-        {
-          "cell": "F23",
-          "value": false
-        },
-        {
-          "cell": "E24",
-          "value": 0.0
-        },
-        {
-          "cell": "F24",
-          "value": false
-        },
-        {
-          "cell": "E25",
-          "value": 0.0
-        },
-        {
-          "cell": "F25",
-          "value": false
-        },
-        {
-          "cell": "E26",
-          "value": 0.0
-        },
-        {
-          "cell": "F26",
-          "value": false
-        },
-        {
-          "cell": "E27",
-          "value": 0.0
-        },
-        {
-          "cell": "F27",
-          "value": false
-        },
-        {
-          "cell": "E28",
-          "value": 0.0
-        },
-        {
-          "cell": "F28",
-          "value": false
-        },
-        {
-          "cell": "A70",
-          "value": "W"
-        }
-      ]
-    },
-    {
-      "name": "Dokumen",
-      "cells": [
-        {
-          "cell": "B2",
-          "value": "Administrasi"
-        },
-        {
-          "cell": "I2",
-          "value": "https://simkah4.kemenag.go.id/#"
-        },
-        {
-          "cell": "B3",
-          "value": "Foto copy KTP dilegalisasi lurah"
-        },
-        {
-          "cell": "I3",
-          "value": "2 lembar"
-        },
-        {
-          "cell": "B4",
-          "value": "Foto copy KK dilegalisasi lurah"
-        },
-        {
-          "cell": "I4",
-          "value": "2 lembar"
-        },
-        {
-          "cell": "B5",
-          "value": "akta kelahiran"
-        },
-        {
-          "cell": "I5",
-          "value": "Asli dan fotokopi 2 lembar"
-        },
-        {
-          "cell": "B6",
-          "value": "ijazah terakhir"
-        },
-        {
-          "cell": "B7",
-          "value": "Formulir Surat Pengantar Nikah dari Kepala Desa/Lurah (Model N1)"
-        },
-        {
-          "cell": "I7",
-          "value": "Model N1 ditandatangani lurah atau kepala desa"
-        },
-        {
-          "cell": "B8",
-          "value": "Formulir Permohonan Kehendak Nikah (model N2)"
-        },
-        {
-          "cell": "I8",
-          "value": "Model N2 ditandatangani lurah atau kepala desa"
-        },
-        {
-          "cell": "B9",
-          "value": "Surat persetujuan mempelai (Model N4)"
-        },
-        {
-          "cell": "I9",
-          "value": "Model N4 ditandatangani lurah atau kepala desa"
-        },
-        {
-          "cell": "B10",
-          "value": "Surat izin orang tua (Model N5)"
-        },
-        {
-          "cell": "I10",
-          "value": "Model N5"
-        },
-        {
-          "cell": "B11",
-          "value": "Pas foto suami dan istri berdampingan ukuran 4 x 6 berwarna"
-        },
-        {
-          "cell": "I11",
-          "value": "6 lembar"
-        },
-        {
-          "cell": "B12",
-          "value": "Fotokopi KTP dua orang saksi selain orangtua"
-        },
-        {
-          "cell": "I12",
-          "value": "2 lembar"
-        },
-        {
-          "cell": "B13",
-          "value": "Fotokopi KTP orangtua kedua mempelai"
-        },
-        {
-          "cell": "I13",
-          "value": "2 lembar"
-        },
-        {
-          "cell": "J13",
-          "value": "https://id.shp.ee/ZLuHTBs"
-        },
-        {
-          "cell": "B14",
-          "value": "Surat pernyataan belum pernah menikah dengan materai Rp6.000 dan diketahui oleh 2 orang saksi + stempel RT/RW setempat"
-        },
-        {
-          "cell": "B15",
-          "value": "Surat nikah perkawinan agama"
-        },
-        {
-          "cell": "I15",
-          "value": "2 lembar"
-        },
-        {
-          "cell": "J15",
-          "value": "https://id.shp.ee/iDzsDUc"
-        },
-        {
-          "cell": "B16",
-          "value": "Proses Registrasi Online/Offline"
-        },
-        {
-          "cell": "A122",
-          "value": "Hari H"
-        },
-        {
-          "cell": "A123",
-          "value": 1.0
-        },
-        {
-          "cell": "A125",
-          "value": 2.0
-        },
-        {
-          "cell": "A127",
-          "value": 3.0
-        }
-      ]
-    },
-    {
-      "name": "Mood Board",
-      "cells": [
-        {
-          "cell": "A1",
-          "value": "MOOD BOARD"
-        },
-        {
-          "cell": "B5",
-          "value": "COLOR PALETTE"
-        },
-        {
-          "cell": "G5",
-          "value": "RINGS"
-        },
-        {
-          "cell": "E6",
-          "value": "Dominant warna"
-        },
-        {
-          "cell": "K6",
-          "value": "Main Ring"
-        },
-        {
-          "cell": "N6",
-          "value": "Referensi Lain"
-        },
-        {
-          "cell": "K7",
-          "value": "Tipe : "
-        },
-        {
-          "cell": "B28",
-          "value": "PREWEDDING ADAT BALI"
-        },
-        {
-          "cell": "B29",
-          "value": "Looks"
-        },
-        {
-          "cell": "M30",
-          "value": "Descriptions"
-        },
-        {
-          "cell": "B53",
-          "value": "Lokasi"
-        },
-        {
-          "cell": "B54",
-          "value": "Puri Rangki"
-        },
-        {
-          "cell": "J54",
-          "value": "Puri Ageng Blahbatuh"
-        },
-        {
-          "cell": "B70",
-          "value": "Pose"
-        },
-        {
-          "cell": "R71",
-          "value": "Pose Konsep :"
-        },
-        {
-          "cell": "B194",
-          "value": "PREWEDDING CASUAL"
-        },
-        {
-          "cell": "B195",
-          "value": "Looks"
-        },
-        {
-          "cell": "K196",
-          "value": "Descriptions"
-        },
-        {
-          "cell": "B216",
-          "value": "Properties"
-        },
-        {
-          "cell": "K217",
-          "value": "Descriptions"
-        },
-        {
-          "cell": "B232",
-          "value": "Lokasi :"
-        },
-        {
-          "cell": "B248",
-          "value": "Pose"
-        },
-        {
-          "cell": "B380",
-          "value": "NGIDIH"
-        },
-        {
-          "cell": "B381",
-          "value": "Looks"
-        },
-        {
-          "cell": "B382",
-          "value": "Make Up"
-        },
-        {
-          "cell": "J382",
-          "value": "Hair Do"
-        },
-        {
-          "cell": "Q382",
-          "value": "Descriptions"
-        },
-        {
-          "cell": "Q383",
-          "value": "Make Up :"
-        },
-        {
-          "cell": "Q393",
-          "value": "Hair Do :"
-        },
-        {
-          "cell": "Q400",
-          "value": "Wardrobe :"
-        },
-        {
-          "cell": "B435",
-          "value": "HARI H"
-        },
-        {
-          "cell": "B436",
-          "value": "Looks"
-        },
-        {
-          "cell": "B437",
-          "value": "Make Up"
-        },
-        {
-          "cell": "J437",
-          "value": "Hair Do"
-        },
-        {
-          "cell": "Q437",
-          "value": "Descriptions"
-        },
-        {
-          "cell": "Q438",
-          "value": "Make Up :"
-        },
-        {
-          "cell": "Q448",
-          "value": "Hair Do :"
-        },
-        {
-          "cell": "Q455",
-          "value": "Wardrobe :"
-        },
-        {
-          "cell": "B478",
-          "value": "RESEPSI"
-        },
-        {
-          "cell": "B479",
-          "value": "Looks"
-        },
-        {
-          "cell": "B480",
-          "value": "Make Up"
-        },
-        {
-          "cell": "J480",
-          "value": "Hair Do"
-        },
-        {
-          "cell": "Q480",
-          "value": "Descriptions"
-        },
-        {
-          "cell": "Q481",
-          "value": "Make Up :"
-        },
-        {
-          "cell": "Q491",
-          "value": "Hair Do :"
-        },
-        {
-          "cell": "Q498",
-          "value": "Wardrobe :"
-        }
-      ]
-    },
-    {
-      "name": "Hiasan",
-      "cells": []
     }
   ]
 }

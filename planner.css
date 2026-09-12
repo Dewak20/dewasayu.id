@@ -1323,3 +1323,27 @@
   .check-summary button { min-width: 120px; }
   .document-progress { grid-template-columns: 100px 1fr; }
 }
+
+/* ========================= Peringatan penyimpanan ========================= */
+/* Muncul kalau browser menolak menulis localStorage (mode penyamaran /
+   kuota penuh). Sengaja menetap, bukan toast, karena risikonya kehilangan
+   data — pengguna harus sempat membacanya. */
+
+.storage-warning {
+  position: sticky;
+  top: clamp(68px, 6vw, 86px);
+  z-index: 29;
+  margin: 0;
+  padding: 14px var(--pad);
+  background: linear-gradient(120deg, rgba(185, 117, 104, .16), rgba(255, 253, 249, .96));
+  border-bottom: 1px solid rgba(185, 117, 104, .4);
+  color: #8a4034;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.storage-warning strong { color: #6f2f26; }
+
+@media (max-width: 860px) {
+  .storage-warning { top: clamp(68px, 6vw, 86px); font-size: 13px; }
+}

@@ -37,6 +37,7 @@ export default function PlannerApp() {
   const [view, setView] = useState("dashboard");
   const [sidebar, setSidebar] = useState(false);
   const [toast, setToast] = useState("");
+  const [storageError, setStorageError] = useState("");
 
   useEffect(() => {
     try {
@@ -45,7 +46,19 @@ export default function PlannerApp() {
     } catch (_) {}
     setReady(true);
   }, []);
-  useEffect(() => { if (ready) localStorage.setItem(STORE_KEY, JSON.stringify(data)); }, [data, ready]);
+  // Penulisan harus dijaga: di Safari mode penyamaran dan saat kuota penuh,
+  // setItem melempar error. Tanpa penjagaan ini seluruh planner ikut mati.
+  useEffect(() => {
+    if (!ready) return;
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(data));
+      setStorageError("");
+    } catch (error) {
+      setStorageError(error?.name === "QuotaExceededError"
+        ? "Penyimpanan browser penuh — perubahan terakhir belum tersimpan. Ekspor datamu, lalu hapus entri yang tidak terpakai."
+        : "Browser menolak menyimpan data (mis. mode penyamaran). Perubahanmu hanya bertahan selama tab ini terbuka — segera ekspor datamu.");
+    }
+  }, [data, ready]);
   useEffect(() => { if (!toast) return; const timer = setTimeout(() => setToast(""), 2600); return () => clearTimeout(timer); }, [toast]);
 
   const patchData = (key, next) => setData((current) => ({ ...current, [key]: typeof next === "function" ? next(current[key]) : next }));
@@ -69,6 +82,7 @@ export default function PlannerApp() {
 
       <main className="planner-main">
         <header className="planner-topbar"><button className="mobile-menu" onClick={() => setSidebar(true)}>☰</button><div><span>WEDDING WORKSPACE</span><strong>{NAV.find(([id]) => id === view)?.[2]}</strong></div><div className="top-actions"><span className="save-state">● Tersimpan otomatis</span><button className="avatar-button">{couple.charAt(0)}</button></div></header>
+        {storageError && <div className="storage-warning" role="alert"><strong>⚠ Data belum tersimpan.</strong> {storageError}</div>}
         <div className="planner-content">
           {view === "dashboard" && <DashboardView {...props} onNavigate={setView} />}
           {view === "budget" && <BudgetView {...props} />}

@@ -232,9 +232,11 @@ def main():
         "categories": categories, "expenses": expenses, "checklist": checklist,
         "muaVendors": extract_mua(values["MUA"]), "preweddingLocations": locations,
         "guests": guests, "souvenirs": souvenirs, "offerings": offerings,
-        "documents": documents, "moodNotes": mood_notes, "assets": assets,
-        "rawSheets": [raw_sheet(sheet) for sheet in values.worksheets]
+        "documents": documents, "moodNotes": mood_notes, "assets": assets
     }
+    # rawSheets sengaja tidak diikutkan: isinya salinan mentah tiap sheet
+    # (~50 kB, 61% dari file) yang tidak pernah dibaca aplikasi, tapi ikut
+    # ter-bundle ke JavaScript yang diunduh setiap pengunjung /planner.
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Created {OUTPUT.relative_to(ROOT)} ({OUTPUT.stat().st_size:,} bytes)")

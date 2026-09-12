@@ -9,6 +9,7 @@
     python scripts/bali-calendar/scrape.py crosscheck  # sumber kedua (kalenderbali.com) utk pembandingan
     python scripts/bali-calendar/scrape.py arti        # teks tafsir tiap wara/wuku/lintang/pratiti
     python scripts/bali-calendar/scrape.py dauhayu     # dauh ayu (waktu baik dalam sehari) per saptawara
+    python scripts/bali-calendar/scrape.py sumber3     # sumber ketiga independen (kalenderbali.info)
     python scripts/bali-calendar/scrape.py skips       # posisi ngunaratri (binary search, ~3000 request)
 
 Semua tahap resumable: file yang sudah ada dilewati. Ada jeda antar request
@@ -490,6 +491,74 @@ def tahap_dauhayu():
     print(f"  {sum(len(v) for v in hasil.values())} rentang jam di 7 saptawara")
 
 
+# ------------------------------------------------------------------ sumber3
+
+# kalenderbali.info — disusun I K. Suwintana (2013), tidak merujuk KBD sama
+# sekali. Ini satu-satunya pembanding yang benar-benar independen: kalenderbali
+# .com dan .org sama-sama karya I Wayan Nuarsa, jadi kesepakatan keduanya tidak
+# membuktikan apa pun.
+BASE3 = "https://kalenderbali.info/kalender/detailHari/"
+
+
+def _sel_detail(t, kelas, minimal):
+    """Isi sel detail berkelas `kelas`, dipecah per <br> jadi daftar nilai.
+
+    Kelas "kiri" dan "kanan" masing-masing dipakai dua kali di halaman ini —
+    baris pertama untuk gambar purnama/tilem dan ramalan pawiwahan, baris kedua
+    untuk wewaran. Jadi yang diambil sel pertama yang isinya cukup panjang,
+    bukan sekadar yang pertama ketemu.
+    """
+    for m in re.finditer(r'(?is)<td[^>]*class="[^"]*' + kelas + r'[^"]*"[^>]*>(.*?)</td>', t):
+        isi = re.sub(r"(?is)<(?!br)[^>]+>", "", m.group(1))
+        bagian = [" ".join(html.unescape(x).split()) for x in re.split(r"(?i)<br\s*/?>", isi)]
+        bagian = [x for x in bagian if x]
+        if len(bagian) >= minimal:
+            return bagian
+    return []
+
+
+def tahap_sumber3():
+    """Detail harian dari sumber ketiga untuk tanggal-tanggal terpilih.
+
+    Situsnya hanya menyediakan detail per hari, tidak per bulan, jadi tanggalnya
+    dipilih hemat oleh `pilih-tanggal-sumber3.mjs` — yang paling diagnostik
+    dulu, bukan sebulan penuh.
+    """
+    tanggal = json.load(open(os.path.join(FIX, "sumber3_tanggal.json"), encoding="utf-8"))
+    hasil = {}
+    for i, iso in enumerate(tanggal):
+        y, m, d = (int(x) for x in iso.split("-"))
+        simpan = os.path.join(RAW, "kbinfo", f"{iso}.html")
+        if os.path.exists(simpan) and os.path.getsize(simpan) > 400:
+            t = open(simpan, encoding="utf-8").read()
+        else:
+            r = http().get(f"{BASE3}{d}/{m}/{y}/hitam/html", timeout=30)
+            t = r.text
+            os.makedirs(os.path.dirname(simpan), exist_ok=True)
+            open(simpan, "w", encoding="utf-8").write(t)
+            time.sleep(JEDA)
+
+        atas = _sel_detail(t, "tengahbawah", 4)
+        kiri = _sel_detail(t, "kiri", 5)
+        kanan = _sel_detail(t, "kanan", 5)
+        if len(atas) < 4 or len(kiri) < 5 or len(kanan) < 5:
+            print(f"  LEWAT {iso}: struktur tak terduga")
+            continue
+        hasil[iso] = {
+            "saptawara": atas[0], "wuku": atas[1],
+            "sasih": re.sub(r"^Sasih-", "", atas[2]), "penanggal": atas[3],
+            "triwara": kiri[0], "caturwara": kiri[1], "dwiwara": kiri[2],
+            "ekawara": kiri[3], "urip": kiri[4],
+            "pancawara": kanan[0], "sadwara": kanan[1], "astawara": kanan[2],
+            "sangawara": kanan[3], "dasawara": kanan[4],
+            "purnama": "purnama" in t, "tilem": "tilem" in t,
+        }
+        if (i + 1) % 50 == 0:
+            print(f"  {i + 1}/{len(tanggal)}")
+    simpan_fixture("gt_kbinfo.json", {k: v for k, v in sorted(hasil.items())})
+    print(f"  {len(hasil)}/{len(tanggal)} tanggal terpanen")
+
+
 # --------------------------------------------------------------------- skips
 
 def _angka_tithi(d, cache, kunci):
@@ -563,7 +632,7 @@ def tahap_skips():
 
 TAHAP = {"anchors": tahap_anchors, "rules": tahap_rules, "ground": tahap_ground,
          "rerainan": tahap_rerainan, "karyaayu": tahap_karyaayu,
-         "alaayu": tahap_alaayu, "crosscheck": tahap_crosscheck, "arti": tahap_arti, "dauhayu": tahap_dauhayu, "skips": tahap_skips}
+         "alaayu": tahap_alaayu, "crosscheck": tahap_crosscheck, "arti": tahap_arti, "dauhayu": tahap_dauhayu, "sumber3": tahap_sumber3, "skips": tahap_skips}
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in TAHAP:

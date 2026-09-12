@@ -296,6 +296,15 @@ export default function KalenderBali({ awal, bulanAwal }) {
           <Baris label="Bhatara">{hari.wuku.bhatara}</Baris>
           <Baris label="Wewukon">{hari.wuku.wewukon.join(", ") || "—"}</Baris>
           <Baris label="Saka">{hari.saka ?? "-"}</Baris>
+          {(hari.sasih?.nampih || hari.sasih?.mala) && (
+            <p className="kb-nota-sumber">
+              Hari ini jatuh pada <strong>{hari.sasih.nampih ? "nampih" : "mala"} sasih</strong> —
+              bulan sisipan. Di sinilah kalender Bali paling sering berbeda pendapat:
+              pembandingan kami menemukan kalenderbali.info memberi nama sasih yang
+              lain pada hampir semua hari nampih. Penamaan di sini mengikuti
+              kalenderbali.org. Angka penanggalnya sendiri umumnya sama.
+            </p>
+          )}
           {hari.sasih?.ngunaratri && (
             <p className="kb-nota-sumber">
               Setengah bulan ini kena <strong>ngunaratri</strong> — satu angka

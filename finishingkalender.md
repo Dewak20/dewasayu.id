@@ -1,7 +1,7 @@
 # Rencana Penyelesaian Kalender Bali
 
-> **Sudah dijalankan.** Enam dari tujuh tahap selesai; Tahap 4 sebagian karena
-> menunggu satu masukan dari luar. Rinciannya ada di tiap tahap, ringkasannya di
+> **Sudah dijalankan, tujuh dari tujuh tahap.** Rinciannya ada di tiap tahap,
+> ringkasannya di
 > [Ringkasan urutan](#ringkasan-urutan) dan [Yang tersisa](#yang-tersisa) di
 > bawah. Tiap tahap ditulis ulang dengan hasil sebenarnya — termasuk tiga tempat
 > di mana temuan di lapangan membantah dugaan rencana ini sendiri.
@@ -202,7 +202,7 @@ daftar dewasa.
 
 ---
 
-## Tahap 4 — Cross-check dua sumber lain — SEBAGIAN
+## Tahap 4 — Cross-check dua sumber lain — SELESAI
 
 **Temuan yang mengubah premis tahap ini:** kalenderbali.com dan kalenderbali.org
 **disusun orang yang sama** — I Wayan Nuarsa, Universitas Udayana, tertulis di
@@ -220,8 +220,28 @@ Tabel lengkapnya di `lib/bali-calendar/README.md`.
 kalender lain bisa menomorinya berbeda — satu-satunya titik di mana dua sumber
 itu memang berbeda.
 
-**Yang belum:** situs ketiga. Identitasnya tidak tercatat di repo mana pun, jadi
-pembandingan dengan sumber yang benar-benar independen masih menunggu.
+**Sumber ketiga:** identitasnya tidak tercatat di repo, jadi dicari sendiri.
+Yang dipakai **kalenderbali.info** (I K. Suwintana, 2013) — tidak merujuk KBD
+sama sekali, jadi benar-benar independen. Dibandingkan pada 150 tanggal
+1970-2098 yang sengaja berat di nampih sasih, mala sasih, ngunaratri, dan
+purnama-tilem.
+
+**Dan di sinilah pertanyaan tahap ini terjawab — jawabannya tidak nyaman:**
+
+- **Lapisan pawukon sepakat mutlak.** Sepuluh wewaran, wuku, dan urip cocok
+  1.800/1.800. Dua implementasi yang tidak saling melihat menghasilkan angka
+  yang sama persis. Ini konfirmasi independen pertama untuk mesin ini.
+- **Lapisan sasih berselisih, dan sistematis.** kalenderbali.info **tidak
+  memakai label "Nampih" sama sekali** (0 dari 150), sehingga 24 dari 24 hari
+  nampih diberi nama berbeda. Bahkan hari biasa berbeda pada 8 dari 32.
+- **Yang bergeser namanya, bukan hitungannya.** Pada hampir semua tanggal yang
+  berbeda, angka penanggal/pangelongnya justru sama persis — nama sasihnya saja
+  yang maju satu di kalenderbali.info.
+
+**Tindakan:** mengikuti instruksi tahap ini untuk tidak diam-diam memilih salah
+satu, panel detail hari sekarang menandai hari nampih dan mala sasih beserta
+keterangan bahwa kalender lain bisa memberi nama berbeda. Tabel lengkapnya di
+`lib/bali-calendar/README.md`.
 
 
 **Kenapa:** tiga situs diberikan di awal, tapi praktis hanya kalenderbali.org
@@ -375,11 +395,19 @@ panel detail memuat tafsir.
 
    Kekhawatiran awal tahap ini — bahwa `--force` akan melompat versi Next —
    ternyata benar, tapi baru pada putaran kedua. Putaran pertama hanya naik
-   patch. Sisanya rantai `postcss` yang dikunci `next@15.5.25` sendiri, dan
-   menutupnya menuntut **next@16.3.5**, sebuah breaking change. **Ditahan
-   sengaja** supaya jadi pekerjaan tersendiri dengan pengujiannya sendiri —
-   keempat advisory-nya soal `sourceMappingURL` dan output stringify di jalur
-   build, bukan runtime yang menerima input pengguna.
+   patch; sisanya rantai `postcss` yang dikunci `next@15.5.25` sendiri.
+
+   **Upgrade ke next@16.3.5 lalu dikerjakan, dan `npm audit` kini 0.** Satu
+   regresi ikut ketahuan dan diperbaiki: Next 15 masih mengizinkan akses sinkron
+   ke `params` lewat shim kompatibilitas, Next 16 membuangnya. Akibatnya
+   `params.slug` di halaman artikel jadi `undefined`, `notFound()` terpanggil
+   **saat build**, dan halaman artikel MDX ter-prerender sebagai 404 — sementara
+   build tetap melaporkan sukses. Ketahuan hanya karena tiap route diuji satu
+   per satu. `engines.node` ikut dinaikkan ke `>=20.9.0` mengikuti syarat
+   next@16.
+
+   **Pelajaran yang layak diingat:** kegagalan `params` di Next 16 tidak muncul
+   sebagai error build. Route dinamis baru wajib memakai `await params`.
 5. **Merge branch** — selesai. Pekerjaan dipindah dari `feature/keuangan-wave1`
    ke **`feature/kalender-bali`**, di-commit jadi enam commit, lalu di-*fast
    forward* ke **`main`** dan di-push. `main` tertinggal 12 commit, bukan 6 —
@@ -424,19 +452,25 @@ panel detail memuat tafsir.
 | 1 | Rerainan & hari penting | selesai |
 | 2 | Otonan masuk skoring | selesai — sumbernya `karyaayu.php`, bukan `carijodoh.php` |
 | 3 | Tutup lubang korpus dewasa | selesai |
-| 4 | Cross-check 2 sumber lain | **sebagian** — menunggu identitas situs ketiga |
+| 4 | Cross-check 2 sumber lain | selesai — sumber ketiga: kalenderbali.info |
 | 5 | Mobile, aksesibilitas, URL | selesai |
 | 6 | Konten & SEO | selesai, kecuali piodalan (di luar cakupan) |
 | 7 | Pengerasan & kerapian | selesai |
 
 ## Yang tersisa
 
-1. **Situs ketiga untuk cross-check.** Identitasnya tidak tercatat di repo mana
-   pun. Ini satu-satunya butir yang benar-benar menunggu masukan dari luar.
-   Tanpa itu, klaim "tiga sumber sepakat" belum bisa dibuat — apalagi setelah
-   ketahuan dua di antaranya penulisnya sama.
-2. **Dua kerentanan `postcss`** yang menuntut next@16. Ditahan sengaja; lihat
-   Tahap 7 butir 4.
+Tidak ada butir rencana yang menggantung. Dua hal yang layak diingat sebagai
+konsekuensi, bukan tugas:
+
+1. **Klaim akurasi harus dibatasi pada lapisan yang tepat.** Pawukon terbukti
+   sepakat dengan sumber independen; sasih tidak. Jadi "tervalidasi" berarti
+   "cocok dengan kalenderbali.org", dan untuk pawukon juga "cocok dengan
+   implementasi independen" — bukan "benar secara mutlak". Penamaan sasih,
+   terutama nampih, memang punya lebih dari satu pendapat.
+2. **Sumber keempat kalau mau lebih jauh.** Pustaka open source `sakacalendar`
+   (github.com/edysantosa/sakacalendar) sempat muncul saat mencari sumber
+   independen dan belum diuji. Kalau nanti perlu memutuskan konvensi nampih mana
+   yang dipakai, itu kandidat pembanding berikutnya.
 
 ## Yang sengaja di luar cakupan
 

@@ -245,3 +245,92 @@ for (const [th, bl] of [[2026, 9], [2026, 1], [1997, 6], [2050, 3]]) {
 }
 console.log(`== dauh ayu: ${dn - dbad}/${dn} hari cocok (7 saptawara, 4 bulan lintas musim & era) ==`);
 if (!dbad) console.log("  semua cocok");
+
+// ---- Tahap 4: sumber ketiga yang independen (kalenderbali.info) ----
+// Disusun I K. Suwintana (2013) dan tidak merujuk KBD sama sekali. Ini satu-
+// satunya pembanding yang benar-benar independen: kalenderbali.com dan .org
+// sama-sama karya I Wayan Nuarsa, jadi kesepakatan keduanya tidak membuktikan
+// apa pun tentang kebenaran.
+const gtInfo = JSON.parse(readFileSync(join(DIR, "gt_kbinfo.json"), "utf8"));
+
+// Kedua situs menamai hal yang sama dengan ejaan berbeda. Ini disamakan lebih
+// dulu supaya yang tersisa benar-benar selisih kalender, bukan selisih ejaan.
+const EJAAN = {
+  // sasih
+  Kapitu: "Kepitu", Katiga: "Ketiga", Kalima: "Kelima", Kanem: "Kenam",
+  Kawulu: "Kewulu", Kaulu: "Kewulu", Kasanga: "Kesanga", Kadasa: "Kedasa",
+  Jiestha: "Jiyestha", Jyestha: "Jiyestha", Destha: "Jiyestha",
+  // pancawara & sangawara
+  Kliwon: "Keliwon", Urukung: "Urungan",
+  // wuku
+  Dungulan: "Dunggulan", Kelawu: "Kulawu", Klawu: "Kulawu"
+};
+const samakan = (s) => String(s).split(" ").map((w) => EJAAN[w] ?? w).join(" ");
+
+const BANDING3 = {
+  saptawara: (h) => h.wewaran.saptawara,
+  pancawara: (h) => h.wewaran.pancawara,
+  triwara: (h) => h.wewaran.triwara,
+  caturwara: (h) => h.wewaran.caturwara,
+  sadwara: (h) => h.wewaran.sadwara,
+  astawara: (h) => h.wewaran.astawara,
+  sangawara: (h) => h.wewaran.sangawara,
+  dasawara: (h) => h.wewaran.dasawara,
+  dwiwara: (h) => h.wewaran.dwiwara,
+  ekawara: (h) => (h.wewaran.ekawara === "-" ? "--" : h.wewaran.ekawara),
+  wuku: (h) => h.wuku.nama,
+  sasih: (h) => h.sasih.nama,
+  penanggal: (h) => String(h.sasih.angka),
+  urip: (h) => `Urip=${h.wewaran.urip.saptawara}+${h.wewaran.urip.pancawara}`
+};
+
+const i3n = new Map(), i3bad = new Map(), i3beda = [];
+for (const [iso, rec] of Object.entries(gtInfo)) {
+  const h = hariBali(iso);
+  if (!h.sasih) continue;
+  for (const [f, get] of Object.entries(BANDING3)) {
+    i3n.set(f, (i3n.get(f) || 0) + 1);
+    if (samakan(get(h)) === samakan(rec[f])) continue;
+    i3bad.set(f, (i3bad.get(f) || 0) + 1);
+    i3beda.push(`${iso} ${f}: .info=${rec[f]} kita=${get(h)} (${h.sasih.nama} ${h.sasih.label})`);
+  }
+}
+const t3 = [...i3n.values()].reduce((a, b) => a + b, 0);
+const b3 = [...i3bad.values()].reduce((a, b) => a + b, 0);
+console.log(`== sumber ketiga, independen (kalenderbali.info): ${t3 - b3}/${t3} field cocok ` +
+  `(${Object.keys(gtInfo).length} tanggal terpilih di nampih/mala sasih, ngunaratri, purnama-tilem) ==`);
+for (const [f, salah] of [...i3bad].sort((a, b) => b[1] - a[1])) {
+  console.log(`  ${f}: ${salah}/${i3n.get(f)} beda`);
+}
+// Selisih ditampilkan utuh selama masih sedikit: kalau dua tradisi memang
+// berbeda di suatu tanggal, itu harus kelihatan, bukan disembunyikan.
+if (i3beda.length && i3beda.length <= 20) for (const b of i3beda) console.log("    " + b);
+if (!b3) console.log("  semua cocok");
+
+// Sampelnya sengaja berat di kasus langka, jadi angka gabungan di atas tidak
+// mewakili tanggal acak. Rincian per kelompok yang menjawab pertanyaannya:
+// di mana dua kalender ini sepakat, dan di mana tidak.
+const kelompok3 = (h) => h.sasih.nampih ? "nampih sasih" : h.sasih.mala ? "mala sasih"
+  : h.sasih.ngunaratri ? "ngunaratri" : (h.sasih.purnama || h.sasih.tilem) ? "purnama/tilem" : "hari biasa";
+const rinci = new Map();
+for (const [iso, rec] of Object.entries(gtInfo)) {
+  const h = hariBali(iso);
+  if (!h.sasih) continue;
+  const k = kelompok3(h);
+  if (!rinci.has(k)) rinci.set(k, { n: 0, sasih: 0, geser: 0 });
+  const e = rinci.get(k);
+  e.n++;
+  if (samakan(rec.sasih) !== samakan(h.sasih.nama)) {
+    e.sasih++;
+    // Penanggal sama tapi nama sasih beda = pergeseran penamaan, bukan
+    // perhitungan bulan yang berbeda.
+    if (String(rec.penanggal) === String(h.sasih.angka)) e.geser++;
+  }
+}
+console.log("  rincian sasih per kelompok (n | beda | di antaranya cuma bergeser nama):");
+for (const [k, e] of [...rinci].sort()) {
+  console.log(`    ${k.padEnd(15)} ${String(e.n).padStart(3)} | ${String(e.sasih).padStart(4)} | ${String(e.geser).padStart(4)}`);
+}
+const pakaiNampih = Object.values(gtInfo).filter((r) => /Nampih/i.test(r.sasih)).length;
+console.log(`  kalenderbali.info tidak memakai label "Nampih" sama sekali ` +
+  `(${pakaiNampih}/${Object.keys(gtInfo).length} tanggal sampel)`);

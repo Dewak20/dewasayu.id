@@ -166,14 +166,18 @@ Keduanya opsional: tanpa `otonan`, keluarannya persis sama seperti sebelum
 parameter ini ada. Hasil Karya Ayu dilaporkan di `nilai.karyaAyu` dan **tidak**
 dijumlahkan ke skor dewasa — dua aturan berbeda, jadi dilaporkan terpisah.
 
-## Pembandingan dengan sumber kedua
+## Pembandingan dengan sumber lain
 
 Tiga situs dipakai sebagai rujukan di awal, tapi ada temuan yang mengubah
 artinya: **kalenderbali.com dan kalenderbali.org disusun orang yang sama**
 (I Wayan Nuarsa, Universitas Udayana — tertulis di footer keduanya). Jadi
 kesepakatan antara keduanya bukan bukti kebenaran; yang diuji adalah apakah dua
 penyajian dari penerbit yang sama konsisten, bukan apakah dua tradisi sepakat.
-Pembandingan dengan sumber yang benar-benar independen masih terbuka.
+
+Karena itu ditambahkan **sumber ketiga yang benar-benar independen**:
+kalenderbali.info, disusun I K. Suwintana (2013), yang tidak merujuk KBD sama
+sekali. Hasilnya ada di bagian berikutnya — dan di situlah pertanyaan Tahap 4
+akhirnya terjawab.
 
 Bulan yang dibandingkan tidak diambil acak rata: `pilih-bulan-crosscheck.mjs`
 sengaja menumpuknya di nampih sasih, mala sasih, dan setengah-bulan yang kena
@@ -200,6 +204,47 @@ Kelima selisihnya bukan perbedaan kalender melainkan perbedaan penulisan:
 Di luar itu .com menulis hari ngunaratri sebagai pasangan angka ("6/7") sementara
 .org hanya menulis angka yang dipakai; itu dianggap cocok saat membandingkan.
 
+## Pembandingan dengan sumber independen
+
+kalenderbali.info (I K. Suwintana, 2013) dibandingkan pada **150 tanggal**
+1970-2098, dipilih berat di tempat kalender paling mungkin berselisih: nampih
+sasih, mala sasih, ngunaratri, dan purnama-tilem. Ejaan disamakan lebih dulu
+("Kliwon"/"Keliwon", "Urukung"/"Urungan", "Dungulan"/"Dunggulan",
+"Jiestha"/"Jiyestha", dan seterusnya) supaya yang tersisa benar-benar selisih
+kalender, bukan selisih ejaan.
+
+**Lapisan pawukon: sepakat mutlak.** Dua belas field — sepuluh wewaran, wuku,
+dan urip — cocok **1.800/1.800**. Ini konfirmasi independen pertama untuk mesin
+pawukon di sini, dan yang paling berarti dari seluruh pembandingan: dua
+implementasi yang tidak saling melihat menghasilkan angka yang sama persis.
+
+**Lapisan sasih: berselisih, dan selisihnya sistematis.**
+
+| Kelompok | n | Nama sasih beda | Di antaranya penanggal tetap sama |
+|---|---|---|---|
+| Hari biasa | 32 | 8 | 8 |
+| Mala sasih | 30 | 10 | 10 |
+| **Nampih sasih** | 24 | **24** | 23 |
+| Ngunaratri | 40 | 8 | 6 |
+| Purnama/tilem | 24 | 9 | 9 |
+
+Tiga hal yang bisa disimpulkan:
+
+1. **kalenderbali.info tidak memakai label "Nampih" sama sekali** — nol dari 150
+   tanggal sampel. Pada hari yang di sini bernama Nampih, situs itu memakai nama
+   sasih biasa. Ini beda konvensi yang total, bukan beda hitungan.
+2. **Selisihnya pergeseran penamaan, bukan perhitungan bulan.** Pada hampir
+   semua tanggal yang berbeda, angka penanggal/pangelongnya justru sama persis —
+   yang bergeser namanya saja, umumnya maju satu sasih di kalenderbali.info.
+3. **Bahkan hari biasa pun bisa berbeda** (8 dari 32). Jadi ini bukan cuma soal
+   bulan sisipan; konvensi yang berbeda soal kapan nampih disisipkan membuat
+   penamaan sasih ikut bergeser untuk rentang waktu di sekitarnya.
+
+**Konsekuensinya untuk produk:** mesin ini mengikuti kalenderbali.org, dan itu
+pilihan, bukan kebenaran mutlak. Panel detail hari menandai hari nampih dan mala
+sasih beserta keterangan bahwa kalender lain bisa memberi nama berbeda — supaya
+pengguna tahu ada dua pendapat, bukan disodori satu seolah tunggal.
+
 ## Validasi
 
 `node scripts/bali-calendar/validate.mjs` membandingkan mesin ini dengan data
@@ -210,6 +255,8 @@ yang dipanen dari kalenderbali.org:
   penanggal, sasih, lintang, pararasan, pancasuda, watek, ekajalaresi, pratiti,
   dan ingkel jejepan — cocok semua.
 - **730 hari** untuk Wewukon per wuku — cocok semua.
+- **150 tanggal** terhadap sumber independen kalenderbali.info — lapisan pawukon
+  1.800/1.800; lapisan sasih berselisih, rinciannya di atas.
 - **6.574 hari** (18 tahun sampel) untuk rerainan — 6.567 cocok persis, dan
   **6.574/6.574** untuk hari penting nasional. Tujuh hari yang tersisa bukan soal
   aturan rerainannya, melainkan dua batasan mesin yang memang sudah tercatat:

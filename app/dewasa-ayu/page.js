@@ -96,6 +96,11 @@ export default function DewasaAyuHub() {
           daftar tamu — di ruang kerja Dewasa Ayu.
         </p>
         <Link className="btn btn-gold btn-lg" href="/daftar">Mulai siapkan pernikahan <i className="arrow" aria-hidden="true">↗</i></Link>
+        <p className="da-cta-lain">
+          Mau lihat perhitungannya dulu? Buka{" "}
+          <Link href="/kalender">kalender Bali</Link> atau{" "}
+          <Link href="/kalender/hari-baik">pencari hari baik</Link>.
+        </p>
       </div>
     </ContentLayout>
   );

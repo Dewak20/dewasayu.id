@@ -88,9 +88,16 @@ export default function OtonanPage() {
       </div>
 
       <div className="da-cta">
-        <h2>Siapkan pernikahan sambil menunggu kalkulatornya.</h2>
-        <p>Uang adat, rangkaian acara, vendor, dan daftar tamu bisa mulai dirapikan dari sekarang.</p>
-        <Link className="btn btn-gold btn-lg" href="/daftar">Daftar sekarang <i className="arrow" aria-hidden="true">↗</i></Link>
+        <h2>Hitung otonanmu sekarang.</h2>
+        <p>
+          Kalkulatornya sudah jalan: masukkan tanggal lahir, dapatkan otonan berikutnya
+          beserta wewaran dan wuku tiap tanggalnya.
+        </p>
+        <Link className="btn btn-gold btn-lg" href="/kalender/otonan">Hitung otonan <i className="arrow" aria-hidden="true">↗</i></Link>
+        <p className="da-cta-lain">
+          Atau buka <Link href="/kalender">kalender Bali lengkapnya</Link> dan{" "}
+          <Link href="/kalender/hari-baik">pencari hari baik</Link>.
+        </p>
       </div>
     </ContentLayout>
   );

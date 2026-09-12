@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TAHUN_TERBIT } from "../../../lib/tahun-terbit";
 import ContentLayout from "../../../components/ContentLayout";
 
 export const metadata = {
@@ -30,8 +31,8 @@ export default function PernikahanPage() {
         <p className="da-lede">
           Pawiwahan (upacara pernikahan) punya aturan wariga tersendiri, terpisah dari
           dewasa ayu untuk acara lain seperti potong rambut atau mendirikan bangunan.
-          Berikut kriteria umum yang sering dijadikan acuan — bukan daftar tanggal
-          final, karena posisi tiap tanggal berubah setiap tahun.
+          Berikut kriteria umum yang sering dijadikan acuan. Daftar tanggalnya sendiri
+          dihitung ulang tiap tahun dan diterbitkan per tahun — tautannya ada di bawah.
         </p>
       </div>
 
@@ -55,14 +56,20 @@ export default function PernikahanPage() {
       </div>
 
       <div className="da-prose" style={{ marginTop: 40 }}>
-        <h2>Kenapa tidak ada daftar tanggal langsung?</h2>
+        <h2>Daftar tanggal per tahun</h2>
         <p>
           Karena wuku, wewaran, dan sasih berjalan pada siklusnya masing-masing dan
           tidak selaras dengan kalender Masehi, satu tanggal Masehi (misalnya 12
-          September) bisa jatuh pada kombinasi yang berbeda setiap tahun. Menampilkan
-          daftar tanggal tanpa menghitung ulang setiap tahun berisiko salah — dan
-          karena ini menyangkut upacara adat, kami memilih untuk menunggu mesin
-          perhitungan kami tervalidasi dulu sebelum menerbitkan tanggal spesifik.
+          September) jatuh pada kombinasi yang berbeda setiap tahun — jadi daftarnya
+          harus dihitung ulang per tahun, bukan disalin. Mesin perhitungan kami kini
+          sudah tervalidasi terhadap kalenderbali.org (pawukon 1970–2100, dua tahun
+          penuh data harian, dan seluruh korpus 220 aturan ala-ayuning dewasa), jadi
+          daftarnya sudah bisa diterbitkan:
+        </p>
+        <p className="da-tahun-tautan">
+          {TAHUN_TERBIT.map((t) => (
+            <Link key={t} href={`/dewasa-ayu/pernikahan/${t}`}>Hari baik {t}</Link>
+          ))}
         </p>
         <p>
           Untuk kebutuhan mendesak, cara paling aman tetap berkonsultasi langsung
@@ -104,6 +111,11 @@ export default function PernikahanPage() {
         <h2>Sambil menunggu hari baik dipastikan, mulai siapkan yang lain.</h2>
         <p>Anggaran, uang adat, rangkaian acara, vendor, dan daftar tamu — dalam satu ruang kerja.</p>
         <Link className="btn btn-gold btn-lg" href="/daftar">Mulai siapkan pernikahan <i className="arrow" aria-hidden="true">↗</i></Link>
+        <p className="da-cta-lain">
+          Sudah punya rentang tanggalnya? Coba{" "}
+          <Link href="/kalender/hari-baik">pencari hari baik</Link> — bisa sekaligus
+          memperhitungkan otonan kedua mempelai.
+        </p>
       </div>
     </ContentLayout>
   );

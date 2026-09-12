@@ -14,7 +14,8 @@ export default function ContentLayout({ children }) {
           </Link>
           <nav className="nav-links" aria-label="Navigasi Dewasa Ayu">
             <Link href="/dewasa-ayu">Dewasa Ayu</Link>
-            <Link href="/dewasa-ayu/pernikahan">Hari Baik Menikah</Link>
+            <Link href="/kalender">Kalender Bali</Link>
+            <Link href="/kalender/hari-baik">Cari Hari Baik</Link>
             <Link href="/dewasa-ayu/otonan">Otonan</Link>
             <Link href="/dewasa-ayu/artikel">Artikel</Link>
           </nav>
@@ -42,6 +43,7 @@ export default function ContentLayout({ children }) {
             <Link href="/dewasa-ayu/istilah">Istilah wariga</Link>
             <Link href="/dewasa-ayu/otonan">Otonan</Link>
             <Link href="/dewasa-ayu/pernikahan">Hari baik menikah</Link>
+            <Link href="/kalender">Kalender Bali</Link>
             <Link href="/dewasa-ayu/artikel">Artikel</Link>
           </div>
           <div><strong>Mulai</strong><Link href="/daftar">Daftar</Link><Link href="/login">Masuk</Link><Link href="/planner">Planner</Link></div>

@@ -4,6 +4,7 @@ import "../planner.css";
 import "../landing.css";
 import "../auth.css";
 import "../dewasa-ayu.css";
+import "../kalender.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
 const marcellus = Marcellus({ subsets: ["latin"], weight: "400", variable: "--font-marcellus" });

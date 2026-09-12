@@ -40,11 +40,16 @@ export default function PlannerApp() {
   const [toast, setToast] = useState("");
   const [storageError, setStorageError] = useState("");
 
+  // localStorage hanya ada di browser, jadi pemuatan wajib terjadi setelah
+  // render pertama — inilah pola hidrasi yang benar untuk data lokal, dan
+  // hanya berjalan sekali saat mount.
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY));
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved?.meta && saved?.project) setData(saved);
     } catch (_) {}
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReady(true);
   }, []);
   // Penulisan harus dijaga: di Safari mode penyamaran dan saat kuota penuh,
@@ -53,8 +58,12 @@ export default function PlannerApp() {
     if (!ready) return;
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify(data));
+      // Status galat baru diketahui setelah percobaan menulis, jadi memang
+      // harus diset di dalam efek. React membatalkan render kalau nilainya sama.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStorageError("");
     } catch (error) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStorageError(error?.name === "QuotaExceededError"
         ? "Penyimpanan browser penuh — perubahan terakhir belum tersimpan. Ekspor datamu, lalu hapus entri yang tidak terpakai."
         : "Browser menolak menyimpan data (mis. mode penyamaran). Perubahanmu hanya bertahan selama tab ini terbuka — segera ekspor datamu.");
@@ -555,6 +564,13 @@ function SavingPlannerView({ data, patchData, notify }) {
   </>;
 }
 
+/* Kartu metrik Ringkasan Keuangan. Didefinisikan di tingkat modul, bukan di
+   dalam komponen: komponen yang dibuat ulang tiap render membuat React
+   melepas dan memasang ulang seluruh subtree-nya. */
+function KartuKeuangan({ label, value, note, tone, to, onNavigate }) {
+  return <article className={`planner-metric ${tone || ""} ${to ? "clickable" : ""}`} onClick={to ? () => onNavigate(to) : undefined}><span>{label}</span><strong>{value}</strong>{note && <small>{note}</small>}</article>;
+}
+
 function RingkasanKeuanganView({ data, onNavigate }) {
   const sources = data.project.fundingSources || [];
   const received = sources.reduce((t, s) => t + Number(s.received || 0), 0);
@@ -568,9 +584,8 @@ function RingkasanKeuanganView({ data, onNavigate }) {
   const paidOut = expensesPaid + vendorPaid + adatDelivered;
   const needs = allocation + adatTotal;
   const gap = received - needs;
-  const Card = ({ label, value, note, tone, to }) => <article className={`planner-metric ${tone || ""} ${to ? "clickable" : ""}`} onClick={to ? () => onNavigate(to) : undefined}><span>{label}</span><strong>{value}</strong>{note && <small>{note}</small>}</article>;
   return <><PageIntro kicker="ARUS UANG PAWIWAHAN" title="Ringkasan Keuangan" text="Satu tempat melihat dari mana dana datang, ke mana perginya, dan apakah cukup. Klik kartu untuk membuka modulnya." />
-    <div className="metric-grid"><Card label="Dana Terkumpul" value={money(received)} note="pendanaan diterima" tone="green" to="funding" /><Card label="Rencana Belanja" value={money(allocation)} note="anggaran vendor" to="budget" /><Card label="Kas Adat" value={money(adatTotal)} note={`${money(adatDelivered)} diserahkan`} to="adat" /><Card label="Sudah Keluar" value={money(paidOut)} note="vendor + kas adat" to="payments" /></div>
+    <div className="metric-grid"><KartuKeuangan onNavigate={onNavigate} label="Dana Terkumpul" value={money(received)} note="pendanaan diterima" tone="green" to="funding" /><KartuKeuangan onNavigate={onNavigate} label="Rencana Belanja" value={money(allocation)} note="anggaran vendor" to="budget" /><KartuKeuangan onNavigate={onNavigate} label="Kas Adat" value={money(adatTotal)} note={`${money(adatDelivered)} diserahkan`} to="adat" /><KartuKeuangan onNavigate={onNavigate} label="Sudah Keluar" value={money(paidOut)} note="vendor + kas adat" to="payments" /></div>
     <div className="two-column">
       <section className="workspace-card"><CardHead kicker="KONDISI DANA" title={gap >= 0 ? "Perkiraan cukup" : "Perkiraan kurang"} /><div className={`finance-verdict ${gap >= 0 ? "ok" : "short"}`}><strong>{money(Math.abs(gap))}</strong><span>{gap >= 0 ? "dana terkumpul melebihi kebutuhan tercatat" : "kebutuhan tercatat melebihi dana terkumpul"}</span></div><div className="finance-lines"><div><span>Kebutuhan (budget + kas adat)</span><b>{money(needs)}</b></div><div><span>Dana terkumpul</span><b>{money(received)}</b></div><div><span>Sisa harus dibayar</span><b>{money(Math.max(0, needs - paidOut))}</b></div></div></section>
       <section className="workspace-card"><CardHead kicker="CATATAN" title="Cara angka dihitung" /><ul className="calc-notes"><li>Dana = pendanaan yang sudah <strong>diterima</strong>. Angpao tidak dihitung karena baru masuk saat hari-H.</li><li>Kebutuhan = rencana Budget + Kas adat.</li><li>Tabungan {saving.target ? <>menuju target {money(saving.target)} ({money(saving.saved || 0)} terkumpul)</> : "belum diatur"} — ditampilkan sebagai progres, tidak ditambahkan ke dana agar tak tumpang tindih.</li><li>Besaran adat (sesari, punia, peturunan) = etika <em>desa-kala-patra</em>, bukan tarif.</li></ul></section>

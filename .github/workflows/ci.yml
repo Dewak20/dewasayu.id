@@ -1,0 +1,38 @@
+name: CI
+
+# Menjalankan lint, validasi kalender, dan build produksi pada tiap push dan
+# pull request ke main. Tujuannya menangkap regresi sebelum sampai ke Vercel,
+# bukan setelah situs terlanjur rusak.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  periksa:
+    name: Lint, uji kalender, build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Pasang dependensi
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Validasi mesin kalender Bali
+        run: npm run test:kalender
+
+      - name: Build produksi
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://dewasayu.id

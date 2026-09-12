@@ -8,8 +8,11 @@ export function generateStaticParams() {
   return getAllArticleSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }) {
-  const article = getArticleBySlug(params.slug);
+// `params` adalah Promise sejak Next 15 dan wajib di-await sejak Next 16 —
+// shim yang dulu mengizinkan akses sinkron sudah dibuang.
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) return {};
   return {
     title: `${article.meta.title} | Dewasa Ayu`,
@@ -19,8 +22,9 @@ export function generateMetadata({ params }) {
 
 const dateFormatter = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", year: "numeric" });
 
-export default function ArtikelDetail({ params }) {
-  const article = getArticleBySlug(params.slug);
+export default async function ArtikelDetail({ params }) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) notFound();
 
   return (

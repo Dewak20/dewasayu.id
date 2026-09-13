@@ -20,17 +20,30 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          # Vitest 5 butuh Node >=22.12 dan jsdom butuh >=22.13; Node 20 sudah
-          # usang di runner GitHub. Angka ini harus sejalan dengan "engines"
-          # di package.json.
-          node-version: "22"
+          # Disamakan dengan lingkungan tempat lockfile ini dibuat dan
+          # diverifikasi (Node 24 / npm 11). Lockfile npm 11 dibaca npm 10
+          # adalah satu-satunya perbedaan yang tersisa antara sini dan lokal.
+          node-version: "24"
           cache: npm
 
       - name: Versi perkakas
-        run: node --version && npm --version
+        run: |
+          node --version
+          npm --version
+          echo "lockfileVersion: $(node -p "require('./package-lock.json').lockfileVersion")"
 
+      # Log runner tidak bisa dibaca tanpa token, sedangkan annotation bisa.
+      # Galat npm diangkat jadi annotation supaya kegagalan berikutnya bisa
+      # didiagnosis tanpa menebak-nebak.
       - name: Pasang dependensi
-        run: npm ci
+        run: |
+          set +e
+          npm ci 2>&1 | tee npm-ci.log
+          kode=${PIPESTATUS[0]}
+          if [ "$kode" -ne 0 ]; then
+            echo "::error title=npm ci gagal::$(grep -iE 'npm (error|ERR)' npm-ci.log | head -20 | tr '\n' ' ~ ' | cut -c1-1800)"
+          fi
+          exit "$kode"
 
       - name: Lint
         run: npm run lint

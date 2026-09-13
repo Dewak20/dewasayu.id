@@ -32,16 +32,30 @@ jobs:
           npm --version
           echo "lockfileVersion: $(node -p "require('./package-lock.json').lockfileVersion")"
 
-      # Log runner tidak bisa dibaca tanpa token, sedangkan annotation bisa.
-      # Galat npm diangkat jadi annotation supaya kegagalan berikutnya bisa
-      # didiagnosis tanpa menebak-nebak.
+      # Sengaja `npm install`, bukan `npm ci`.
+      #
+      # package-lock.json dibuat di Windows. Next memakai sharp, yang punya
+      # fallback `@img/sharp-wasm32`; di Linux fallback itu menarik
+      # @emnapi/runtime dan @emnapi/core ke level atas. npm tidak mencatat
+      # dependensi milik paket khusus-platform lain ke dalam lock, sehingga
+      # entri itu tidak ada dan `npm ci` berhenti dengan EUSAGE
+      # "Missing: @emnapi/runtime from lock file".
+      #
+      # Regenerasi lock dengan --os=linux --cpu=x64 sudah dicoba dan tidak
+      # menambahkannya. Satu-satunya cara tetap memakai `npm ci` adalah
+      # membuat lock di Linux, yang tidak mungkin dari mesin pengembangan
+      # Windows. Versi tetap dibatasi lockfile; `npm install` hanya
+      # melengkapi yang kurang untuk platform runner.
+      #
+      # Log runner butuh token, annotation tidak — galat npm diangkat jadi
+      # annotation supaya kegagalan berikutnya bisa dibaca tanpa menebak.
       - name: Pasang dependensi
         run: |
           set +e
-          npm ci 2>&1 | tee npm-ci.log
+          npm install --no-audit --no-fund 2>&1 | tee npm-log.txt
           kode=${PIPESTATUS[0]}
           if [ "$kode" -ne 0 ]; then
-            echo "::error title=npm ci gagal::$(grep -iE 'npm (error|ERR)' npm-ci.log | head -20 | tr '\n' ' ~ ' | cut -c1-1800)"
+            echo "::error title=Pemasangan gagal::$(grep -iE 'npm (error|ERR)' npm-log.txt | head -20 | tr '\n' ' ~ ' | cut -c1-1800)"
           fi
           exit "$kode"
 

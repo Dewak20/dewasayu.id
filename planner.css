@@ -1213,11 +1213,15 @@
     width: 268px;
     height: calc(100vh - 20px);
     border-radius: var(--r-panel);
-    transition: left .3s var(--ease);
+    transition: left .3s var(--ease), visibility .3s;
     box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+    /* Laci tertutup tetap ada di DOM di luar layar. Tanpa visibility:hidden
+       isinya masih bisa dijelajahi tombol Tab, sehingga fokus keyboard
+       "hilang" ke menu yang tidak terlihat. */
+    visibility: hidden;
   }
 
-  .planner-sidebar.open { left: 10px; }
+  .planner-sidebar.open { left: 10px; visibility: visible; }
   .sidebar-scrim { display: block; position: fixed; inset: 0; z-index: 35; border: 0; background: rgba(11, 20, 15, .45); backdrop-filter: blur(3px); }
   .planner-main { border-radius: 0; }
   .mobile-menu { display: grid; place-items: center; width: 44px; height: 44px; font-size: 18px; }
@@ -1392,3 +1396,46 @@
   .backup-actions .main-button,
   .backup-actions .ghost-button { flex: 1 1 auto; justify-content: center; }
 }
+
+/* ============================ Fokus keyboard ============================== */
+/* Sebelumnya hanya input yang punya penanda fokus, sehingga pengguna keyboard
+   tidak bisa melihat sedang berada di tombol yang mana. :focus-visible dipakai
+   supaya penanda hanya muncul untuk navigasi keyboard, bukan saat diklik. */
+
+.planner-shell :focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Di panel gelap, emas terang lebih terbaca daripada emas tua. */
+.planner-sidebar :focus-visible { outline-color: var(--gold); }
+
+/* Tombol yang sudah membulat penuh mengikuti bentuknya. */
+.planner-nav button:focus-visible,
+.main-button:focus-visible,
+.ghost-button:focus-visible,
+.owner-tabs button:focus-visible,
+.form-actions button:focus-visible,
+.avatar-button:focus-visible,
+.mobile-menu:focus-visible,
+.planner-modal > header button:focus-visible { border-radius: 999px; }
+
+.check-button:focus-visible { border-radius: 8px; }
+
+/* Melewati daftar panjang: pengguna keyboard bisa langsung ke isi halaman. */
+.lewati-ke-isi {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 12px 20px;
+  border-radius: 0 0 12px 0;
+  background: var(--ink);
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lewati-ke-isi:focus { left: 0; }

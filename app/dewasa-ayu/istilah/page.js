@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ContentLayout from "../../../components/ContentLayout";
 import { LdRemah } from "../../../components/DataTerstruktur";
+import Faq from "../../../components/Faq";
 
 export const metadata = {
   title: "Istilah Wariga: Arti Pawukon, Wewaran, Wuku, Sasih | Dewasa Ayu",
@@ -118,6 +119,27 @@ export default function IstilahPage() {
           <span className="go">Baca selengkapnya →</span>
         </Link>
       </div>
+
+      <Faq
+        daftar={[
+          {
+            tanya: "Apa bedanya pawukon dan sasih?",
+            jawab: "Pawukon adalah siklus tetap 210 hari yang tersusun dari 30 wuku, masing-masing tujuh hari, dan tidak berkaitan dengan peredaran bulan maupun matahari. Sasih adalah kalender lunar dengan 12 bulan, memakai penanggal untuk paruh terang menuju purnama dan panglong untuk paruh gelap menuju tilem."
+          },
+          {
+            tanya: "Apa itu wewaran?",
+            jawab: "Wewaran adalah beberapa lapis pekan yang berjalan paralel di dalam sistem pawukon, mulai dari pekan satu hari sampai sepuluh hari. Kombinasi posisi sebuah tanggal pada lapis-lapis inilah yang dipakai menilai baik tidaknya suatu hari."
+          },
+          {
+            tanya: "Apa itu otonan?",
+            jawab: "Otonan adalah hari kelahiran menurut pawukon, sehingga berulang setiap 210 hari, bukan setiap tahun seperti ulang tahun Masehi. Otonan mempelai kerap ikut dipertimbangkan saat memilih hari baik pernikahan."
+          },
+          {
+            tanya: "Apakah daftar istilah ini cukup untuk menentukan hari pernikahan sendiri?",
+            jawab: "Belum tentu. Istilah di sini membantu memahami dasar dan berdiskusi dengan lebih siap, tetapi penetapan hari untuk acara sepenting pawiwahan tetap melibatkan pemangku atau sulinggih keluarga, karena banyak pertimbangan mengikuti kebiasaan setempat sesuai desa, kala, patra."
+          }
+        ]}
+      />
 
       <div className="da-cta">
         <h2>Sudah cukup paham istilahnya?</h2>

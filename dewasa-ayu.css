@@ -237,3 +237,70 @@
 @media (max-width: 560px) {
   .hb-tahun { grid-template-columns: 1fr; }
 }
+
+/* ============================== Tanya jawab =============================== */
+/* Memakai <details> supaya tetap bisa dibuka-tutup tanpa JavaScript, dan
+   isinya tetap ada di HTML sehingga terbaca mesin pencari maupun pembaca layar. */
+
+.da-faq { margin-top: clamp(36px, 5vw, 64px); }
+
+.da-faq > h2 { margin: 0 0 clamp(16px, 2vw, 24px); }
+
+.da-faq-daftar { display: grid; gap: 10px; }
+
+.da-faq-item {
+  border: 1px solid rgba(26, 39, 33, .12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .6);
+  transition: border-color .22s ease, background .22s ease;
+}
+
+.da-faq-item[open] { background: #fff; border-color: rgba(210, 168, 84, .5); }
+.da-faq-item:hover { border-color: rgba(26, 39, 33, .26); }
+
+.da-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 17px 20px;
+  cursor: pointer;
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 700;
+  color: #1a2721;
+  list-style: none;
+}
+
+.da-faq-item summary::-webkit-details-marker { display: none; }
+
+/* Penanda buka/tutup dibuat dari CSS, ditandai aria-hidden lewat content
+   generated sehingga tidak ikut dibacakan pembaca layar. */
+.da-faq-item summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(226, 191, 116, .22);
+  color: #6d5c2c;
+  font-size: 16px;
+  transition: transform .25s cubic-bezier(.22, 1, .36, 1);
+}
+
+.da-faq-item[open] summary::after { content: "−"; transform: rotate(180deg); }
+
+.da-faq-item summary:focus-visible {
+  outline: 2px solid #d3ab58;
+  outline-offset: 2px;
+  border-radius: 16px;
+}
+
+.da-faq-item p {
+  margin: 0;
+  padding: 0 20px 19px;
+  font-size: clamp(13px, .95vw, 15px);
+  line-height: 1.7;
+  color: #4d574f;
+}

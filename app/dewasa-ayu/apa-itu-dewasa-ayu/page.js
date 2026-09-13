@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ContentLayout from "../../../components/ContentLayout";
 import { LdRemah } from "../../../components/DataTerstruktur";
+import Faq from "../../../components/Faq";
 
 export const metadata = {
   title: "Apa itu Dewasa Ayu? Pengertian Hari Baik dalam Hindu Bali",
@@ -101,6 +102,27 @@ export default function ApaItuDewasaAyu() {
           <span className="go">Baca selengkapnya →</span>
         </Link>
       </div>
+
+      <Faq
+        daftar={[
+          {
+            tanya: "Apa arti dewasa ayu?",
+            jawab: "Secara harfiah dewasa ayu berarti waktu atau hari yang baik. Dalam praktik Hindu Bali istilah ini merujuk pada hari-hari yang dianggap membawa energi selaras untuk memulai suatu pekerjaan atau upacara. Lawannya adalah dewasa ala, yaitu hari yang sebaiknya dihindari."
+          },
+          {
+            tanya: "Kenapa menghitung dewasa ayu terasa rumit?",
+            jawab: "Karena ada dua sistem kalender yang dipakai bersamaan. Pawukon adalah siklus tetap 210 hari yang tersusun dari 30 wuku, dengan beberapa lapis pekan (wewaran) berjalan paralel. Sasih adalah kalender lunar 12 bulan dengan penanggal dan panglong. Hari baik ditentukan dengan mencocokkan posisi sebuah tanggal pada kedua sistem sekaligus, ditambah aturan yang berbeda menurut jenis acaranya."
+          },
+          {
+            tanya: "Siapa yang berwenang menetapkan hari baik?",
+            jawab: "Secara tradisional penentuannya dilakukan oleh pemangku atau sulinggih keluarga. Mereka memahami konteks yang tidak selalu tertulis di kalender cetak, misalnya kecocokan dengan otonan mempelai, kondisi keluarga, dan kebiasaan desa setempat sesuai prinsip desa, kala, patra. Kalender dan aplikasi berguna sebagai bahan diskusi awal, bukan pengganti keputusan pemangku."
+          },
+          {
+            tanya: "Apakah dewasa ayu sama dengan memilih tanggal cantik seperti 10-10?",
+            jawab: "Tidak. Dewasa ayu tidak mengikuti kalender Masehi sama sekali. Satu tanggal Masehi bisa jatuh pada wuku dan wewaran yang berbeda tiap tahun, sehingga hari baik untuk menikah bisa jatuh pada 3 Agustus di satu tahun dan tanggal yang sama sekali berbeda di tahun berikutnya."
+          }
+        ]}
+      />
 
       <div className="da-cta">
         <h2>Ingin dibantu menghitungkan?</h2>

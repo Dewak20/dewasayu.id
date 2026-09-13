@@ -1,8 +1,8 @@
 name: CI
 
-# Menjalankan lint, validasi kalender, dan build produksi pada tiap push dan
-# pull request ke main. Tujuannya menangkap regresi sebelum sampai ke Vercel,
-# bukan setelah situs terlanjur rusak.
+# Menjalankan lint, uji perilaku, validasi kalender, dan build produksi pada
+# tiap push dan pull request ke main. Tujuannya menangkap regresi sebelum
+# sampai ke Vercel, bukan setelah situs terlanjur rusak.
 
 on:
   push:
@@ -16,12 +16,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          # Vitest 5 butuh Node >=22.12 dan jsdom butuh >=22.13; Node 20 sudah
+          # usang di runner GitHub. Angka ini harus sejalan dengan "engines"
+          # di package.json.
+          node-version: "22"
           cache: npm
+
+      - name: Versi perkakas
+        run: node --version && npm --version
 
       - name: Pasang dependensi
         run: npm ci

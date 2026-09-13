@@ -12,7 +12,7 @@ on:
 
 jobs:
   periksa:
-    name: Lint, uji kalender, build
+    name: Lint, uji perilaku, uji kalender, build
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Uji perilaku (Vitest)
+        run: npm run test:unit
 
       - name: Validasi mesin kalender Bali
         run: npm run test:kalender

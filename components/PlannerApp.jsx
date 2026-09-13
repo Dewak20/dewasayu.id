@@ -49,7 +49,6 @@ export default function PlannerApp() {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved?.meta && saved?.project) setData(saved);
     } catch (_) {}
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReady(true);
   }, []);
   // Penulisan harus dijaga: di Safari mode penyamaran dan saat kuota penuh,
@@ -63,7 +62,6 @@ export default function PlannerApp() {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setStorageError("");
     } catch (error) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStorageError(error?.name === "QuotaExceededError"
         ? "Penyimpanan browser penuh — perubahan terakhir belum tersimpan. Ekspor datamu, lalu hapus entri yang tidak terpakai."
         : "Browser menolak menyimpan data (mis. mode penyamaran). Perubahanmu hanya bertahan selama tab ini terbuka — segera ekspor datamu.");
